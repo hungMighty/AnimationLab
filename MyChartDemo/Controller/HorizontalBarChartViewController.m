@@ -76,12 +76,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self.chartView animateWithYAxisDuration:2];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self.chartView animateWithYAxisDuration:2.5];
 }
 
 #pragma Chart data
