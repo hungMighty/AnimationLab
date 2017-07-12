@@ -58,7 +58,7 @@
     
     [self customizeChartView];
     for (int i = 0; i < chartViews.count; i++) {
-        [chartViews[i] animateWithYAxisDuration:1.5];
+        [chartViews[i] animateWithYAxisDuration:0.75];
     }
 }
 
