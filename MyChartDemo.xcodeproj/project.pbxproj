@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */; };
+		A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */; };
+		A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */; };
 		A0A77C911F14750F00D16BC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C901F14750F00D16BC2 /* main.m */; };
 		A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C931F14750F00D16BC2 /* AppDelegate.m */; };
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
@@ -20,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HorizontalBarChartViewController.xib; path = Xibs/HorizontalBarChartViewController.xib; sourceTree = "<group>"; };
+		A07E86581F16307F00A3D158 /* CustomBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBarChartViewController.h; path = Controller/CustomBarChartViewController.h; sourceTree = "<group>"; };
+		A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBarChartViewController.m; path = Controller/CustomBarChartViewController.m; sourceTree = "<group>"; };
+		A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomBarChartViewController.xib; path = Xibs/CustomBarChartViewController.xib; sourceTree = "<group>"; };
 		A0A77C8C1F14750F00D16BC2 /* MyChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A77C901F14750F00D16BC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0A77C921F14750F00D16BC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */,
+				A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -108,6 +114,8 @@
 				A0A77CB01F14A54500D16BC2 /* ViewController.m */,
 				A0A77CAC1F14A52200D16BC2 /* HorizontalBarChartViewController.h */,
 				A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */,
+				A07E86581F16307F00A3D158 /* CustomBarChartViewController.h */,
+				A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
+				A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */,
 				A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */,
 				A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
@@ -271,6 +280,7 @@
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
+				A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

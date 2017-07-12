@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HorizontalBarChartViewController.h"
+#import "CustomBarChartViewController.h"
 
 @interface ViewController ()
 
@@ -26,8 +27,14 @@
 }
 
 #pragma Actions
+
 - (IBAction)showBarChartViewClicked:(id)sender {
     UIViewController *view = [[HorizontalBarChartViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
+}
+
+- (IBAction)drawBarChartUsingCoreGraphicsClick:(id)sender {
+    UIViewController *view = [[CustomBarChartViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 
