@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HorizontalBarChartViewController">
             <connections>
-                <outlet property="chartView" destination="Oqd-Ej-1xl" id="Fnl-LB-oI5"/>
+                <outlet property="bronzeChartView" destination="Oqd-Ej-1xl" id="7aa-mC-8ji"/>
+                <outlet property="silverChartView" destination="WvH-xr-X5G" id="LFg-is-nwe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,11 +31,18 @@
                         <action selector="optionsButtonTapped:" destination="-1" eventType="touchUpInside" id="ig5-8o-JhO"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqd-Ej-1xl" customClass="HorizontalBarChartView" customModule="Charts">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqd-Ej-1xl" userLabel="Bronze Chart View" customClass="HorizontalBarChartView" customModule="Charts">
                     <rect key="frame" x="0.0" y="47" width="375" height="100"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="2br-bV-lxM"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WvH-xr-X5G" userLabel="Silver Chart View" customClass="HorizontalBarChartView" customModule="Charts">
+                    <rect key="frame" x="0.0" y="167" width="375" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Bqn-4j-lOj"/>
                     </constraints>
                 </view>
             </subviews>
@@ -42,7 +50,10 @@
             <constraints>
                 <constraint firstItem="Oqd-Ej-1xl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="47" id="3NA-if-rAO"/>
                 <constraint firstItem="Oqd-Ej-1xl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Mc-iO-BuY"/>
+                <constraint firstAttribute="trailing" secondItem="WvH-xr-X5G" secondAttribute="trailing" id="MIm-Ec-W1v"/>
+                <constraint firstItem="WvH-xr-X5G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QEH-xZ-q4C"/>
                 <constraint firstItem="Zdz-nd-u7k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="4" id="QYu-uI-rC8"/>
+                <constraint firstItem="WvH-xr-X5G" firstAttribute="top" secondItem="Oqd-Ej-1xl" secondAttribute="bottom" constant="20" id="fJ8-eh-TSm"/>
                 <constraint firstAttribute="trailing" secondItem="Zdz-nd-u7k" secondAttribute="trailing" constant="8" id="hkP-f4-aXC"/>
                 <constraint firstAttribute="trailing" secondItem="Oqd-Ej-1xl" secondAttribute="trailing" id="mC3-xy-2CS"/>
             </constraints>

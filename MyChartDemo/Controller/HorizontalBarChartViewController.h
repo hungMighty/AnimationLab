@@ -11,4 +11,6 @@
 
 @interface HorizontalBarChartViewController : ViewController
 
+@property(nonatomic, strong) NSMutableArray<NSDictionary *> *dataList;
+
 @end
