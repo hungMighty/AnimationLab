@@ -8,7 +8,7 @@
 
 #import "HorizontalBarChartViewController.h"
 
-@interface HorizontalBarChartViewController () <ChartViewDelegate, IChartAxisValueFormatter> {
+@interface HorizontalBarChartViewController () <ChartViewDelegate> {
     NSArray<HorizontalBarChartView *> *chartViews;
 }
 @property (strong, nonatomic) IBOutlet HorizontalBarChartView *bronzeChartView;
@@ -31,6 +31,42 @@
     }
     return self;
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"Simple Bar Chart";
+    self.bronzeChartView.delegate = self;
+    self.silverChartView.delegate = self;
+    chartViews = @[ self.bronzeChartView, self.silverChartView ];
+    if (self.dataList == nil) {
+        self.dataList = [[NSMutableArray<NSDictionary *> alloc] init];
+        [self.dataList addObject:@{@"xValue": @(0),
+                                   @"yValue": @(4),
+                                   @"yMaxValue": @(7)}];
+        [self.dataList addObject:@{@"xValue": @(0),
+                                   @"yValue": @(2),
+                                   @"yMaxValue": @(4)}];
+    }
+    
+    [self setupBarLineChartView];
+    [self populateData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self customizeChartView];
+    for (int i = 0; i < chartViews.count; i++) {
+        [chartViews[i] animateWithYAxisDuration:1.5];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+#pragma ChartView Customization
 
 - (void)setupBarLineChartView {
     for (int i = 0; i < chartViews.count; i++) {
@@ -68,44 +104,19 @@
     }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.title = @"Simple Bar Chart";
-    self.bronzeChartView.delegate = self;
-    self.silverChartView.delegate = self;
-    chartViews = @[ self.bronzeChartView, self.silverChartView ];
-    if (self.dataList == nil) {
-        self.dataList = [[NSMutableArray<NSDictionary *> alloc] init];
-        [self.dataList addObject:@{@"xValue": @(0),
-                                   @"yValue": @(4),
-                                   @"yMaxValue": @(7)}];
-        [self.dataList addObject:@{@"xValue": @(0),
-                                   @"yValue": @(2),
-                                   @"yMaxValue": @(4)}];
-    }
-    
-    [self setupBarLineChartView];
-    [self populateData];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
+- (void)customizeChartView {
     for (int i = 0; i < chartViews.count; i++) {
-        [chartViews[i] animateWithYAxisDuration:1.5];
+        HorizontalBarChartView *chartView = chartViews[i];
+//        chartView.backgroundColor = UIColor.brownColor;
+        chartView.extraLeftOffset = -15.f;
     }
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 #pragma Chart data
 
 - (void)populateData {
     UIColor *chartViewForegroundColor = [UIColor colorWithRed:211/255.f green:74/255.f blue:88/255.f alpha:1.f];
-    UIColor *chartViewShadowColor = [UIColor colorWithRed:235/255.f green:235/255.f blue:235/255.f alpha:1.f];
+    UIColor *chartViewShadowColor = [UIColor colorWithRed:255/255.f green:213/255.f blue:213/255.f alpha:1.f];
     
     for (int i = 0; i < chartViews.count; i++) {
         HorizontalBarChartView *barChartView = chartViews[i];
@@ -124,7 +135,7 @@
         
         BarChartData *data = [[BarChartData alloc] initWithDataSet:set];
         [data setValueFont:[UIFont systemFontOfSize:13.f]];
-        data.barWidth = 0.25;
+        data.barWidth = 1;
         
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         formatter.numberStyle = NSNumberFormatterRoundUp;
