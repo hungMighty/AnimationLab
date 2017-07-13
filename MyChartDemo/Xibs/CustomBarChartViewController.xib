@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBarChartViewController">
             <connections>
-                <outlet property="chartUIView" destination="Rrf-bH-LgY" id="OQt-WD-fnp"/>
+                <outlet property="bronzeBarChart" destination="Rrf-bH-LgY" id="2JV-U2-sAP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrf-bH-LgY">
-                    <rect key="frame" x="10" y="10" width="355" height="80"/>
+                    <rect key="frame" x="87.5" y="10" width="200" height="10"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="Wwp-UM-Xov"/>
+                        <constraint firstAttribute="width" constant="200" id="LPu-NU-jaI"/>
+                        <constraint firstAttribute="height" constant="10" id="Wwp-UM-Xov"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Rrf-bH-LgY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="0cP-1M-2IK"/>
-                <constraint firstAttribute="trailing" secondItem="Rrf-bH-LgY" secondAttribute="trailing" constant="10" id="mGy-9C-g07"/>
+                <constraint firstItem="Rrf-bH-LgY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Twq-Y8-uUD"/>
                 <constraint firstItem="Rrf-bH-LgY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="vlx-jx-6LR"/>
             </constraints>
         </view>

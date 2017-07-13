@@ -28,10 +28,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zb-3D-VcK">
-                                <rect key="frame" x="116" y="114" width="142" height="30"/>
-                                <state key="normal" title="Using Core Graphics"/>
+                                <rect key="frame" x="134.5" y="114" width="105" height="30"/>
+                                <state key="normal" title="Custom UIView"/>
                                 <connections>
-                                    <action selector="drawBarChartUsingCoreGraphicsClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mub-pG-nh1"/>
+                                    <action selector="drawBarChartUsingCustomUIView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1T3-97-QcT"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -33,7 +33,7 @@
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (IBAction)drawBarChartUsingCoreGraphicsClick:(id)sender {
+- (IBAction)drawBarChartUsingCustomUIView:(id)sender {
     UIViewController *view = [[CustomBarChartViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }

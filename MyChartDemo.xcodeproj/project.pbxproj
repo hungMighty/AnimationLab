@@ -17,6 +17,7 @@
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
 		A0A77CAE1F14A52200D16BC2 /* HorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */; };
 		A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CB01F14A54500D16BC2 /* ViewController.m */; };
+		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		B7B32994D794EA1B65256A60 /* Pods_MyChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,9 @@
 		A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HorizontalBarChartViewController.m; path = Controller/HorizontalBarChartViewController.m; sourceTree = "<group>"; };
 		A0A77CAF1F14A54500D16BC2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		A0A77CB01F14A54500D16BC2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
+		A0EF81C11F17A087006065BF /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "Model/UIColor+RGB.m"; sourceTree = "<group>"; };
+		A0EF81C31F17AF16006065BF /* UtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilityClasses.h; path = Model/UtilityClasses.h; sourceTree = "<group>"; };
 		B5C4B2BB6DE84A84F634A741 /* Pods-MyChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyChartDemo/Pods-MyChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7DCF4C1267F64614E44768 /* Pods-MyChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChartDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyChartDemo/Pods-MyChartDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,9 @@
 		A0A77CA71F14887500D16BC2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A0EF81C31F17AF16006065BF /* UtilityClasses.h */,
+				A0EF81C01F17A087006065BF /* UIColor+RGB.h */,
+				A0EF81C11F17A087006065BF /* UIColor+RGB.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A77CAE1F14A52200D16BC2 /* HorizontalBarChartViewController.m in Sources */,
+				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,

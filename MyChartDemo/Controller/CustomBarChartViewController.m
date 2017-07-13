@@ -7,12 +7,14 @@
 //
 
 #import "CustomBarChartViewController.h"
+#import "UtilityClasses.h"
 
 @interface CustomBarChartViewController () {
-    UIView *holder;
+    CGFloat chartCornerRadius;
+    NSMutableArray<UIView *> *chartBackViews;
 }
 
-@property (strong, nonatomic) IBOutlet UIView *chartUIView;
+@property (strong, nonatomic) IBOutlet UIView *bronzeBarChart;
 
 @end
 
@@ -22,32 +24,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    chartCornerRadius = 6;
+    chartBackViews = [[NSMutableArray alloc] init];
+    [chartBackViews addObject:self.bronzeBarChart];
+    [self customizeBarchartBackground];
+    [self drawChartRect];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    [self drawRect];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:1.5 animations:^(void) {
-//        CGRect frame = holder.frame;
-//        frame.size.width = 50;
-//        holder.frame = frame;
-//        self.heightCon.constant = 600 // heightCon is the IBOutlet to the constraint
-        [holder setFrame:CGRectMake(0, 5, 200, 20)];
-    }];
+    [self animateChartRect];
 }
 
+- (void)customizeBarchartBackground {
+    self.bronzeBarChart.layer.cornerRadius = chartCornerRadius;
+    self.bronzeBarChart.layer.masksToBounds = YES;
+    self.bronzeBarChart.backgroundColor = UIColor.whiteColor;
+}
 
-- (void)drawRect {
-    UIView *rectView = [[UIView alloc] initWithFrame:CGRectMake (0, 5, 50, 20)];
-    rectView.backgroundColor = [UIColor blackColor];
-    holder = rectView;
-    [self.chartUIView addSubview:rectView];
+- (void)drawChartRect {
+    for (int i = 0; i < chartBackViews.count; i++) {
+        UIView *chartBackView = chartBackViews[i];
+        UIColor *startColor = [UIColor rgb:147 green:57 blue:62];
+        UIColor *endColor = [UIColor rgb:200 green:68 blue:75];
+        UIView *chartRect = [[UIView alloc] initWithFrame:CGRectMake (0, 0, 0, 10)];
+        chartRect.layer.cornerRadius = chartCornerRadius;
+        chartRect.layer.masksToBounds = YES;
+        
+        CAGradientLayer *gradient = [CAGradientLayer layer];
+        gradient.frame = chartRect.bounds;
+        gradient.colors = @[(id)startColor.CGColor, (id)endColor.CGColor];
+        [gradient setStartPoint:CGPointMake(0.0, 0.5)];
+        [gradient setEndPoint:CGPointMake(1.0, 0.5)];
+        [chartRect.layer insertSublayer:gradient atIndex:0];
+        
+        [chartBackView addSubview:chartRect];
+        
+        CALayer *border = [CALayer layer];
+        border.backgroundColor = [UIColor rgb:240 green:240 blue:240].CGColor;
+        border.frame = CGRectMake(0, 10 - 1, 200, 1);
+        [chartBackView.layer addSublayer:border];
+    }
+}
+
+- (void)animateChartRect {
+    UIView *bronzeChartFrontView = chartBackViews[0].subviews.firstObject;
+    [UIView animateWithDuration:1.5 animations:^(void) {
+        [bronzeChartFrontView setFrame:CGRectMake(0, 0, 140, 10)];
+        [bronzeChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, 140, 10)];
+    }];
 }
 
 #pragma Actions
