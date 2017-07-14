@@ -30,6 +30,7 @@
     chartBackViews = [[NSMutableArray alloc] init];
     [chartBackViews addObject:self.bronzeBarChart];
     [chartBackViews addObject:self.silverBarChart];
+    [self mockData];
     [self customizeBarchartBackground];
     [self drawChartRect];
 }
@@ -38,17 +39,26 @@
     [super viewWillAppear:animated];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self animateChartRect];
 }
 
+- (void)mockData {
+    self.bronzeBarChartValues = [[NSMutableArray alloc] init];
+    self.silverBarChartValues = [[NSMutableArray alloc] init];
+    [self.bronzeBarChartValues addObject:@6];
+    [self.bronzeBarChartValues addObject:@7];
+    [self.silverBarChartValues addObject:@3];
+    [self.silverBarChartValues addObject:@4];
+}
+
 - (void)customizeBarchartBackground {
     for (int i = 0; i < chartBackViews.count; i++) {
         UIView *chartBackView = chartBackViews[i];
-        chartBackView.layer.cornerRadius = chartCornerRadius;
         chartBackView.layer.masksToBounds = YES;
+        chartBackView.layer.cornerRadius = chartCornerRadius;
         chartBackView.backgroundColor = UIColor.whiteColor;
         chartBackView.layer.borderColor = [UIColor rgb:240 green:240 blue:240].CGColor;
         chartBackView.layer.borderWidth = 1.0f;
@@ -61,8 +71,8 @@
         UIColor *startColor = [UIColor rgb:147 green:57 blue:62];
         UIColor *endColor = [UIColor rgb:200 green:68 blue:75];
         UIView *chartRect = [[UIView alloc] initWithFrame:CGRectMake (0, 0, 0, 10)];
-        chartRect.layer.cornerRadius = chartCornerRadius;
         chartRect.layer.masksToBounds = YES;
+        chartRect.layer.cornerRadius = chartCornerRadius;
         
         CAGradientLayer *gradient = [CAGradientLayer layer];
         gradient.frame = chartRect.bounds;
@@ -77,14 +87,18 @@
 
 - (void)animateChartRect {
     UIView *bronzeChartFrontView = chartBackViews[0].subviews.firstObject;
+    CGFloat ratio = [self.bronzeBarChartValues[0] floatValue] / [self.bronzeBarChartValues[1] floatValue];
+    CGFloat newWidth = chartBackViews[0].frame.size.width * ratio;
     [UIView animateWithDuration:1.5 animations:^(void) {
-        [bronzeChartFrontView setFrame:CGRectMake(0, 0, 140, 10)];
-        [bronzeChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, 140, 10)];
+        [bronzeChartFrontView setFrame:CGRectMake(0, 0, newWidth, 10)];
+        [bronzeChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, newWidth, 10)];
     }];
     UIView *silverChartFrontView = chartBackViews[1].subviews.firstObject;
+    ratio = [self.silverBarChartValues[0] floatValue] / [self.silverBarChartValues[1] floatValue];
+    newWidth = chartBackViews[1].frame.size.width * ratio;
     [UIView animateWithDuration:1.5 animations:^(void) {
-        [silverChartFrontView setFrame:CGRectMake(0, 0, 110, 10)];
-        [silverChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, 110, 10)];
+        [silverChartFrontView setFrame:CGRectMake(0, 0, newWidth, 10)];
+        [silverChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, newWidth, 10)];
     }];
 }
 

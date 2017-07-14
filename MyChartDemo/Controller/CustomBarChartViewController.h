@@ -11,4 +11,7 @@
 
 @interface CustomBarChartViewController : ViewController
 
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *bronzeBarChartValues;
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *silverBarChartValues;
+
 @end
