@@ -7,7 +7,7 @@
 //
 
 #import "SimpleHorizontalBarChart.h"
-#import "UIColor+RGB.h"
+#import "UtilityClasses.h"
 
 @interface SimpleHorizontalBarChart () {
     CGFloat chartCornerRadius;
@@ -28,7 +28,7 @@
 }
 
 // custom init with frame
--  (id)initWithFrame:(CGRect)aRect {
+- (id)initWithFrame:(CGRect)aRect {
     if (self = [super initWithFrame:aRect]) {
         [self initDefaultStatistics];
         [self customizeBarchartBackground];

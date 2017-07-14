@@ -9,15 +9,17 @@
 #import "CustomBarChartViewController.h"
 #import "UtilityClasses.h"
 #import "SimpleHorizontalBarChart.h"
+#import "ValueLabelForBarchart.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
+    NSMutableArray<ValueLabelForBarchart *> *valueLabels;
 }
 
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
-@property (strong, nonatomic) IBOutlet UIView *bronzeValueView;
-@property (strong, nonatomic) IBOutlet UILabel *silverValueLabel;
+@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *bronzeValueView;
+@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueView;
 
 @end
 
@@ -31,15 +33,22 @@
     chartBackViews = [[NSMutableArray alloc] init];
     [chartBackViews addObject:self.bronzeBarChart];
     [chartBackViews addObject:self.silverBarChart];
+    valueLabels = [[NSMutableArray alloc] init];
+    [valueLabels addObject:self.bronzeValueView];
+    [valueLabels addObject:self.silverValueView];
     [self mockData];
     self.bronzeBarChart.ratio = @([self.bronzeBarChartValues[0] floatValue] / [self.bronzeBarChartValues[1] floatValue]);
     self.silverBarChart.ratio = @([self.silverBarChartValues[0] floatValue] / [self.silverBarChartValues[1] floatValue]);
+    self.bronzeValueView.barChartValues = self.bronzeBarChartValues;
+    self.silverValueView.barChartValues = self.silverBarChartValues;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self customizeLabels];
+    for (int i = 0; i < valueLabels.count; i++) {
+        [valueLabels[i] addCustomUILabelWithShadow];
+    }
     [self animateChartRect];
 }
 
@@ -54,46 +63,6 @@
     [self.bronzeBarChartValues addObject:@7];
     [self.silverBarChartValues addObject:@3];
     [self.silverBarChartValues addObject:@4];
-}
-
-- (void)customizeLabels {
-    // Add Shadow to bar chart
-    CGFloat labelMargin = 3.f;
-    CGRect superFrame = self.bronzeValueView.frame;
-    UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(0.5f,
-                                                                  0.5f,
-                                                                  superFrame.size.width - labelMargin,
-                                                                  superFrame.size.height - labelMargin)];
-    shadowView.backgroundColor = UIColor.clearColor;
-    shadowView.layer.masksToBounds = false;
-    shadowView.layer.shadowColor = [UIColor grayColor].CGColor;
-    shadowView.layer.shadowOpacity = 0.2f;
-    shadowView.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
-    shadowView.layer.shadowRadius = 1.5f;
-    
-    UILabel *bronzeValueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.5f,
-                                                                          0.5f,
-                                                                          superFrame.size.width - labelMargin,
-                                                                          superFrame.size.height - labelMargin)];
-    [bronzeValueLabel setText:[NSString stringWithFormat:@"%li / %li", (long)[self.bronzeBarChartValues[0] integerValue], (long)[self.bronzeBarChartValues[1] integerValue]]];
-    [bronzeValueLabel setFont:[UIFont systemFontOfSize:14.f]];
-    [bronzeValueLabel setTextAlignment:NSTextAlignmentCenter];
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString: bronzeValueLabel.attributedText];
-    UIColor *textColor = [UIColor rgb:174 green:14 blue:25];
-    [text addAttribute:NSForegroundColorAttributeName
-                 value:textColor
-                 range:NSMakeRange(0, 1)];
-    [bronzeValueLabel setAttributedText: text];
-    bronzeValueLabel.backgroundColor = UIColor.whiteColor;
-    bronzeValueLabel.layer.cornerRadius = bronzeValueLabel.frame.size.height / 2;
-    bronzeValueLabel.layer.masksToBounds = true;
-    
-    [shadowView addSubview:bronzeValueLabel];
-    [self.bronzeValueView addSubview:shadowView];
-    self.bronzeValueView.layer.cornerRadius = bronzeValueLabel.frame.size.height / 2;
-//    [self.bronzeValueView setBackgroundColor:UIColor.redColor];
-    [self.bronzeValueView setBackgroundColor:UIColor.clearColor];
-    self.bronzeValueView.layer.masksToBounds = true;
 }
 
 - (void)animateChartRect {
