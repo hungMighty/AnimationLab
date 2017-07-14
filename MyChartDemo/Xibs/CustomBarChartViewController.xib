@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBarChartViewController">
             <connections>
                 <outlet property="bronzeBarChart" destination="Kvl-F5-dy1" id="Mxg-Un-H6U"/>
-                <outlet property="bronzeValueLabel" destination="JbO-Js-vzQ" id="Idv-YM-lES"/>
+                <outlet property="bronzeValueView" destination="weh-mm-gMq" id="ZXq-Kf-eGf"/>
                 <outlet property="silverBarChart" destination="7ql-Jf-eR8" id="Fvr-xD-dQi"/>
                 <outlet property="silverValueLabel" destination="fJa-Hw-rH1" id="Gk7-vb-BOB"/>
                 <outlet property="view" destination="tBC-lo-MI0" id="EIo-b9-SaG"/>
@@ -103,12 +103,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-Js-vzQ">
-                                    <rect key="frame" x="295.5" y="8" width="24.5" height="19.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-F5-dy1" userLabel="Bronze Chart View" customClass="SimpleHorizontalBarChart">
                                     <rect key="frame" x="15" y="38.5" width="305" height="10"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,18 +118,26 @@ earn 1 Silver medal.</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weh-mm-gMq">
+                                    <rect key="frame" x="280" y="6" width="40" height="25"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="46d-lG-dMt"/>
+                                        <constraint firstAttribute="width" constant="40" id="Tzk-jP-Qwx"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="xPa-qr-sff" firstAttribute="top" secondItem="LdJ-Gf-ePO" secondAttribute="top" constant="8" id="05m-lH-mm2"/>
                                 <constraint firstItem="Kvl-F5-dy1" firstAttribute="leading" secondItem="xPa-qr-sff" secondAttribute="leading" id="5rC-Df-mR3"/>
+                                <constraint firstItem="weh-mm-gMq" firstAttribute="centerY" secondItem="xPa-qr-sff" secondAttribute="centerY" id="FS0-c3-b60"/>
                                 <constraint firstItem="Kvl-F5-dy1" firstAttribute="top" secondItem="xPa-qr-sff" secondAttribute="bottom" constant="10" id="OGI-E6-EgP"/>
                                 <constraint firstItem="WZf-id-qSJ" firstAttribute="centerX" secondItem="LdJ-Gf-ePO" secondAttribute="centerX" id="R6a-5X-G2o"/>
-                                <constraint firstItem="Kvl-F5-dy1" firstAttribute="trailing" secondItem="JbO-Js-vzQ" secondAttribute="trailing" id="hDs-At-oC8"/>
+                                <constraint firstItem="Kvl-F5-dy1" firstAttribute="trailing" secondItem="weh-mm-gMq" secondAttribute="trailing" id="eLx-eh-0UB"/>
                                 <constraint firstAttribute="bottom" secondItem="WZf-id-qSJ" secondAttribute="bottom" constant="20" id="lTM-6J-A5v"/>
                                 <constraint firstItem="xPa-qr-sff" firstAttribute="leading" secondItem="LdJ-Gf-ePO" secondAttribute="leading" constant="15" id="vKb-ls-eCq"/>
-                                <constraint firstAttribute="trailing" secondItem="JbO-Js-vzQ" secondAttribute="trailing" constant="15" id="vmh-DT-ayq"/>
-                                <constraint firstItem="JbO-Js-vzQ" firstAttribute="top" secondItem="LdJ-Gf-ePO" secondAttribute="top" constant="8" id="x2K-fx-snn"/>
+                                <constraint firstAttribute="trailing" secondItem="weh-mm-gMq" secondAttribute="trailing" constant="15" id="wyS-qw-Qtp"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbQ-bY-IrP" userLabel="Silver Panel">
@@ -147,9 +149,9 @@ earn 1 Silver medal.</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJa-Hw-rH1">
-                                    <rect key="frame" x="295" y="8" width="25" height="19.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 / 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJa-Hw-rH1">
+                                    <rect key="frame" x="290" y="10" width="30" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -173,7 +175,7 @@ unlock Gold.</string>
                             <constraints>
                                 <constraint firstItem="6yT-mg-UK6" firstAttribute="centerX" secondItem="hbQ-bY-IrP" secondAttribute="centerX" id="AHO-w4-ask"/>
                                 <constraint firstItem="7ql-Jf-eR8" firstAttribute="top" secondItem="PFj-Yd-Q8f" secondAttribute="bottom" constant="10" id="D1g-eW-DWb"/>
-                                <constraint firstItem="fJa-Hw-rH1" firstAttribute="top" secondItem="hbQ-bY-IrP" secondAttribute="top" constant="8" id="Q6i-io-yS4"/>
+                                <constraint firstItem="fJa-Hw-rH1" firstAttribute="centerY" secondItem="PFj-Yd-Q8f" secondAttribute="centerY" id="RLW-vO-VIn"/>
                                 <constraint firstAttribute="trailing" secondItem="fJa-Hw-rH1" secondAttribute="trailing" constant="15" id="Ux9-FW-hdX"/>
                                 <constraint firstItem="PFj-Yd-Q8f" firstAttribute="top" secondItem="hbQ-bY-IrP" secondAttribute="top" constant="8" id="Vxl-IU-sxa"/>
                                 <constraint firstItem="7ql-Jf-eR8" firstAttribute="leading" secondItem="PFj-Yd-Q8f" secondAttribute="leading" id="YqY-Hy-WLf"/>
@@ -217,7 +219,7 @@ unlock Gold.</string>
                 <constraint firstItem="Vn8-80-bEn" firstAttribute="leading" secondItem="tBC-lo-MI0" secondAttribute="leading" constant="20" id="qZS-uT-q2u"/>
                 <constraint firstItem="l3R-sF-8ml" firstAttribute="top" secondItem="4RM-pn-c1c" secondAttribute="bottom" id="xV2-n9-dVH"/>
             </constraints>
-            <point key="canvasLocation" x="5" y="-155"/>
+            <point key="canvasLocation" x="4.5" y="-155.5"/>
         </view>
     </objects>
 </document>
