@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBarChartViewController">
             <connections>
                 <outlet property="bronzeBarChart" destination="Kvl-F5-dy1" id="Mxg-Un-H6U"/>
+                <outlet property="bronzeValueLabel" destination="JbO-Js-vzQ" id="Idv-YM-lES"/>
                 <outlet property="silverBarChart" destination="7ql-Jf-eR8" id="Fvr-xD-dQi"/>
+                <outlet property="silverValueLabel" destination="fJa-Hw-rH1" id="Gk7-vb-BOB"/>
                 <outlet property="view" destination="tBC-lo-MI0" id="EIo-b9-SaG"/>
             </connections>
         </placeholder>
@@ -102,12 +104,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-Js-vzQ">
-                                    <rect key="frame" x="294.5" y="8" width="25.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="295.5" y="8" width="24.5" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-F5-dy1" userLabel="Bronze Chart View">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-F5-dy1" userLabel="Bronze Chart View" customClass="SimpleHorizontalBarChart">
                                     <rect key="frame" x="15" y="38.5" width="305" height="10"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -146,8 +148,8 @@ earn 1 Silver medal.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJa-Hw-rH1">
-                                    <rect key="frame" x="293.5" y="8" width="26.5" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="295" y="8" width="25" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -159,7 +161,7 @@ unlock Gold.</string>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-Jf-eR8" userLabel="Silver Chart View">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-Jf-eR8" userLabel="Silver Chart View" customClass="SimpleHorizontalBarChart">
                                     <rect key="frame" x="15" y="38.5" width="305" height="10"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
