@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -88,11 +89,11 @@
                         <constraint firstItem="6N1-q1-3yG" firstAttribute="centerY" secondItem="Mqx-ug-8wY" secondAttribute="centerY" id="kgC-11-7j9"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Q4p-AV-23G">
-                    <rect key="frame" x="20" y="205" width="335" height="447"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXS-rI-sVK">
+                    <rect key="frame" x="20" y="200" width="335" height="457"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdN-Xr-aNe" userLabel="Bronze Panel">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="142.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="152.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bronze Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTa-g9-xdo">
                                     <rect key="frame" x="15" y="8" width="98" height="20.5"/>
@@ -136,7 +137,7 @@ earn 1 Silver medal.</string>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr8-vu-DEB" userLabel="Silver Panel">
-                            <rect key="frame" x="0.0" y="152.5" width="335" height="142"/>
+                            <rect key="frame" x="0.0" y="152.5" width="335" height="152.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silver Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw2-wa-W7c">
                                     <rect key="frame" x="15" y="8" width="86.5" height="20.5"/>
@@ -180,24 +181,39 @@ unlock Gold.</string>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGU-IK-XQ8" userLabel="Gold Panel">
-                            <rect key="frame" x="0.0" y="304.5" width="335" height="142.5"/>
+                            <rect key="frame" x="0.0" y="305" width="335" height="152.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
-                </stackView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="LGU-IK-XQ8" firstAttribute="leading" secondItem="YXS-rI-sVK" secondAttribute="leading" id="1Ia-ho-4Ep"/>
+                        <constraint firstAttribute="trailing" secondItem="LGU-IK-XQ8" secondAttribute="trailing" id="7FN-Kz-yHL"/>
+                        <constraint firstAttribute="trailing" secondItem="yr8-vu-DEB" secondAttribute="trailing" id="HDi-uW-Ugi"/>
+                        <constraint firstItem="LGU-IK-XQ8" firstAttribute="top" secondItem="yr8-vu-DEB" secondAttribute="bottom" id="Jme-ub-z0R"/>
+                        <constraint firstItem="fdN-Xr-aNe" firstAttribute="top" secondItem="YXS-rI-sVK" secondAttribute="top" id="TLA-Ns-EU4"/>
+                        <constraint firstItem="yr8-vu-DEB" firstAttribute="height" secondItem="fdN-Xr-aNe" secondAttribute="height" id="UK3-bG-05u"/>
+                        <constraint firstAttribute="trailing" secondItem="fdN-Xr-aNe" secondAttribute="trailing" id="UZf-Bi-1Yj"/>
+                        <constraint firstItem="yr8-vu-DEB" firstAttribute="top" secondItem="fdN-Xr-aNe" secondAttribute="bottom" id="Yjz-cf-eqY"/>
+                        <constraint firstItem="fdN-Xr-aNe" firstAttribute="leading" secondItem="YXS-rI-sVK" secondAttribute="leading" id="azN-wC-Cs9"/>
+                        <constraint firstItem="LGU-IK-XQ8" firstAttribute="height" secondItem="yr8-vu-DEB" secondAttribute="height" id="cY3-rO-3Lb"/>
+                        <constraint firstItem="fdN-Xr-aNe" firstAttribute="height" secondItem="YXS-rI-sVK" secondAttribute="height" multiplier="1/3" id="ybH-tL-TA9"/>
+                        <constraint firstItem="yr8-vu-DEB" firstAttribute="leading" secondItem="YXS-rI-sVK" secondAttribute="leading" id="ypW-Id-eai"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Q4p-AV-23G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="12Q-q0-TDu"/>
-                <constraint firstAttribute="trailing" secondItem="Q4p-AV-23G" secondAttribute="trailing" constant="20" id="92r-qj-Bs6"/>
-                <constraint firstItem="Q4p-AV-23G" firstAttribute="top" secondItem="gb3-9n-hDQ" secondAttribute="bottom" constant="15" id="MVZ-SM-MND"/>
+                <constraint firstItem="YXS-rI-sVK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="7ui-TR-WxY"/>
+                <constraint firstAttribute="trailing" secondItem="YXS-rI-sVK" secondAttribute="trailing" constant="20" id="9QS-6O-XEE"/>
+                <constraint firstAttribute="bottom" secondItem="YXS-rI-sVK" secondAttribute="bottom" constant="10" id="OCh-90-cgz"/>
                 <constraint firstAttribute="trailing" secondItem="gb3-9n-hDQ" secondAttribute="trailing" id="Vfx-jE-Q5T"/>
                 <constraint firstItem="y7G-UM-s7F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zn8-9y-gKO"/>
-                <constraint firstAttribute="bottom" secondItem="Q4p-AV-23G" secondAttribute="bottom" constant="15" id="ceF-0j-9ps"/>
                 <constraint firstItem="y7G-UM-s7F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dCp-ZI-pna"/>
                 <constraint firstAttribute="trailing" secondItem="y7G-UM-s7F" secondAttribute="trailing" id="dLp-lA-HtN"/>
                 <constraint firstItem="gb3-9n-hDQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jpy-9l-hHd"/>
                 <constraint firstItem="gb3-9n-hDQ" firstAttribute="top" secondItem="y7G-UM-s7F" secondAttribute="bottom" id="uOZ-o5-ZlR"/>
+                <constraint firstItem="YXS-rI-sVK" firstAttribute="top" secondItem="gb3-9n-hDQ" secondAttribute="bottom" constant="10" id="xIZ-sw-tgA"/>
             </constraints>
             <point key="canvasLocation" x="157.5" y="222.5"/>
         </view>

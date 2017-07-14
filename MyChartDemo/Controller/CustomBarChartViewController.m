@@ -15,6 +15,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIView *bronzeBarChart;
+@property (strong, nonatomic) IBOutlet UIView *silverBarChart;
 
 @end
 
@@ -28,6 +29,7 @@
     chartCornerRadius = 6;
     chartBackViews = [[NSMutableArray alloc] init];
     [chartBackViews addObject:self.bronzeBarChart];
+    [chartBackViews addObject:self.silverBarChart];
     [self customizeBarchartBackground];
     [self drawChartRect];
 }
@@ -43,9 +45,14 @@
 }
 
 - (void)customizeBarchartBackground {
-    self.bronzeBarChart.layer.cornerRadius = chartCornerRadius;
-    self.bronzeBarChart.layer.masksToBounds = YES;
-    self.bronzeBarChart.backgroundColor = UIColor.whiteColor;
+    for (int i = 0; i < chartBackViews.count; i++) {
+        UIView *chartBackView = chartBackViews[i];
+        chartBackView.layer.cornerRadius = chartCornerRadius;
+        chartBackView.layer.masksToBounds = YES;
+        chartBackView.backgroundColor = UIColor.whiteColor;
+        chartBackView.layer.borderColor = [UIColor rgb:240 green:240 blue:240].CGColor;
+        chartBackView.layer.borderWidth = 1.0f;
+    }
 }
 
 - (void)drawChartRect {
@@ -65,11 +72,6 @@
         [chartRect.layer insertSublayer:gradient atIndex:0];
         
         [chartBackView addSubview:chartRect];
-        
-        CALayer *border = [CALayer layer];
-        border.backgroundColor = [UIColor rgb:240 green:240 blue:240].CGColor;
-        border.frame = CGRectMake(0, 10 - 1, 200, 1);
-        [chartBackView.layer addSublayer:border];
     }
 }
 
@@ -78,6 +80,11 @@
     [UIView animateWithDuration:1.5 animations:^(void) {
         [bronzeChartFrontView setFrame:CGRectMake(0, 0, 140, 10)];
         [bronzeChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, 140, 10)];
+    }];
+    UIView *silverChartFrontView = chartBackViews[1].subviews.firstObject;
+    [UIView animateWithDuration:1.5 animations:^(void) {
+        [silverChartFrontView setFrame:CGRectMake(0, 0, 110, 10)];
+        [silverChartFrontView.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, 110, 10)];
     }];
 }
 
