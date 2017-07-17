@@ -10,16 +10,24 @@
 #import "UtilityClasses.h"
 #import "SimpleHorizontalBarChart.h"
 #import "ValueLabelForBarchart.h"
+#import "CustomRankingPanel.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
     NSMutableArray<ValueLabelForBarchart *> *valueLabels;
 }
 
+
+@property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
+@property (strong, nonatomic) IBOutlet UIView *panelsContainer;
+
+@property (strong, nonatomic) IBOutlet CustomRankingPanel *bronzePanel;
+@property (strong, nonatomic) IBOutlet CustomRankingPanel *silverPanel;
+@property (strong, nonatomic) IBOutlet CustomRankingPanel *goldPanel;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
-@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *bronzeValueView;
-@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueView;
+@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *bronzeValueLabel;
+@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueLabel;
 
 @end
 
@@ -34,18 +42,20 @@
     [chartBackViews addObject:self.bronzeBarChart];
     [chartBackViews addObject:self.silverBarChart];
     valueLabels = [[NSMutableArray alloc] init];
-    [valueLabels addObject:self.bronzeValueView];
-    [valueLabels addObject:self.silverValueView];
+    [valueLabels addObject:self.bronzeValueLabel];
+    [valueLabels addObject:self.silverValueLabel];
     [self mockData];
     self.bronzeBarChart.ratio = @([self.bronzeBarChartValues[0] floatValue] / [self.bronzeBarChartValues[1] floatValue]);
     self.silverBarChart.ratio = @([self.silverBarChartValues[0] floatValue] / [self.silverBarChartValues[1] floatValue]);
-    self.bronzeValueView.barChartValues = self.bronzeBarChartValues;
-    self.silverValueView.barChartValues = self.silverBarChartValues;
+    self.bronzeValueLabel.barChartValues = self.bronzeBarChartValues;
+    self.silverValueLabel.barChartValues = self.silverBarChartValues;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.panelsContainerBackground.backgroundColor = UIColor.whiteColor;
+    self.panelsContainer.backgroundColor = UIColor.whiteColor;
     for (int i = 0; i < valueLabels.count; i++) {
         [valueLabels[i] addCustomUILabelWithShadow];
     }

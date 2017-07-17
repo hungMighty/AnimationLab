@@ -18,6 +18,7 @@
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
 		A0A77CAE1F14A52200D16BC2 /* HorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */; };
 		A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CB01F14A54500D16BC2 /* ViewController.m */; };
+		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
 		A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		B7B32994D794EA1B65256A60 /* Pods_MyChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */; };
@@ -42,6 +43,8 @@
 		A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HorizontalBarChartViewController.m; path = Controller/HorizontalBarChartViewController.m; sourceTree = "<group>"; };
 		A0A77CAF1F14A54500D16BC2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
 		A0A77CB01F14A54500D16BC2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		A0C474781F1C60080098BCED /* CustomRankingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomRankingPanel.h; path = View/CustomRankingPanel.h; sourceTree = "<group>"; };
+		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
 		A0CA3CE21F19178400BF4079 /* ValueLabelForBarchart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueLabelForBarchart.h; path = View/ValueLabelForBarchart.h; sourceTree = "<group>"; };
 		A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValueLabelForBarchart.m; path = View/ValueLabelForBarchart.m; sourceTree = "<group>"; };
 		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */,
 				A0CA3CE21F19178400BF4079 /* ValueLabelForBarchart.h */,
 				A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */,
+				A0C474781F1C60080098BCED /* CustomRankingPanel.h */,
+				A0C474791F1C60080098BCED /* CustomRankingPanel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */,
+				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
 				A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */,
 			);
