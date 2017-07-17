@@ -7,6 +7,7 @@
 //
 
 #import "CustomRankingPanel.h"
+#import "UIColor+RGB.h"
 
 @interface CustomRankingPanel () {
 }

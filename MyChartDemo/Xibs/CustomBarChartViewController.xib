@@ -12,13 +12,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBarChartViewController">
             <connections>
                 <outlet property="bronzeBarChart" destination="Kvl-F5-dy1" id="Mxg-Un-H6U"/>
-                <outlet property="bronzePanel" destination="LdJ-Gf-ePO" id="eWC-er-6OD"/>
+                <outlet property="bronzePanel" destination="LdJ-Gf-ePO" id="neS-ex-RZb"/>
+                <outlet property="bronzePanelOval" destination="ohP-RD-Tgt" id="nt2-Fw-SZH"/>
                 <outlet property="bronzeValueLabel" destination="weh-mm-gMq" id="LZq-lI-3Zq"/>
                 <outlet property="goldPanel" destination="ibc-vV-T5g" id="Pwj-He-0VT"/>
+                <outlet property="goldPanelOval" destination="p2c-PW-f1e" id="FrL-3r-Hth"/>
                 <outlet property="panelsContainer" destination="Vn8-80-bEn" id="oqb-Ce-s4U"/>
                 <outlet property="panelsContainerBackground" destination="BCP-Dn-gJG" id="uSw-bH-MJa"/>
                 <outlet property="silverBarChart" destination="7ql-Jf-eR8" id="Fvr-xD-dQi"/>
                 <outlet property="silverPanel" destination="hbQ-bY-IrP" id="76B-xP-D3E"/>
+                <outlet property="silverPanelOval" destination="RnE-S5-ado" id="wDe-co-2o9"/>
                 <outlet property="silverValueLabel" destination="Apj-kf-Aa7" id="KHG-rl-n59"/>
                 <outlet property="view" destination="tBC-lo-MI0" id="EIo-b9-SaG"/>
             </connections>
@@ -103,8 +106,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vn8-80-bEn" userLabel="PanelContainer">
                     <rect key="frame" x="20" y="200" width="335" height="457"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdJ-Gf-ePO" userLabel="Bronze Panel" customClass="CustomRankingPanel">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-RD-Tgt" userLabel="Bronze Panel Oval" customClass="CustomRankingPanel">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="141.5"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdJ-Gf-ePO" userLabel="Bronze Panel">
+                            <rect key="frame" x="12" y="0.0" width="323" height="141.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bronze Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPa-qr-sff">
                                     <rect key="frame" x="35" y="8" width="90" height="18"/>
@@ -113,14 +120,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-F5-dy1" userLabel="Bronze Chart View" customClass="SimpleHorizontalBarChart">
-                                    <rect key="frame" x="35" y="36" width="265" height="10"/>
+                                    <rect key="frame" x="35" y="36" width="253" height="10"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="nb7-qX-3cU"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZf-id-qSJ">
-                                    <rect key="frame" x="97" y="83" width="141" height="38.5"/>
+                                    <rect key="frame" x="91" y="83" width="141" height="38.5"/>
                                     <string key="text">Collect 3 more to
 earn 1 Silver medal.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -128,7 +135,7 @@ earn 1 Silver medal.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weh-mm-gMq" customClass="ValueLabelForBarchart">
-                                    <rect key="frame" x="260" y="5" width="40" height="25"/>
+                                    <rect key="frame" x="248" y="5" width="40" height="25"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="46d-lG-dMt"/>
@@ -149,8 +156,12 @@ earn 1 Silver medal.</string>
                                 <constraint firstAttribute="trailing" secondItem="weh-mm-gMq" secondAttribute="trailing" constant="35" id="wyS-qw-Qtp"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbQ-bY-IrP" userLabel="Silver Panel" customClass="CustomRankingPanel">
-                            <rect key="frame" x="0.0" y="151.5" width="335" height="142"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-S5-ado" userLabel="Silver Panel Oval" customClass="CustomRankingPanel">
+                            <rect key="frame" x="0.0" y="151.5" width="335" height="141.5"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbQ-bY-IrP" userLabel="Silver Panel">
+                            <rect key="frame" x="12" y="151.5" width="323" height="142"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silver Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFj-Yd-Q8f">
                                     <rect key="frame" x="35" y="8" width="79.5" height="18"/>
@@ -159,7 +170,7 @@ earn 1 Silver medal.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yT-mg-UK6">
-                                    <rect key="frame" x="106.5" y="83.5" width="122.5" height="38.5"/>
+                                    <rect key="frame" x="100.5" y="83.5" width="122.5" height="38.5"/>
                                     <string key="text">Collect 1 more to
 unlock Gold.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -167,14 +178,14 @@ unlock Gold.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-Jf-eR8" userLabel="Silver Chart View" customClass="SimpleHorizontalBarChart">
-                                    <rect key="frame" x="35" y="36" width="265" height="10"/>
+                                    <rect key="frame" x="35" y="36" width="253" height="10"/>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="shf-g9-Mtn"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-kf-Aa7" customClass="ValueLabelForBarchart">
-                                    <rect key="frame" x="260" y="5" width="40" height="25"/>
+                                    <rect key="frame" x="248" y="5" width="40" height="25"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="OBf-Hc-zxa"/>
@@ -195,24 +206,40 @@ unlock Gold.</string>
                                 <constraint firstAttribute="bottom" secondItem="6yT-mg-UK6" secondAttribute="bottom" constant="20" id="xnl-1k-yWW"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibc-vV-T5g" userLabel="Gold Panel" customClass="CustomRankingPanel">
-                            <rect key="frame" x="0.0" y="303.5" width="335" height="141.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2c-PW-f1e" userLabel="Gold Panel Oval" customClass="CustomRankingPanel">
+                            <rect key="frame" x="0.0" y="303" width="335" height="141.5"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibc-vV-T5g" userLabel="Gold Panel">
+                            <rect key="frame" x="12" y="303.5" width="323" height="141.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="ibc-vV-T5g" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="76F-gJ-01X"/>
+                        <constraint firstAttribute="trailing" secondItem="ohP-RD-Tgt" secondAttribute="trailing" id="1Aa-h5-WjC"/>
+                        <constraint firstItem="RnE-S5-ado" firstAttribute="top" secondItem="ohP-RD-Tgt" secondAttribute="bottom" constant="10" id="4L8-re-p8v"/>
+                        <constraint firstItem="ibc-vV-T5g" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" constant="12" id="76F-gJ-01X"/>
                         <constraint firstItem="hbQ-bY-IrP" firstAttribute="top" secondItem="LdJ-Gf-ePO" secondAttribute="bottom" constant="10" id="DO3-N9-CGq"/>
+                        <constraint firstItem="p2c-PW-f1e" firstAttribute="height" secondItem="ohP-RD-Tgt" secondAttribute="height" id="EMi-IQ-ldT"/>
                         <constraint firstItem="ibc-vV-T5g" firstAttribute="height" secondItem="hbQ-bY-IrP" secondAttribute="height" id="FdG-1X-xtF"/>
-                        <constraint firstItem="hbQ-bY-IrP" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="Nnc-F6-MVJ"/>
+                        <constraint firstItem="ohP-RD-Tgt" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="J0M-gg-vJA"/>
+                        <constraint firstItem="hbQ-bY-IrP" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" constant="12" id="Nnc-F6-MVJ"/>
                         <constraint firstItem="LdJ-Gf-ePO" firstAttribute="height" secondItem="Vn8-80-bEn" secondAttribute="height" multiplier="0.31" id="ORc-Mf-gD4"/>
-                        <constraint firstItem="LdJ-Gf-ePO" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="POd-N1-p91"/>
+                        <constraint firstAttribute="trailing" secondItem="RnE-S5-ado" secondAttribute="trailing" id="P52-Wk-SGq"/>
+                        <constraint firstItem="LdJ-Gf-ePO" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" constant="12" id="POd-N1-p91"/>
                         <constraint firstItem="hbQ-bY-IrP" firstAttribute="height" secondItem="LdJ-Gf-ePO" secondAttribute="height" id="U1t-GZ-eje"/>
+                        <constraint firstAttribute="trailing" secondItem="p2c-PW-f1e" secondAttribute="trailing" id="VfX-Jy-0do"/>
+                        <constraint firstItem="RnE-S5-ado" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="Wbk-ct-zVd"/>
                         <constraint firstAttribute="trailing" secondItem="LdJ-Gf-ePO" secondAttribute="trailing" id="ao5-bC-q0Q"/>
+                        <constraint firstItem="RnE-S5-ado" firstAttribute="height" secondItem="ohP-RD-Tgt" secondAttribute="height" id="bgg-AX-QTa"/>
                         <constraint firstItem="LdJ-Gf-ePO" firstAttribute="top" secondItem="Vn8-80-bEn" secondAttribute="top" id="dbR-I6-VNi"/>
                         <constraint firstItem="ibc-vV-T5g" firstAttribute="top" secondItem="hbQ-bY-IrP" secondAttribute="bottom" constant="10" id="fhe-Ts-WO3"/>
+                        <constraint firstItem="p2c-PW-f1e" firstAttribute="top" secondItem="RnE-S5-ado" secondAttribute="bottom" constant="10" id="kbW-Ut-YvE"/>
+                        <constraint firstItem="p2c-PW-f1e" firstAttribute="leading" secondItem="Vn8-80-bEn" secondAttribute="leading" id="nwS-VY-Cji"/>
+                        <constraint firstItem="ohP-RD-Tgt" firstAttribute="height" secondItem="Vn8-80-bEn" secondAttribute="height" multiplier="0.31" id="qTY-0w-N9r"/>
                         <constraint firstAttribute="trailing" secondItem="hbQ-bY-IrP" secondAttribute="trailing" id="vB4-Go-JL6"/>
+                        <constraint firstItem="ohP-RD-Tgt" firstAttribute="top" secondItem="Vn8-80-bEn" secondAttribute="top" id="wtn-kS-3Gj"/>
                         <constraint firstAttribute="trailing" secondItem="ibc-vV-T5g" secondAttribute="trailing" id="xOf-z6-TCG"/>
                     </constraints>
                 </view>
