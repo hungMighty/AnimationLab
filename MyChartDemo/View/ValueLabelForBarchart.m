@@ -30,6 +30,10 @@
     if (self.barChartValues == nil) {
         return;
     }
+    for (int i = 0; i < self.subviews.count; i++) {
+        [self.subviews[i] removeFromSuperview];
+    }
+    
     // Add Shadow to bar chart
     CGFloat subViewOffset = 0.5f;
     CGFloat labelMargin = 3.f;
@@ -47,16 +51,6 @@
     UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(subViewOffset, subViewOffset,
                                                                           superViewBounds.size.width - labelMargin,
                                                                           superViewBounds.size.height - labelMargin)];
-    [valueLabel setText:[NSString stringWithFormat:@"%li / %li",
-                               (long)[self.barChartValues[0] integerValue], (long)[self.barChartValues[1] integerValue]]];
-    [valueLabel setFont:[UIFont systemFontOfSize:14.f]];
-    [valueLabel setTextAlignment:NSTextAlignmentCenter];
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithAttributedString: valueLabel.attributedText];
-    UIColor *textColor = [UIColor rgb:174 green:14 blue:25];
-    [text addAttribute:NSForegroundColorAttributeName
-                 value:textColor
-                 range:NSMakeRange(0, 1)];
-    [valueLabel setAttributedText: text];
     valueLabel.backgroundColor = UIColor.whiteColor;
     valueLabel.layer.masksToBounds = true;
     valueLabel.layer.cornerRadius = valueLabel.frame.size.height / 2;
@@ -66,6 +60,36 @@
     [self setBackgroundColor:UIColor.clearColor];
     self.layer.masksToBounds = true;
     self.layer.cornerRadius = valueLabel.frame.size.height / 2;
+}
+
+- (void)setValueWithColorForLabel {
+    if (self.barChartValues == nil) {
+        return;
+    }
+    UILabel *valueLabel = (UILabel *) self.subviews[0].subviews[0];
+    if (valueLabel && self.barChartValues.count > 0) {
+        [valueLabel setFont:[UIFont systemFontOfSize:13.f weight:UIFontWeightRegular]];
+        [valueLabel setTextAlignment:NSTextAlignmentCenter];
+        NSMutableAttributedString *text;
+        UIColor *textColor;
+        if (self.barChartValues.count == 2) {
+            [valueLabel setText:[NSString stringWithFormat:@"%li / %li",
+                                 (long)[self.barChartValues[0] integerValue],
+                                 (long)[self.barChartValues[1] integerValue]]];
+            
+            text = [[NSMutableAttributedString alloc] initWithAttributedString: valueLabel.attributedText];
+            textColor = [UIColor rgb:174 green:14 blue:25];
+        } else {
+            [valueLabel setText:[NSString stringWithFormat:@"%li",
+                                 (long)[self.barChartValues[0] integerValue]]];
+            text = [[NSMutableAttributedString alloc] initWithAttributedString: valueLabel.attributedText];
+            textColor = [UIColor rgb:139 green:139 blue:139];
+        }
+        [text addAttribute:NSForegroundColorAttributeName
+                     value:textColor
+                     range:NSMakeRange(0, 1)];
+        [valueLabel setAttributedText: text];
+    }
 }
 
 @end

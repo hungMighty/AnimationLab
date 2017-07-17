@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *bronzeBarChartValues;
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *silverBarChartValues;
+@property (strong, nonatomic) NSMutableArray<NSNumber *> *goldBarChartValues;
 
 @end

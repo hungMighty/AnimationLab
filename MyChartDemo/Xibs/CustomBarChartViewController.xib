@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,14 +13,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBarChartViewController">
             <connections>
                 <outlet property="bronzeBarChart" destination="Kvl-F5-dy1" id="Mxg-Un-H6U"/>
+                <outlet property="bronzeLevelTitleLabel" destination="xPa-qr-sff" id="maP-eM-cOF"/>
                 <outlet property="bronzePanel" destination="LdJ-Gf-ePO" id="neS-ex-RZb"/>
                 <outlet property="bronzePanelOval" destination="ohP-RD-Tgt" id="nt2-Fw-SZH"/>
                 <outlet property="bronzeValueLabel" destination="weh-mm-gMq" id="LZq-lI-3Zq"/>
+                <outlet property="goldLevelTitleLabel" destination="KkX-DL-5tb" id="Qcf-kQ-b0r"/>
                 <outlet property="goldPanel" destination="ibc-vV-T5g" id="Pwj-He-0VT"/>
                 <outlet property="goldPanelOval" destination="p2c-PW-f1e" id="FrL-3r-Hth"/>
+                <outlet property="goldValueLabel" destination="DV4-Zp-ZYO" id="YkH-d1-Hf5"/>
                 <outlet property="panelsContainer" destination="Vn8-80-bEn" id="oqb-Ce-s4U"/>
                 <outlet property="panelsContainerBackground" destination="BCP-Dn-gJG" id="uSw-bH-MJa"/>
                 <outlet property="silverBarChart" destination="7ql-Jf-eR8" id="Fvr-xD-dQi"/>
+                <outlet property="silverLevelTitleLabel" destination="PFj-Yd-Q8f" id="Sb9-rr-Jyi"/>
                 <outlet property="silverPanel" destination="hbQ-bY-IrP" id="76B-xP-D3E"/>
                 <outlet property="silverPanelOval" destination="RnE-S5-ado" id="wDe-co-2o9"/>
                 <outlet property="silverValueLabel" destination="Apj-kf-Aa7" id="KHG-rl-n59"/>
@@ -135,10 +140,10 @@ earn 1 Silver medal.</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weh-mm-gMq" customClass="ValueLabelForBarchart">
-                                    <rect key="frame" x="248" y="5" width="40" height="25"/>
+                                    <rect key="frame" x="248" y="6.5" width="40" height="22"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="46d-lG-dMt"/>
+                                        <constraint firstAttribute="height" constant="22" id="46d-lG-dMt"/>
                                         <constraint firstAttribute="width" constant="40" id="Tzk-jP-Qwx"/>
                                     </constraints>
                                 </view>
@@ -185,10 +190,10 @@ unlock Gold.</string>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apj-kf-Aa7" customClass="ValueLabelForBarchart">
-                                    <rect key="frame" x="248" y="5" width="40" height="25"/>
+                                    <rect key="frame" x="248" y="6.5" width="40" height="22"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="OBf-Hc-zxa"/>
+                                        <constraint firstAttribute="height" constant="22" id="OBf-Hc-zxa"/>
                                         <constraint firstAttribute="width" constant="40" id="ktg-FZ-AVp"/>
                                     </constraints>
                                 </view>
@@ -212,7 +217,48 @@ unlock Gold.</string>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibc-vV-T5g" userLabel="Gold Panel">
                             <rect key="frame" x="12" y="303.5" width="323" height="141.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkX-DL-5tb" userLabel="Gold Level">
+                                    <rect key="frame" x="35" y="8" width="73.5" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DV4-Zp-ZYO" customClass="ValueLabelForBarchart">
+                                    <rect key="frame" x="248" y="6" width="40" height="22"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="5R2-VA-66U"/>
+                                        <constraint firstAttribute="width" constant="40" id="nZr-EN-unD"/>
+                                    </constraints>
+                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Silver Cup.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TN7-m7-QHZ">
+                                    <rect key="frame" x="139" y="31" width="45" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="TN7-m7-QHZ" secondAttribute="height" id="Hf7-zP-8ur"/>
+                                        <constraint firstAttribute="width" constant="45" id="wEJ-H2-Biw"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qk0-Eb-GoI">
+                                    <rect key="frame" x="53" y="95.5" width="218.5" height="36"/>
+                                    <string key="text">Collect 4 Silvers to unlock Gold.
+You deserve it!</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="TN7-m7-QHZ" firstAttribute="top" secondItem="KkX-DL-5tb" secondAttribute="bottom" constant="5" id="8Zh-Al-5et"/>
+                                <constraint firstAttribute="trailing" secondItem="DV4-Zp-ZYO" secondAttribute="trailing" constant="35" id="CMv-Ku-lCP"/>
+                                <constraint firstItem="KkX-DL-5tb" firstAttribute="leading" secondItem="ibc-vV-T5g" secondAttribute="leading" constant="35" id="EQJ-B7-xnb"/>
+                                <constraint firstItem="TN7-m7-QHZ" firstAttribute="centerX" secondItem="ibc-vV-T5g" secondAttribute="centerX" id="a4D-4q-Qbf"/>
+                                <constraint firstAttribute="bottom" secondItem="Qk0-Eb-GoI" secondAttribute="bottom" constant="10" id="fUm-Wg-zou"/>
+                                <constraint firstItem="KkX-DL-5tb" firstAttribute="top" secondItem="ibc-vV-T5g" secondAttribute="top" constant="8" id="iQ4-ZL-HpP"/>
+                                <constraint firstItem="Qk0-Eb-GoI" firstAttribute="centerX" secondItem="ibc-vV-T5g" secondAttribute="centerX" id="jNH-Cu-taB"/>
+                                <constraint firstItem="DV4-Zp-ZYO" firstAttribute="centerY" secondItem="KkX-DL-5tb" secondAttribute="centerY" id="yx9-zQ-gbl"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,4 +310,7 @@ unlock Gold.</string>
             <point key="canvasLocation" x="4.5" y="-155.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Silver Cup.jpg" width="67" height="65"/>
+    </resources>
 </document>

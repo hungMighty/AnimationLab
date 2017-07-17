@@ -14,5 +14,6 @@
 @property (weak, nonatomic) NSMutableArray<NSNumber *> *barChartValues;
 
 - (void)addCustomUILabelWithShadow;
+- (void)setValueWithColorForLabel;
 
 @end

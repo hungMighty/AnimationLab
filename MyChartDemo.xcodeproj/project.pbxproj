@@ -19,6 +19,8 @@
 		A0A77CAE1F14A52200D16BC2 /* HorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */; };
 		A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CB01F14A54500D16BC2 /* ViewController.m */; };
 		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
+		A0C474801F1CB2570098BCED /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */; };
+		A0C474811F1CB2570098BCED /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */; };
 		A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		B7B32994D794EA1B65256A60 /* Pods_MyChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */; };
@@ -45,6 +47,8 @@
 		A0A77CB01F14A54500D16BC2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
 		A0C474781F1C60080098BCED /* CustomRankingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomRankingPanel.h; path = View/CustomRankingPanel.h; sourceTree = "<group>"; };
 		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
+		A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Silver Cup.jpg"; path = "Images/Silver Cup.jpg"; sourceTree = "<group>"; };
+		A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Silver Cup@2x.jpg"; path = "Images/Silver Cup@2x.jpg"; sourceTree = "<group>"; };
 		A0CA3CE21F19178400BF4079 /* ValueLabelForBarchart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueLabelForBarchart.h; path = View/ValueLabelForBarchart.h; sourceTree = "<group>"; };
 		A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValueLabelForBarchart.m; path = View/ValueLabelForBarchart.m; sourceTree = "<group>"; };
 		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		A0A77C8F1F14750F00D16BC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0C4747B1F1CB18A0098BCED /* Images */,
 				A0A77C901F14750F00D16BC2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -154,6 +159,15 @@
 				A0C474791F1C60080098BCED /* CustomRankingPanel.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A0C4747B1F1CB18A0098BCED /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */,
+				A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		B2B934F2D65FEB74D2CF5A9E /* Pods */ = {
@@ -237,7 +251,9 @@
 			files = (
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */,
+				A0C474801F1CB2570098BCED /* Silver Cup.jpg in Resources */,
 				A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */,
+				A0C474811F1CB2570098BCED /* Silver Cup@2x.jpg in Resources */,
 				A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 			);
