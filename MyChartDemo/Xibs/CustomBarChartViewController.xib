@@ -17,6 +17,7 @@
                 <outlet property="bronzePanel" destination="LdJ-Gf-ePO" id="neS-ex-RZb"/>
                 <outlet property="bronzePanelOval" destination="ohP-RD-Tgt" id="nt2-Fw-SZH"/>
                 <outlet property="bronzeValueLabel" destination="weh-mm-gMq" id="LZq-lI-3Zq"/>
+                <outlet property="demandScoreLabel" destination="IQG-mB-9Ad" id="rKg-zD-ld8"/>
                 <outlet property="goldLevelTitleLabel" destination="KkX-DL-5tb" id="Qcf-kQ-b0r"/>
                 <outlet property="goldPanel" destination="ibc-vV-T5g" id="Pwj-He-0VT"/>
                 <outlet property="goldPanelOval" destination="p2c-PW-f1e" id="FrL-3r-Hth"/>
@@ -131,20 +132,57 @@
                                         <constraint firstAttribute="height" constant="10" id="nb7-qX-3cU"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZf-id-qSJ">
-                                    <rect key="frame" x="91" y="83" width="141" height="38.5"/>
-                                    <string key="text">Collect 3 more to
-earn 1 Silver medal.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weh-mm-gMq" customClass="ValueLabelForBarchart">
                                     <rect key="frame" x="248" y="6.5" width="40" height="22"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="22" id="46d-lG-dMt"/>
                                         <constraint firstAttribute="width" constant="40" id="Tzk-jP-Qwx"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIb-rA-vb4" userLabel="Collection Label">
+                                    <rect key="frame" x="81.5" y="61" width="160" height="65.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-kU-ymo">
+                                            <rect key="frame" x="16" y="8" width="48.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQG-mB-9Ad">
+                                            <rect key="frame" x="71.5" y="8" width="18" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="IQG-mB-9Ad" secondAttribute="height" multiplier="1:1" id="UsG-UD-wZX"/>
+                                                <constraint firstAttribute="height" constant="18" id="eeN-oX-NB0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="more to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1f-98-Soe">
+                                            <rect key="frame" x="96.5" y="8" width="53" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="earn 1 Silver medal." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eji-bE-Ig4">
+                                            <rect key="frame" x="13" y="36" width="133" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="m1f-98-Soe" firstAttribute="leading" secondItem="IQG-mB-9Ad" secondAttribute="trailing" constant="7" id="0IR-rg-XAJ"/>
+                                        <constraint firstItem="m1f-98-Soe" firstAttribute="centerY" secondItem="IQG-mB-9Ad" secondAttribute="centerY" id="5Bg-Kr-Fcm"/>
+                                        <constraint firstAttribute="width" constant="160" id="Hen-HA-Ags"/>
+                                        <constraint firstItem="2FQ-kU-ymo" firstAttribute="centerY" secondItem="IQG-mB-9Ad" secondAttribute="centerY" id="Mmh-Zu-pPO"/>
+                                        <constraint firstItem="eji-bE-Ig4" firstAttribute="centerX" secondItem="IIb-rA-vb4" secondAttribute="centerX" id="PAl-pF-0oJ"/>
+                                        <constraint firstItem="IQG-mB-9Ad" firstAttribute="centerX" secondItem="IIb-rA-vb4" secondAttribute="centerX" id="QuI-qp-As6"/>
+                                        <constraint firstItem="eji-bE-Ig4" firstAttribute="top" secondItem="IQG-mB-9Ad" secondAttribute="bottom" constant="10" id="fRl-VP-R5R"/>
+                                        <constraint firstItem="IQG-mB-9Ad" firstAttribute="leading" secondItem="2FQ-kU-ymo" secondAttribute="trailing" constant="7" id="rdl-wm-W2f"/>
+                                        <constraint firstItem="IQG-mB-9Ad" firstAttribute="top" secondItem="IIb-rA-vb4" secondAttribute="top" constant="8" id="wUY-Vs-Cgm"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -154,9 +192,10 @@ earn 1 Silver medal.</string>
                                 <constraint firstItem="Kvl-F5-dy1" firstAttribute="leading" secondItem="xPa-qr-sff" secondAttribute="leading" id="5rC-Df-mR3"/>
                                 <constraint firstItem="weh-mm-gMq" firstAttribute="centerY" secondItem="xPa-qr-sff" secondAttribute="centerY" id="FS0-c3-b60"/>
                                 <constraint firstItem="Kvl-F5-dy1" firstAttribute="top" secondItem="xPa-qr-sff" secondAttribute="bottom" constant="10" id="OGI-E6-EgP"/>
-                                <constraint firstItem="WZf-id-qSJ" firstAttribute="centerX" secondItem="LdJ-Gf-ePO" secondAttribute="centerX" id="R6a-5X-G2o"/>
+                                <constraint firstItem="IIb-rA-vb4" firstAttribute="centerX" secondItem="LdJ-Gf-ePO" secondAttribute="centerX" id="Ooc-5j-rbe"/>
+                                <constraint firstAttribute="bottom" secondItem="IIb-rA-vb4" secondAttribute="bottom" constant="15" id="RNv-hz-xIi"/>
                                 <constraint firstItem="Kvl-F5-dy1" firstAttribute="trailing" secondItem="weh-mm-gMq" secondAttribute="trailing" id="eLx-eh-0UB"/>
-                                <constraint firstAttribute="bottom" secondItem="WZf-id-qSJ" secondAttribute="bottom" constant="20" id="lTM-6J-A5v"/>
+                                <constraint firstItem="IIb-rA-vb4" firstAttribute="top" secondItem="Kvl-F5-dy1" secondAttribute="bottom" constant="15" id="nbs-ej-cKY"/>
                                 <constraint firstItem="xPa-qr-sff" firstAttribute="leading" secondItem="LdJ-Gf-ePO" secondAttribute="leading" constant="35" id="vKb-ls-eCq"/>
                                 <constraint firstAttribute="trailing" secondItem="weh-mm-gMq" secondAttribute="trailing" constant="35" id="wyS-qw-Qtp"/>
                             </constraints>

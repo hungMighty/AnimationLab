@@ -42,6 +42,8 @@
 @property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueLabel;
 @property (strong, nonatomic) IBOutlet ValueLabelForBarchart *goldValueLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *demandScoreLabel;
+
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
 
@@ -84,6 +86,7 @@
     [super viewWillAppear:animated];
     
     [self setColorForRankingPanelViews];
+    [self customRoundLabel];
     for (int i = 0; i < valueLabels.count; i++) {
         [valueLabels[i] addCustomUILabelWithShadow];
         [valueLabels[i] setValueWithColorForLabel];
@@ -110,6 +113,20 @@
     [self.silverBarChartValues addObject:@3];
     [self.silverBarChartValues addObject:@4];
     [self.goldBarChartValues addObject:@0];
+}
+
+- (void)customRoundLabel {
+    self.demandScoreLabel.textColor = UIColor.whiteColor;
+    self.demandScoreLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.demandScoreLabel.font = [UIFont systemFontOfSize:16.f weight:UIFontWeightRegular];
+    self.demandScoreLabel.layer.masksToBounds = true;
+    self.demandScoreLabel.layer.cornerRadius = self.demandScoreLabel.frame.size.height / 2;
+    self.demandScoreLabel.layer.borderWidth = 3.0;
+    self.demandScoreLabel.layer.backgroundColor = UIColor.redColor.CGColor;
+    self.demandScoreLabel.layer.borderColor = UIColor.redColor.CGColor;
+    
+    self.demandScoreLabel.translatesAutoresizingMaskIntoConstraints = false;
 }
 
 - (void)setColorForRankingPanelViews {
