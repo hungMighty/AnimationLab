@@ -35,20 +35,19 @@
 
 - (void)initDefaultStatistics {
     if (self.cornerRadius == nil) {
-        self.cornerRadius = @6;
+        self.cornerRadius = @8;
     }
 }
 
 - (void)customizeBarchartBackground {
     self.layer.cornerRadius = [self.cornerRadius floatValue];
-    self.backgroundColor = UIColor.whiteColor;
     
     // Add Border to bar chart
     //    self.layer.borderColor = [UIColor rgb:240 green:240 blue:240].CGColor;
     //    self.layer.borderWidth = 1.0f;
     
     // Add Shadow to bar chart
-    self.layer.masksToBounds = NO;
+    self.layer.masksToBounds = false;
     self.layer.shadowColor = [UIColor grayColor].CGColor;
     self.layer.shadowOpacity = 0.3f;
     self.layer.shadowOffset = CGSizeMake(1.5f, 1.5f);

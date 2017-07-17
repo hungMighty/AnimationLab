@@ -78,7 +78,7 @@
     }
     
     UIView *frontRect = [[UIView alloc] initWithFrame:CGRectMake (0, 0, 0, [self.charHeight integerValue])];
-    frontRect.layer.masksToBounds = YES;
+    frontRect.layer.masksToBounds = true;
     frontRect.layer.cornerRadius = chartCornerRadius;
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
