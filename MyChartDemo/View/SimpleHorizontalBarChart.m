@@ -11,6 +11,7 @@
 
 @interface SimpleHorizontalBarChart () {
     CGFloat chartCornerRadius;
+    CGFloat frontChartY;
 }
 
 @end
@@ -21,8 +22,6 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self initDefaultStatistics];
-        [self customizeBarchartBackground];
-        [self drawForegroundRect];
     }
     return self;
 }
@@ -31,8 +30,6 @@
 - (id)initWithFrame:(CGRect)aRect {
     if (self = [super initWithFrame:aRect]) {
         [self initDefaultStatistics];
-        [self customizeBarchartBackground];
-        [self drawForegroundRect];
     }
     return self;
 }
@@ -63,7 +60,7 @@
     
     // Add Shadow to bar chart
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
-    self.layer.masksToBounds = NO;
+    self.layer.masksToBounds = false;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.2f;
     self.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
@@ -77,7 +74,9 @@
         [v removeFromSuperview];
     }
     
-    UIView *frontRect = [[UIView alloc] initWithFrame:CGRectMake (0, 0, 0, [self.charHeight integerValue])];
+    frontChartY = ([self.charHeight integerValue] - self.frame.size.height) / 2 * -1;
+    
+    UIView *frontRect = [[UIView alloc] initWithFrame:CGRectMake (0, frontChartY, 0, [self.charHeight integerValue])];
     frontRect.layer.masksToBounds = true;
     frontRect.layer.cornerRadius = chartCornerRadius;
     
@@ -98,8 +97,8 @@
     UIView *frontRect = self.subviews.firstObject;
     CGFloat newWidth = self.frame.size.width * [self.ratio floatValue];
     [UIView animateWithDuration:1.5 animations:^(void) {
-        [frontRect setFrame:CGRectMake(0, 0, newWidth, [self.charHeight integerValue])];
-        [frontRect.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, newWidth, [self.charHeight integerValue])];
+        [frontRect setFrame:CGRectMake(0, frontChartY, newWidth, [self.charHeight integerValue])];
+        [frontRect.layer.sublayers.firstObject setFrame:CGRectMake(0, frontChartY, newWidth, [self.charHeight integerValue])];
     }];
 }
 

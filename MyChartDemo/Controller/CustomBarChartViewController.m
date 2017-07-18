@@ -11,6 +11,7 @@
 #import "SimpleHorizontalBarChart.h"
 #import "ValueLabelForBarchart.h"
 #import "CustomRankingPanel.h"
+#import "CustomCircleLabel.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
@@ -42,20 +43,61 @@
 @property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueLabel;
 @property (strong, nonatomic) IBOutlet ValueLabelForBarchart *goldValueLabel;
 
-@property (strong, nonatomic) IBOutlet UILabel *demandScoreLabel;
-
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
+
+@property (strong, nonatomic) IBOutlet CustomCircleLabel *targetBronzeLabel;
+@property (strong, nonatomic) IBOutlet CustomCircleLabel *targetSilverLabel;
 
 @end
 
 @implementation CustomBarChartViewController
+
+- (void)emulateData {
+    self.bronzeBarChartValues = [[NSMutableArray alloc] init];
+    self.silverBarChartValues = [[NSMutableArray alloc] init];
+    self.goldBarChartValues = [[NSMutableArray alloc] init];
+    [self.bronzeBarChartValues addObject:@4];
+    [self.bronzeBarChartValues addObject:@7];
+    [self.silverBarChartValues addObject:@3];
+    [self.silverBarChartValues addObject:@4];
+    [self.goldBarChartValues addObject:@0];
+}
 
 #pragma View LifeCycles
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self putViewsIntoArrays];
+    [self emulateData];
+    [self mapDataToViews];
+    
+    ovalPanelRadius = 8;
+    bronzePanelColor = [UIColor rgb:166 green:124 blue:0];
+    silverPanelColor = [UIColor rgb:146 green:156 blue:157];
+    goldPanelColor = [UIColor rgb:255 green:223 blue:0];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self setColorForRankingPanelViews];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self addRightCornerToRankingPanels];
+    [self animateViewShadow];
+    [self animateChartRect];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)putViewsIntoArrays {
     chartBackViews = [[NSMutableArray alloc] init];
     [chartBackViews addObject:self.bronzeBarChart];
     [chartBackViews addObject:self.silverBarChart];
@@ -67,66 +109,21 @@
     [rankingPanels addObject:self.bronzePanel];
     [rankingPanels addObject:self.silverPanel];
     [rankingPanels addObject:self.goldPanel];
-    
-    [self mockData];
-    
-    ovalPanelRadius = 8;
-    bronzePanelColor = [UIColor rgb:166 green:124 blue:0];
-    silverPanelColor = [UIColor rgb:146 green:156 blue:157];
-    goldPanelColor = [UIColor rgb:255 green:223 blue:0];
-    
+}
+
+- (void)mapDataToViews {
     self.bronzeBarChart.ratio = @([self.bronzeBarChartValues[0] floatValue] / [self.bronzeBarChartValues[1] floatValue]);
     self.silverBarChart.ratio = @([self.silverBarChartValues[0] floatValue] / [self.silverBarChartValues[1] floatValue]);
     self.bronzeValueLabel.barChartValues = self.bronzeBarChartValues;
     self.silverValueLabel.barChartValues = self.silverBarChartValues;
     self.goldValueLabel.barChartValues = self.goldBarChartValues;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
-    [self setColorForRankingPanelViews];
-    [self customRoundLabel];
-    for (int i = 0; i < valueLabels.count; i++) {
-        [valueLabels[i] addCustomUILabelWithShadow];
-        [valueLabels[i] setValueWithColorForLabel];
-    }
-    [self animateChartRect];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    [self customRightCornerForRankingPanels];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-- (void)mockData {
-    self.bronzeBarChartValues = [[NSMutableArray alloc] init];
-    self.silverBarChartValues = [[NSMutableArray alloc] init];
-    self.goldBarChartValues = [[NSMutableArray alloc] init];
-    [self.bronzeBarChartValues addObject:@3];
-    [self.bronzeBarChartValues addObject:@7];
-    [self.silverBarChartValues addObject:@3];
-    [self.silverBarChartValues addObject:@4];
-    [self.goldBarChartValues addObject:@0];
-}
-
-- (void)customRoundLabel {
-    self.demandScoreLabel.textColor = UIColor.whiteColor;
-    self.demandScoreLabel.textAlignment = NSTextAlignmentCenter;
-    
-    self.demandScoreLabel.font = [UIFont systemFontOfSize:16.f weight:UIFontWeightRegular];
-    self.demandScoreLabel.layer.masksToBounds = true;
-    self.demandScoreLabel.layer.cornerRadius = self.demandScoreLabel.frame.size.height / 2;
-    self.demandScoreLabel.layer.borderWidth = 3.0;
-    self.demandScoreLabel.layer.backgroundColor = UIColor.redColor.CGColor;
-    self.demandScoreLabel.layer.borderColor = UIColor.redColor.CGColor;
-    
-    self.demandScoreLabel.translatesAutoresizingMaskIntoConstraints = false;
+    NSString *remainBronze = @"";
+    NSString *remainSilver = @"";
+    remainBronze = [NSString stringWithFormat:@"%i", (int)[self.bronzeBarChartValues[1] floatValue] - (int)[self.bronzeBarChartValues[0] floatValue]];
+    remainSilver = [NSString stringWithFormat:@"%i", (int)[self.silverBarChartValues[1] floatValue] - (int)[self.silverBarChartValues[0] floatValue]];
+    self.targetBronzeLabel.text = remainBronze;
+    self.targetSilverLabel.text = remainSilver;
 }
 
 - (void)setColorForRankingPanelViews {
@@ -141,7 +138,7 @@
     self.goldLevelTitleLabel.textColor = goldPanelColor;
 }
 
-- (void)customRightCornerForRankingPanels {
+- (void)addRightCornerToRankingPanels {
     for (int i = 0; i < rankingPanels.count; i++) {
         UIView *panel = rankingPanels[i];
         UIBezierPath *path =  [UIBezierPath bezierPathWithRoundedRect:panel.bounds
@@ -151,6 +148,18 @@
         maskLayer.frame = panel.bounds;
         [maskLayer setPath:path.CGPath];
         panel.layer.mask = maskLayer;
+    }
+}
+
+- (void)animateViewShadow {
+    for (int i = 0; i < valueLabels.count; i++) {
+        [valueLabels[i] addCustomUILabelWithShadow];
+        [valueLabels[i] setValueWithColorForLabel];
+    }
+    for (int i = 0; i < chartBackViews.count; i++) {
+        SimpleHorizontalBarChart *barchart = chartBackViews[i];
+        [barchart customizeBarchartBackground];
+        [barchart drawForegroundRect];
     }
 }
 

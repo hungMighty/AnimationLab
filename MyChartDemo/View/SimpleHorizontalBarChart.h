@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSNumber *ratio;
 @property (strong, nonatomic) NSNumber *animationDuration;
 
+- (void)customizeBarchartBackground;
 - (void)drawForegroundRect;
 - (void)animeCharRect;
 
