@@ -48,6 +48,7 @@
 
 @property (strong, nonatomic) IBOutlet CustomCircleLabel *targetBronzeLabel;
 @property (strong, nonatomic) IBOutlet CustomCircleLabel *targetSilverLabel;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cupIconWidth;
 
 @end
 
@@ -91,6 +92,11 @@
     [self addRightCornerToRankingPanels];
     [self animateViewShadow];
     [self animateChartRect];
+    
+    int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
+    if (screenHeight >= 667) {
+        self.cupIconWidth.constant = 45;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

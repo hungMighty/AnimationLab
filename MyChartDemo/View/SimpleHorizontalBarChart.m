@@ -11,7 +11,6 @@
 
 @interface SimpleHorizontalBarChart () {
     CGFloat chartCornerRadius;
-    CGFloat frontChartY;
 }
 
 @end
@@ -42,9 +41,6 @@
     if (self.endColor == nil) {
         self.endColor = [UIColor rgb:200 green:68 blue:75];
     }
-    if (self.charHeight == nil) {
-        self.charHeight = @10;
-    }
     if (self.animationDuration == nil) {
         self.animationDuration = @1.5;
     }
@@ -59,13 +55,11 @@
 //    self.layer.borderWidth = 1.0f;
     
     // Add Shadow to bar chart
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
     self.layer.masksToBounds = false;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.2f;
     self.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
     self.layer.shadowRadius = 3.5f;
-    self.layer.shadowPath = shadowPath.CGPath;
 }
 
 - (void)drawForegroundRect {
@@ -74,9 +68,7 @@
         [v removeFromSuperview];
     }
     
-    frontChartY = ([self.charHeight integerValue] - self.frame.size.height) / 2 * -1;
-    
-    UIView *frontRect = [[UIView alloc] initWithFrame:CGRectMake (0, frontChartY, 0, [self.charHeight integerValue])];
+    UIView *frontRect = [[UIView alloc] initWithFrame:CGRectMake (0, 0, 0, self.bounds.size.height)];
     frontRect.layer.masksToBounds = true;
     frontRect.layer.cornerRadius = chartCornerRadius;
     
@@ -95,10 +87,10 @@
         return;
     }
     UIView *frontRect = self.subviews.firstObject;
-    CGFloat newWidth = self.frame.size.width * [self.ratio floatValue];
+    CGFloat newWidth = self.bounds.size.width * [self.ratio floatValue];
     [UIView animateWithDuration:1.5 animations:^(void) {
-        [frontRect setFrame:CGRectMake(0, frontChartY, newWidth, [self.charHeight integerValue])];
-        [frontRect.layer.sublayers.firstObject setFrame:CGRectMake(0, frontChartY, newWidth, [self.charHeight integerValue])];
+        [frontRect setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
+        [frontRect.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
     }];
 }
 

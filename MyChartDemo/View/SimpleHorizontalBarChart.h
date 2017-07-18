@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) UIColor *startColor;
 @property (strong, nonatomic) UIColor *endColor;
-@property (strong, nonatomic) NSNumber *charHeight;
 @property (strong, nonatomic) NSNumber *ratio;
 @property (strong, nonatomic) NSNumber *animationDuration;
 
