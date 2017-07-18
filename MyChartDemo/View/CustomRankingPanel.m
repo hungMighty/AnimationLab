@@ -20,7 +20,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self initDefaultStatistics];
-        [self customizeBarchartBackground];
+        [self drawBarchartBackground];
     }
     return self;
 }
@@ -29,7 +29,7 @@
 - (id)initWithFrame:(CGRect)aRect {
     if (self = [super initWithFrame:aRect]) {
         [self initDefaultStatistics];
-        [self customizeBarchartBackground];
+        [self drawBarchartBackground];
     }
     return self;
 }
@@ -40,7 +40,7 @@
     }
 }
 
-- (void)customizeBarchartBackground {
+- (void)drawBarchartBackground {
     self.layer.cornerRadius = [self.cornerRadius floatValue];
     
     // Add Border to bar chart

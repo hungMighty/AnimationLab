@@ -158,7 +158,7 @@
     }
     for (int i = 0; i < chartBackViews.count; i++) {
         SimpleHorizontalBarChart *barchart = chartBackViews[i];
-        [barchart customizeBarchartBackground];
+        [barchart drawBarchartBackground];
         [barchart drawForegroundRect];
     }
 }

@@ -50,7 +50,7 @@
     }
 }
 
-- (void)customizeBarchartBackground {
+- (void)drawBarchartBackground {
     self.layer.cornerRadius = chartCornerRadius;
     self.backgroundColor = UIColor.whiteColor;
     
