@@ -12,6 +12,7 @@
 #import "ValueLabelForBarchart.h"
 #import "CustomRankingPanel.h"
 #import "CustomCircleLabel.h"
+#import "BAFluidView.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
@@ -23,6 +24,7 @@
     UIColor *goldPanelColor;
 }
 
+@property (strong, nonatomic) IBOutlet UIView *membershipView;
 
 @property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
 @property (strong, nonatomic) IBOutlet UIView *panelsContainer;
@@ -83,7 +85,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self setColorForRankingPanelViews];
+    [self setColorForMultipleViews];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -92,6 +94,7 @@
     [self addRightCornerToRankingPanels];
     [self animateShadowForViews];
     [self animateChartRect];
+    [self animateFluidView];
     
     int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
     if (screenHeight >= 667) { // bigger cup icon for iPhone s
@@ -132,7 +135,8 @@
     self.targetSilverLabel.text = remainSilver;
 }
 
-- (void)setColorForRankingPanelViews {
+- (void)setColorForMultipleViews {
+    self.membershipView.backgroundColor = UIColor.whiteColor;
     self.panelsContainerBackground.backgroundColor = UIColor.whiteColor;
     self.panelsContainer.backgroundColor = UIColor.whiteColor;
     
@@ -173,6 +177,18 @@
     for (int i = 0; i < chartBackViews.count; i++) {
         [chartBackViews[i] animeCharRect];
     }
+}
+
+- (void)animateFluidView {
+    BAFluidView *view = [[BAFluidView alloc] initWithFrame:self.membershipView.frame startElevation:@0.3];
+    view.fillColor = [UIColor rgb:203 green:114 blue:117];
+    view.strokeColor = [UIColor rgb:203 green:114 blue:117];
+    view.fillAutoReverse = NO;
+    view.fillRepeatCount = 1;
+    [view fillTo:@0.75];
+    view.fillDuration = 0.4;
+    [view startAnimation];
+    [self.membershipView addSubview:view];
 }
 
 #pragma Actions

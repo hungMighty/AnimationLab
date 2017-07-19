@@ -22,6 +22,7 @@
                 <outlet property="goldPanel" destination="ibc-vV-T5g" id="Pwj-He-0VT"/>
                 <outlet property="goldPanelOval" destination="p2c-PW-f1e" id="FrL-3r-Hth"/>
                 <outlet property="goldValueLabel" destination="DV4-Zp-ZYO" id="YkH-d1-Hf5"/>
+                <outlet property="membershipView" destination="l3R-sF-8ml" id="Ck8-l8-oYC"/>
                 <outlet property="panelsContainer" destination="Vn8-80-bEn" id="oqb-Ce-s4U"/>
                 <outlet property="panelsContainerBackground" destination="BCP-Dn-gJG" id="uSw-bH-MJa"/>
                 <outlet property="silverBarChart" destination="7ql-Jf-eR8" id="Fvr-xD-dQi"/>
@@ -73,7 +74,7 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="77K-4Z-SaF"/>
                         <constraint firstItem="yLM-qX-0ne" firstAttribute="centerY" secondItem="4RM-pn-c1c" secondAttribute="centerY" id="82c-D0-Gey"/>
