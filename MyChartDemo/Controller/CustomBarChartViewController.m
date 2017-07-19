@@ -183,11 +183,12 @@
     BAFluidView *view = [[BAFluidView alloc] initWithFrame:self.membershipView.frame startElevation:@0.3];
     view.fillColor = [UIColor rgb:203 green:114 blue:117];
     view.strokeColor = [UIColor rgb:203 green:114 blue:117];
-    view.fillAutoReverse = NO;
+    view.fillAutoReverse = false;
     view.fillRepeatCount = 1;
     [view fillTo:@0.75];
     view.fillDuration = 0.4;
     [view startAnimation];
+//    view.alpha = 0.2f;
     [self.membershipView addSubview:view];
 }
 
