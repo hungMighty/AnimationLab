@@ -12,6 +12,8 @@
 		A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */; };
 		A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */; };
 		A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */; };
+		A09F27F01F1F12BC00DF4825 /* WavingViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F27EE1F1F12BC00DF4825 /* WavingViewViewController.m */; };
+		A09F27F31F1F12D200DF4825 /* WavingViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09F27F21F1F12D200DF4825 /* WavingViewViewController.xib */; };
 		A0A77C911F14750F00D16BC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C901F14750F00D16BC2 /* main.m */; };
 		A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C931F14750F00D16BC2 /* AppDelegate.m */; };
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
@@ -36,6 +38,9 @@
 		A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomBarChartViewController.xib; path = Xibs/CustomBarChartViewController.xib; sourceTree = "<group>"; };
 		A0978FCB1F18A63000F815BA /* SimpleHorizontalBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleHorizontalBarChart.h; path = View/SimpleHorizontalBarChart.h; sourceTree = "<group>"; };
 		A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleHorizontalBarChart.m; path = View/SimpleHorizontalBarChart.m; sourceTree = "<group>"; };
+		A09F27ED1F1F12BC00DF4825 /* WavingViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WavingViewViewController.h; path = Controller/WavingViewViewController.h; sourceTree = "<group>"; };
+		A09F27EE1F1F12BC00DF4825 /* WavingViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WavingViewViewController.m; path = Controller/WavingViewViewController.m; sourceTree = "<group>"; };
+		A09F27F21F1F12D200DF4825 /* WavingViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WavingViewViewController.xib; path = Xibs/WavingViewViewController.xib; sourceTree = "<group>"; };
 		A0A77C8C1F14750F00D16BC2 /* MyChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A77C901F14750F00D16BC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0A77C921F14750F00D16BC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 			children = (
 				A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */,
 				A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */,
+				A09F27F21F1F12D200DF4825 /* WavingViewViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 				A0A77CAD1F14A52200D16BC2 /* HorizontalBarChartViewController.m */,
 				A07E86581F16307F00A3D158 /* CustomBarChartViewController.h */,
 				A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */,
+				A09F27ED1F1F12BC00DF4825 /* WavingViewViewController.h */,
+				A09F27EE1F1F12BC00DF4825 /* WavingViewViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */,
 				A0C474801F1CB2570098BCED /* Silver Cup.jpg in Resources */,
+				A09F27F31F1F12D200DF4825 /* WavingViewViewController.xib in Resources */,
 				A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */,
 				A0C474811F1CB2570098BCED /* Silver Cup@2x.jpg in Resources */,
 				A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */,
@@ -324,6 +333,7 @@
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
+				A09F27F01F1F12BC00DF4825 /* WavingViewViewController.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */,

@@ -34,12 +34,21 @@
                                     <action selector="drawBarChartUsingCustomUIView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1T3-97-QcT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmB-cF-6vf">
+                                <rect key="frame" x="135.5" y="154" width="103" height="30"/>
+                                <state key="normal" title="Waving UIVIew"/>
+                                <connections>
+                                    <action selector="showWavingViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMg-wF-WIU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-nO-pHH"/>
+                            <constraint firstItem="kmB-cF-6vf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pmh-jO-Uwm"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="top" secondItem="Pzw-On-sjj" secondAttribute="bottom" constant="10" id="jq1-Cx-572"/>
+                            <constraint firstItem="kmB-cF-6vf" firstAttribute="top" secondItem="9zb-3D-VcK" secondAttribute="bottom" constant="10" id="uCm-4H-F4z"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMV-eg-S86"/>
                         </constraints>
                     </view>

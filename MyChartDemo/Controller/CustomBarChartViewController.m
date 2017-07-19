@@ -90,11 +90,11 @@
     [super viewDidLayoutSubviews];
     
     [self addRightCornerToRankingPanels];
-    [self animateViewShadow];
+    [self animateShadowForViews];
     [self animateChartRect];
     
     int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
-    if (screenHeight >= 667) {
+    if (screenHeight >= 667) { // bigger cup icon for iPhone s
         self.cupIconWidth.constant = 45;
     }
 }
@@ -157,7 +157,7 @@
     }
 }
 
-- (void)animateViewShadow {
+- (void)animateShadowForViews {
     for (int i = 0; i < valueLabels.count; i++) {
         [valueLabels[i] addCustomUILabelWithShadow];
         [valueLabels[i] setValueWithColorForLabel];

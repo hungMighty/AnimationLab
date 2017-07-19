@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HorizontalBarChartViewController.h"
 #import "CustomBarChartViewController.h"
+#import "WavingViewViewController.h"
 
 @interface ViewController ()
 
@@ -35,6 +36,11 @@
 
 - (IBAction)drawBarChartUsingCustomUIView:(id)sender {
     UIViewController *view = [[CustomBarChartViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
+}
+
+- (IBAction)showWavingViewClicked:(id)sender {
+    UIViewController *view = [[WavingViewViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 
