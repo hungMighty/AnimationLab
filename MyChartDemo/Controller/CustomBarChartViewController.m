@@ -13,6 +13,7 @@
 #import "CustomRankingPanel.h"
 #import "CustomCircleLabel.h"
 #import "BAFluidView.h"
+#import "RightRoundCornerLabel.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
@@ -25,6 +26,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
+@property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
 @property (strong, nonatomic) IBOutlet UIView *panelsContainer;
@@ -160,7 +162,11 @@
 }
 
 - (void)animateFluidView {
-    BAFluidView *view = [[BAFluidView alloc] initWithFrame:self.membershipView.frame startElevation:@0.3];
+    CGRect fluidViewFrame = self.membershipView.frame;
+    fluidViewFrame.size.height = fluidViewFrame.size.height * 3 / 7;
+    fluidViewFrame.origin.y = self.membershipView.frame.size.height - fluidViewFrame.size.height;
+    
+    BAFluidView *view = [[BAFluidView alloc] initWithFrame:fluidViewFrame startElevation:@0.3];
     view.fillColor = [UIColor rgb:203 green:114 blue:117];
     view.strokeColor = [UIColor rgb:203 green:114 blue:117];
     view.fillAutoReverse = false;
@@ -169,7 +175,8 @@
     view.fillDuration = 0.4;
     [view startAnimation];
 //    view.alpha = 0.2f;
-    [self.membershipView addSubview:view];
+    
+    [self.membershipView insertSubview:view belowSubview:self.membershipLabel];
 }
 
 #pragma Actions
