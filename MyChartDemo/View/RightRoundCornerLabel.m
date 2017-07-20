@@ -29,7 +29,6 @@
     [super layoutSubviews];
     
     [self customShadowForView];
-    [self insertHalfRoundLabel];
 }
 
 - (void)customShadowForView {
@@ -38,15 +37,15 @@
     }
     
     self.backgroundColor = UIColor.clearColor;
-    CGFloat radius = self.bounds.size.height / 2;
+    CGFloat superViewRadius = self.bounds.size.height / 2;
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
                                                byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
-                                                     cornerRadii:CGSizeMake(radius, radius)];
-    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-    maskLayer.frame = self.bounds;
-    [maskLayer setPath:path.CGPath];
-    maskLayer.masksToBounds = true;
-    self.layer.mask = maskLayer;
+                                                     cornerRadii:CGSizeMake(superViewRadius, superViewRadius)];
+    CAShapeLayer *superViewMaskLayer = [CAShapeLayer layer];
+    superViewMaskLayer.frame = self.bounds;
+    [superViewMaskLayer setPath:path.CGPath];
+    superViewMaskLayer.masksToBounds = true;
+    self.layer.mask = superViewMaskLayer;
     
     // Add Shadow to UIView
     CGFloat leftMargin = 0.f;
@@ -63,8 +62,8 @@
     shadowView.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
     shadowView.layer.shadowRadius = 2.f;
     
+    // Add UILabel on top of shadowView
     UILabel *label = [[UILabel alloc] initWithFrame:shadowView.bounds];
-    
     CGFloat labelRadius = label.bounds.size.height / 2;
     UIBezierPath *labelPath = [UIBezierPath bezierPathWithRoundedRect:label.bounds
                                                byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight
@@ -76,15 +75,13 @@
     
     [label setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setBackgroundColor:UIColor.whiteColor];
-    [label setText:@"Membership"];
+    label.backgroundColor = UIColor.whiteColor;
+    if (self.labelTitle != nil) {
+        [label setText:self.labelTitle];
+    }
     
     [shadowView addSubview:label];
     [self addSubview:shadowView];
-}
-
-- (void)insertHalfRoundLabel {
-    
 }
 
 @end

@@ -121,6 +121,7 @@
 }
 
 - (void)mapDataToViews {
+    self.membershipLabel.labelTitle = @"Membership";
     self.bronzeBarChart.ratio = @([self.bronzeBarChartValues[0] floatValue] / [self.bronzeBarChartValues[1] floatValue]);
     self.silverBarChart.ratio = @([self.silverBarChartValues[0] floatValue] / [self.silverBarChartValues[1] floatValue]);
     self.bronzeValueLabel.barChartValues = self.bronzeBarChartValues;

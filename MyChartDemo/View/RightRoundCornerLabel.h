@@ -10,4 +10,6 @@
 
 @interface RightRoundCornerLabel : UIView
 
+@property (nonatomic, strong) NSString *labelTitle;
+
 @end
