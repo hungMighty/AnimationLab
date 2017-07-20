@@ -13,6 +13,7 @@
 		A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */; };
 		A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */; };
 		A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */; };
+		A09008D31F20C201002E044B /* RedTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A09008D21F20C201002E044B /* RedTextButton.m */; };
 		A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */; };
 		A09F27F01F1F12BC00DF4825 /* WavingViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F27EE1F1F12BC00DF4825 /* WavingViewViewController.m */; };
 		A09F27F31F1F12D200DF4825 /* WavingViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09F27F21F1F12D200DF4825 /* WavingViewViewController.xib */; };
@@ -42,6 +43,8 @@
 		A07E86581F16307F00A3D158 /* CustomBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBarChartViewController.h; path = Controller/CustomBarChartViewController.h; sourceTree = "<group>"; };
 		A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBarChartViewController.m; path = Controller/CustomBarChartViewController.m; sourceTree = "<group>"; };
 		A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomBarChartViewController.xib; path = Xibs/CustomBarChartViewController.xib; sourceTree = "<group>"; };
+		A09008D11F20C201002E044B /* RedTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedTextButton.h; path = View/RedTextButton.h; sourceTree = "<group>"; };
+		A09008D21F20C201002E044B /* RedTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedTextButton.m; path = View/RedTextButton.m; sourceTree = "<group>"; };
 		A0978FCB1F18A63000F815BA /* SimpleHorizontalBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleHorizontalBarChart.h; path = View/SimpleHorizontalBarChart.h; sourceTree = "<group>"; };
 		A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleHorizontalBarChart.m; path = View/SimpleHorizontalBarChart.m; sourceTree = "<group>"; };
 		A09F27ED1F1F12BC00DF4825 /* WavingViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WavingViewViewController.h; path = Controller/WavingViewViewController.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				A04EF0751F20568B00CC70FB /* BlueRoundButton.m */,
 				A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */,
 				A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */,
+				A09008D11F20C201002E044B /* RedTextButton.h */,
+				A09008D21F20C201002E044B /* RedTextButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
+				A09008D31F20C201002E044B /* RedTextButton.m in Sources */,
 				A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
 				A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */,

@@ -100,6 +100,15 @@
         [frontRect setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
         [frontRect.layer.sublayers.firstObject setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
     }];
+    
+    [UIView animateWithDuration:1.5
+                     animations:^(void) {
+                         [frontRect setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
+                         [frontRect.layer.sublayers.firstObject
+                          setFrame:CGRectMake(0, 0, newWidth, self.bounds.size.height)];
+                     }
+                     completion:^(BOOL finished) {
+                     }];
 }
 
 @end
