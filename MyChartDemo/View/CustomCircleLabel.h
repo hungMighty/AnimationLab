@@ -10,9 +10,6 @@
 
 @interface CustomCircleLabel : UILabel
 
-@property (strong, nonatomic) UIColor *labelThemeColor;
-@property (strong, nonatomic) UIColor *labelTextColor;
-
-- (void)customLabelColor;
+- (void)setLabelColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor;
 
 @end

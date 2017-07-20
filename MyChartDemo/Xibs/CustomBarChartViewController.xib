@@ -88,23 +88,29 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-sF-8ml" userLabel="Memebership View">
                     <rect key="frame" x="0.0" y="40" width="375" height="125"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Membership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3i-c1-FHy">
-                            <rect key="frame" x="15" y="10" width="144" height="29"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SY-cd-EYs">
-                            <rect key="frame" x="286" y="9.5" width="79" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SY-cd-EYs" customClass="BlueRoundButton">
+                            <rect key="frame" x="245" y="21" width="120" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="IDb-sg-Bi6"/>
+                                <constraint firstAttribute="width" constant="120" id="h6B-hn-dLo"/>
+                            </constraints>
                             <state key="normal" title="Information"/>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7t-mA-DqS" customClass="RightRoundCornerLabel">
+                            <rect key="frame" x="0.0" y="10" width="180" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="Lv4-Ke-iKU"/>
+                                <constraint firstAttribute="width" constant="180" id="uVc-5c-cFV"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.83252015749999997" green="0.83138509319999998" blue="0.85121183840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="d3i-c1-FHy" firstAttribute="top" secondItem="l3R-sF-8ml" secondAttribute="top" constant="10" id="2dv-NY-cn7"/>
-                        <constraint firstItem="4SY-cd-EYs" firstAttribute="centerY" secondItem="d3i-c1-FHy" secondAttribute="centerY" id="EoS-zh-YhS"/>
+                        <constraint firstItem="H7t-mA-DqS" firstAttribute="leading" secondItem="l3R-sF-8ml" secondAttribute="leading" id="FLp-Sg-9CK"/>
+                        <constraint firstItem="4SY-cd-EYs" firstAttribute="centerY" secondItem="H7t-mA-DqS" secondAttribute="centerY" id="HQw-9S-oYI"/>
                         <constraint firstAttribute="trailing" secondItem="4SY-cd-EYs" secondAttribute="trailing" constant="10" id="Jp5-Js-wJR"/>
-                        <constraint firstItem="d3i-c1-FHy" firstAttribute="leading" secondItem="l3R-sF-8ml" secondAttribute="leading" constant="15" id="uvG-95-JAA"/>
+                        <constraint firstItem="H7t-mA-DqS" firstAttribute="top" secondItem="l3R-sF-8ml" secondAttribute="top" constant="10" id="Zg2-61-35L"/>
                         <constraint firstAttribute="height" constant="125" id="v91-bi-bon"/>
                     </constraints>
                 </view>

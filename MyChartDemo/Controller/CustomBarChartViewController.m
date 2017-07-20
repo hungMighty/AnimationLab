@@ -92,12 +92,10 @@
     [super viewDidLayoutSubviews];
     
     [self addRightCornerToRankingPanels];
-    [self animateShadowForViews];
-    [self animateChartRect];
     [self animateFluidView];
     
     int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
-    if (screenHeight >= 667) { // bigger cup icon for iPhone s
+    if (screenHeight >= 667) { // bigger cup icon size for iPhone s
         self.cupIconWidth.constant = 45;
     }
 }
@@ -161,31 +159,13 @@
     }
 }
 
-- (void)animateShadowForViews {
-    for (int i = 0; i < valueLabels.count; i++) {
-        [valueLabels[i] addCustomUILabelWithShadow];
-        [valueLabels[i] setValueWithColorForLabel];
-    }
-    for (int i = 0; i < chartBackViews.count; i++) {
-        SimpleHorizontalBarChart *barchart = chartBackViews[i];
-        [barchart drawBarchartBackground];
-        [barchart drawForegroundRect];
-    }
-}
-
-- (void)animateChartRect {
-    for (int i = 0; i < chartBackViews.count; i++) {
-        [chartBackViews[i] animeCharRect];
-    }
-}
-
 - (void)animateFluidView {
     BAFluidView *view = [[BAFluidView alloc] initWithFrame:self.membershipView.frame startElevation:@0.3];
     view.fillColor = [UIColor rgb:203 green:114 blue:117];
     view.strokeColor = [UIColor rgb:203 green:114 blue:117];
     view.fillAutoReverse = false;
     view.fillRepeatCount = 1;
-    [view fillTo:@0.75];
+    [view fillTo:@0.6];
     view.fillDuration = 0.4;
     [view startAnimation];
 //    view.alpha = 0.2f;

@@ -33,6 +33,14 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self drawBarchartBackground];
+    [self drawForegroundRect];
+    [self animeCharRect];
+}
+
 - (void)initDefaultStatistics {
     chartCornerRadius = 6;
     if (self.startColor == nil) {

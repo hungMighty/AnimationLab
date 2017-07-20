@@ -13,7 +13,6 @@
 // load from nib
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self addCustomUILabelWithShadow];
     }
     return self;
 }
@@ -21,9 +20,15 @@
 // custom init with frame
 - (id)initWithFrame:(CGRect)aRect {
     if (self = [super initWithFrame:aRect]) {
-        [self addCustomUILabelWithShadow];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self addCustomUILabelWithShadow];
+    [self setValueWithColorForLabel];
 }
 
 - (void)addCustomUILabelWithShadow {

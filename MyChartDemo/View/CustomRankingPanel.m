@@ -20,7 +20,6 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         [self initDefaultStatistics];
-        [self drawBarchartBackground];
     }
     return self;
 }
@@ -29,9 +28,14 @@
 - (id)initWithFrame:(CGRect)aRect {
     if (self = [super initWithFrame:aRect]) {
         [self initDefaultStatistics];
-        [self drawBarchartBackground];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    [self drawBarchartBackground];
 }
 
 - (void)initDefaultStatistics {

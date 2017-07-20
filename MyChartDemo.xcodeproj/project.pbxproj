@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */; };
+		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
+		A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */; };
 		A07E86551F160E2000A3D158 /* HorizontalBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */; };
 		A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */; };
 		A07E865E1F16309900A3D158 /* CustomBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E865D1F16309900A3D158 /* CustomBarChartViewController.xib */; };
@@ -32,6 +34,10 @@
 /* Begin PBXFileReference section */
 		A026A0FE1F1DC31A007CF948 /* CustomCircleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCircleLabel.h; path = View/CustomCircleLabel.h; sourceTree = "<group>"; };
 		A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCircleLabel.m; path = View/CustomCircleLabel.m; sourceTree = "<group>"; };
+		A04EF0741F20568B00CC70FB /* BlueRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueRoundButton.h; path = View/BlueRoundButton.h; sourceTree = "<group>"; };
+		A04EF0751F20568B00CC70FB /* BlueRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueRoundButton.m; path = View/BlueRoundButton.m; sourceTree = "<group>"; };
+		A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightRoundCornerLabel.h; path = View/RightRoundCornerLabel.h; sourceTree = "<group>"; };
+		A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightRoundCornerLabel.m; path = View/RightRoundCornerLabel.m; sourceTree = "<group>"; };
 		A07E86541F160E2000A3D158 /* HorizontalBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HorizontalBarChartViewController.xib; path = Xibs/HorizontalBarChartViewController.xib; sourceTree = "<group>"; };
 		A07E86581F16307F00A3D158 /* CustomBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBarChartViewController.h; path = Controller/CustomBarChartViewController.h; sourceTree = "<group>"; };
 		A07E86591F16307F00A3D158 /* CustomBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBarChartViewController.m; path = Controller/CustomBarChartViewController.m; sourceTree = "<group>"; };
@@ -170,6 +176,10 @@
 				A0C474791F1C60080098BCED /* CustomRankingPanel.m */,
 				A026A0FE1F1DC31A007CF948 /* CustomCircleLabel.h */,
 				A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */,
+				A04EF0741F20568B00CC70FB /* BlueRoundButton.h */,
+				A04EF0751F20568B00CC70FB /* BlueRoundButton.m */,
+				A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */,
+				A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -331,11 +341,13 @@
 				A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */,
 				A0A77CAE1F14A52200D16BC2 /* HorizontalBarChartViewController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
+				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A09F27F01F1F12BC00DF4825 /* WavingViewViewController.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
+				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
 				A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
 				A07E865B1F16307F00A3D158 /* CustomBarChartViewController.m in Sources */,
