@@ -14,6 +14,7 @@
 #import "CustomCircleLabel.h"
 #import "BAFluidView.h"
 #import "RightRoundCornerLabel.h"
+#import "WaveView.h"
 
 @interface CustomBarChartViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
@@ -27,6 +28,8 @@
 
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
+@property (strong, nonatomic) UIView *waveViewContainer;
+@property (strong, nonatomic) WaveView *waveView;
 
 @property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
 @property (strong, nonatomic) IBOutlet UIView *panelsContainer;
@@ -94,7 +97,7 @@
     [super viewDidLayoutSubviews];
     
     [self addRightCornerToRankingPanels];
-    [self animateFluidView];
+    [self animateWaveView];
     
     int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
     if (screenHeight >= 667) { // bigger cup icon size for iPhone s
@@ -162,22 +165,30 @@
     }
 }
 
-- (void)animateFluidView {
-    CGRect fluidViewFrame = self.membershipView.frame;
-    fluidViewFrame.size.height = fluidViewFrame.size.height * 3 / 7;
-    fluidViewFrame.origin.y = self.membershipView.frame.size.height - fluidViewFrame.size.height;
+- (void)animateWaveView {
+    CGRect waveContainerFrame = self.membershipView.frame;
+    waveContainerFrame.size.height = 5;
+    waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
+    self.waveViewContainer = [[UIView alloc] initWithFrame:waveContainerFrame];
+    [self.membershipView insertSubview:self.waveViewContainer belowSubview:self.membershipLabel];
     
-    BAFluidView *view = [[BAFluidView alloc] initWithFrame:fluidViewFrame startElevation:@0.3];
-    view.fillColor = [UIColor rgb:203 green:114 blue:117];
-    view.strokeColor = [UIColor rgb:203 green:114 blue:117];
-    view.fillAutoReverse = false;
-    view.fillRepeatCount = 1;
-    [view fillTo:@0.6];
-    view.fillDuration = 0.4;
-    [view startAnimation];
-//    view.alpha = 0.2f;
+    if (!self.waveView) {
+        UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
+        self.waveViewContainer.clipsToBounds = false;
+        self.waveViewContainer.backgroundColor = redColor;
+        self.waveView = [WaveView addToView:self.waveViewContainer
+                                  withFrame:CGRectMake(0, -2.7, self.waveViewContainer.frame.size.width, 3)];
+        self.waveView.waveColor = redColor;
+        self.waveView.waveTime = -1; // make wave view animate indefinitely
+        [self.waveView wave];
+    }
     
-    [self.membershipView insertSubview:view belowSubview:self.membershipLabel];
+    // Animate waveViewContainer to go up from bottom
+    waveContainerFrame.size.height = self.membershipView.frame.size.height / 2 - 20;
+    waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
+    [UIView animateWithDuration:2.5f animations:^{
+        [self.waveViewContainer setFrame:waveContainerFrame];
+    }];
 }
 
 #pragma Actions
