@@ -18,10 +18,12 @@
                 <outlet property="bronzePanelOval" destination="ohP-RD-Tgt" id="nt2-Fw-SZH"/>
                 <outlet property="bronzeValueLabel" destination="weh-mm-gMq" id="LZq-lI-3Zq"/>
                 <outlet property="cupIconWidth" destination="wEJ-H2-Biw" id="82a-VM-VbJ"/>
+                <outlet property="currentRankButton" destination="yLM-qX-0ne" id="xPM-Hf-uA7"/>
                 <outlet property="goldLevelTitleLabel" destination="KkX-DL-5tb" id="Qcf-kQ-b0r"/>
                 <outlet property="goldPanel" destination="ibc-vV-T5g" id="Pwj-He-0VT"/>
                 <outlet property="goldPanelOval" destination="p2c-PW-f1e" id="FrL-3r-Hth"/>
                 <outlet property="goldValueLabel" destination="DV4-Zp-ZYO" id="YkH-d1-Hf5"/>
+                <outlet property="membershipButton" destination="0rS-RT-c1d" id="Nkc-nZ-cYv"/>
                 <outlet property="membershipLabel" destination="H7t-mA-DqS" id="LPf-f7-oSU"/>
                 <outlet property="membershipView" destination="l3R-sF-8ml" id="Ck8-l8-oYC"/>
                 <outlet property="panelsContainer" destination="Vn8-80-bEn" id="oqb-Ce-s4U"/>
@@ -33,6 +35,7 @@
                 <outlet property="silverValueLabel" destination="Apj-kf-Aa7" id="KHG-rl-n59"/>
                 <outlet property="targetBronzeLabel" destination="IQG-mB-9Ad" id="Vr5-Ms-twb"/>
                 <outlet property="targetSilverLabel" destination="h4K-PC-pIx" id="YOb-6V-k22"/>
+                <outlet property="topResultButton" destination="NUB-5u-9zX" id="ucX-uD-tGN"/>
                 <outlet property="view" destination="tBC-lo-MI0" id="EIo-b9-SaG"/>
             </connections>
         </placeholder>
@@ -53,6 +56,9 @@
                             <state key="selected">
                                 <color key="titleColor" red="0.78596583549999999" green="0.048242511690000003" blue="0.06220003835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="membershipClicked:" destination="-1" eventType="touchUpInside" id="hqN-x8-Ul3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUB-5u-9zX" customClass="RedTextButton">
                             <rect key="frame" x="146.5" y="5" width="82" height="30"/>

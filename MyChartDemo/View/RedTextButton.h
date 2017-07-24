@@ -10,4 +10,8 @@
 
 @interface RedTextButton : UIButton
 
+@property (nonatomic, strong) NSMutableArray<RedTextButton *> *buttonsGroup;
+@property (nonatomic, strong) UIColor *touchupColor;
+@property (nonatomic, strong) UIColor *normalColor;
+
 @end

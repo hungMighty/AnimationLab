@@ -14,6 +14,7 @@
 #import "CustomCircleLabel.h"
 #import "BAFluidView.h"
 #import "RightRoundCornerLabel.h"
+#import "RedTextButton.h"
 #import "WaveView.h"
 
 @interface CustomBarChartViewController () {
@@ -25,6 +26,10 @@
     UIColor *silverPanelColor;
     UIColor *goldPanelColor;
 }
+
+@property (strong, nonatomic) IBOutlet RedTextButton *membershipButton;
+@property (strong, nonatomic) IBOutlet RedTextButton *topResultButton;
+@property (strong, nonatomic) IBOutlet RedTextButton *currentRankButton;
 
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
@@ -121,6 +126,13 @@
     [rankingPanels addObject:self.bronzePanel];
     [rankingPanels addObject:self.silverPanel];
     [rankingPanels addObject:self.goldPanel];
+    NSMutableArray<RedTextButton *> *topButtonsGroup = [[NSMutableArray alloc]
+                                                        initWithObjects:self.membershipButton,
+                                                        self.topResultButton,
+                                                        self.currentRankButton, nil];
+    self.membershipButton.buttonsGroup = topButtonsGroup;
+    self.topResultButton.buttonsGroup = topButtonsGroup;
+    self.currentRankButton.buttonsGroup = topButtonsGroup;
 }
 
 - (void)mapDataToViews {
@@ -192,5 +204,9 @@
 }
 
 #pragma Actions
+
+- (IBAction)membershipClicked:(id)sender {
+    NSLog(@"Membership button clicked");
+}
 
 @end
