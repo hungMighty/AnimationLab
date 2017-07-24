@@ -1,20 +1,20 @@
 //
-//  RedTextButton.m
+//  GroupButtonWithColor.m
 //  MyChartDemo
 //
 //  Created by Ahri on 7/20/17.
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "RedTextButton.h"
+#import "GroupButtonWithColor.h"
 #import "UIColor+RGB.h"
 
-@interface RedTextButton () {
+@interface GroupButtonWithColor () {
 }
 
 @end
 
-@implementation RedTextButton
+@implementation GroupButtonWithColor
 
 // load from nib
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

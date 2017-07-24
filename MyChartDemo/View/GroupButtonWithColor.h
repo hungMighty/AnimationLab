@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RedTextButton : UIButton
+@interface GroupButtonWithColor : UIButton
 
-@property (nonatomic, strong) NSMutableArray<RedTextButton *> *buttonsGroup;
+@property (nonatomic, strong) NSMutableArray<GroupButtonWithColor *> *buttonsGroup;
 @property (nonatomic, strong) UIColor *touchupColor;
 @property (nonatomic, strong) UIColor *normalColor;
 

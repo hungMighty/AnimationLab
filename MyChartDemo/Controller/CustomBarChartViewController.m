@@ -14,7 +14,7 @@
 #import "CustomCircleLabel.h"
 #import "BAFluidView.h"
 #import "RightRoundCornerLabel.h"
-#import "RedTextButton.h"
+#import "GroupButtonWithColor.h"
 #import "WaveView.h"
 
 @interface CustomBarChartViewController () {
@@ -27,9 +27,9 @@
     UIColor *goldPanelColor;
 }
 
-@property (strong, nonatomic) IBOutlet RedTextButton *membershipButton;
-@property (strong, nonatomic) IBOutlet RedTextButton *topResultButton;
-@property (strong, nonatomic) IBOutlet RedTextButton *currentRankButton;
+@property (strong, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
+@property (strong, nonatomic) IBOutlet GroupButtonWithColor *topResultButton;
+@property (strong, nonatomic) IBOutlet GroupButtonWithColor *currentRankButton;
 
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
@@ -126,7 +126,7 @@
     [rankingPanels addObject:self.bronzePanel];
     [rankingPanels addObject:self.silverPanel];
     [rankingPanels addObject:self.goldPanel];
-    NSMutableArray<RedTextButton *> *topButtonsGroup = [[NSMutableArray alloc]
+    NSMutableArray<GroupButtonWithColor *> *topButtonsGroup = [[NSMutableArray alloc]
                                                         initWithObjects:self.membershipButton,
                                                         self.topResultButton,
                                                         self.currentRankButton, nil];
