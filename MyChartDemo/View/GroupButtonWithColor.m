@@ -56,5 +56,9 @@
     }
 }
 
+- (void)setupButtonNormalColor:(UIColor *)color {
+    self.normalColor = color;
+    [self setTitleColor:self.normalColor forState:UIControlStateNormal];
+}
 
 @end

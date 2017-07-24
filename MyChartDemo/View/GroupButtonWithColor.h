@@ -14,4 +14,6 @@
 @property (nonatomic, strong) UIColor *touchupColor;
 @property (nonatomic, strong) UIColor *normalColor;
 
+- (void)setupButtonNormalColor:(UIColor *)color;
+
 @end
