@@ -25,6 +25,7 @@
     UIColor *bronzePanelColor;
     UIColor *silverPanelColor;
     UIColor *goldPanelColor;
+    CGFloat waveHeight;
 }
 
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
@@ -179,7 +180,7 @@
 
 - (void)animateWaveView {
     CGRect waveContainerFrame = self.membershipView.frame;
-    waveContainerFrame.size.height = 5;
+    waveContainerFrame.size.height = 0;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
     self.waveViewContainer = [[UIView alloc] initWithFrame:waveContainerFrame];
     [self.membershipView insertSubview:self.waveViewContainer belowSubview:self.membershipLabel];
@@ -188,18 +189,25 @@
         UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
         self.waveViewContainer.clipsToBounds = false;
         self.waveViewContainer.backgroundColor = redColor;
+        waveHeight = 7;
         self.waveView = [WaveView addToView:self.waveViewContainer
-                                  withFrame:CGRectMake(0, -2.7, self.waveViewContainer.frame.size.width, 3)];
+                                  withFrame:CGRectMake(0, -(waveHeight - 0.2),
+                                                       self.waveViewContainer.frame.size.width, waveHeight)];
         self.waveView.waveColor = redColor;
+        self.waveView.angularSpeed = 2.5f;
         self.waveView.waveTime = -1; // make wave view animate indefinitely
         [self.waveView wave];
     }
     
     // Animate waveViewContainer to go up from bottom
-    waveContainerFrame.size.height = self.membershipView.frame.size.height / 2 - 20;
+    waveContainerFrame.size.height = self.membershipView.frame.size.height / 2 - 25;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
     [UIView animateWithDuration:2.5f animations:^{
         [self.waveViewContainer setFrame:waveContainerFrame];
+    } completion:^(BOOL finished) {
+        CGRect waveViewFrame = self.waveView.frame;
+        waveViewFrame.origin.y = -(waveHeight - 0.05);
+        self.waveView.frame = waveViewFrame;
     }];
 }
 
