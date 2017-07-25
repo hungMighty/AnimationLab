@@ -42,7 +42,7 @@
 }
 
 - (void)initDefaultStatistics {
-    chartCornerRadius = 6;
+    chartCornerRadius = self.frame.size.height / 2;
     if (self.startColor == nil) {
         self.startColor = [UIColor rgb:147 green:57 blue:62];
     }
