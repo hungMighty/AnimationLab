@@ -194,7 +194,7 @@
                                   withFrame:CGRectMake(0, -(waveHeight - 0.2),
                                                        self.waveViewContainer.frame.size.width, waveHeight)];
         self.waveView.waveColor = redColor;
-        self.waveView.angularSpeed = 2.5f;
+        self.waveView.angularSpeed = 3.5f;
         self.waveView.waveTime = -1; // make wave view animate indefinitely
         [self.waveView wave];
     }
