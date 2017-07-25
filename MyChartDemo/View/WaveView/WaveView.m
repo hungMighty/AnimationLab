@@ -85,11 +85,11 @@
     CGPathMoveToPoint(path, nil, 0, height / 2);
     
     CGFloat y = 0.f;
-    CGFloat waveExtraHeight = 0.f;
+    CGFloat steepProportion = 0.f;
     for (CGFloat x = 0.f; x <= width; x++) {
-        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - waveExtraHeight;
+        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepProportion;
         CGPathAddLineToPoint(path, nil, x, y);
-        waveExtraHeight += 0.12;
+        steepProportion += 0.2;
     }
     CGPathAddLineToPoint(path, nil, width, height);
     CGPathAddLineToPoint(path, nil, 0, height);

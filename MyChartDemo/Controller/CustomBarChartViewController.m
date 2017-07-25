@@ -200,7 +200,7 @@
     }
     
     // Animate waveViewContainer to go up from bottom
-    waveContainerFrame.size.height = 8;
+    waveContainerFrame.size.height = 0;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
     [UIView animateWithDuration:2.5f animations:^{
         [self.waveViewContainer setFrame:waveContainerFrame];
