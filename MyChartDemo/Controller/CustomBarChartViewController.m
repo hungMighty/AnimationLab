@@ -189,7 +189,7 @@
         UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
         self.waveViewContainer.clipsToBounds = false;
         self.waveViewContainer.backgroundColor = redColor;
-        waveHeight = 7;
+        waveHeight = 9;
         self.waveView = [WaveView addToView:self.waveViewContainer
                                   withFrame:CGRectMake(0, -(waveHeight - 0.2),
                                                        self.waveViewContainer.frame.size.width, waveHeight)];
@@ -200,7 +200,7 @@
     }
     
     // Animate waveViewContainer to go up from bottom
-    waveContainerFrame.size.height = self.membershipView.frame.size.height / 2 - 25;
+    waveContainerFrame.size.height = 8;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
     [UIView animateWithDuration:2.5f animations:^{
         [self.waveViewContainer setFrame:waveContainerFrame];
