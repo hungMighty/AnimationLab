@@ -15,6 +15,7 @@
 
 @property (assign, nonatomic) CGFloat offsetX;
 @property (strong, nonatomic) CADisplayLink *waveDisplayLink;
+@property (strong, nonatomic) NSTimer *waveSlowerTimer;
 @property (strong, nonatomic) CAShapeLayer *waveShapeLayer;
 
 @end
@@ -23,7 +24,9 @@
 
 - (void)dealloc {
     [self.waveDisplayLink invalidate];
+    [self.waveSlowerTimer invalidate];
     self.waveDisplayLink = nil;
+    self.waveSlowerTimer = nil;
 }
 
 + (instancetype)addToView:(UIView *)view withFrame:(CGRect)frame {
@@ -48,7 +51,7 @@
 
 - (void)basicSetup {
     self.angularSpeed = 2.f;
-    self.waveSpeed = 9.f;
+    self.waveSpeed = 6.f;
     self.waveTime = 1.5f;
     self.waveColor = [UIColor whiteColor];
 }
@@ -68,8 +71,7 @@
     
     if (self.waveTime != -1.f && self.waveTime > 0.f) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waveTime * NSEC_PER_SEC))
-                       , dispatch_get_main_queue(),
-                       ^{
+                       , dispatch_get_main_queue(), ^{
                            [self stop];
                        });
     }
@@ -99,15 +101,19 @@
 }
 
 - (void)stop {
-    [UIView animateWithDuration:1.f animations:^{
-        self.alpha = 0.f;
-    } completion:^(BOOL finished) {
-        [self.waveDisplayLink invalidate];
-        self.waveDisplayLink = nil;
-        self.waveShapeLayer.path = nil;
-        self.alpha = 1.f;
+//    self.alpha = 0.9f;
+    self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
+        self.waveSpeed -= 0.15;
+        
+        if (self.waveSpeed < 0) {
+            [self.waveDisplayLink invalidate];
+            [self.waveSlowerTimer invalidate];
+            self.waveDisplayLink = nil;
+            self.waveSlowerTimer = nil;
+//            self.waveShapeLayer.path = nil;
+//            self.alpha = 0.9f;
+        }
     }];
 }
-
 
 @end

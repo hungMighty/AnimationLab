@@ -194,21 +194,21 @@
                                   withFrame:CGRectMake(0, -(waveHeight - 0.2),
                                                        self.waveViewContainer.frame.size.width, waveHeight)];
         self.waveView.waveColor = redColor;
-        self.waveView.angularSpeed = 3.5f;
-        self.waveView.waveTime = -1; // make wave view animate indefinitely
+        self.waveView.angularSpeed = 2.5f;
+        self.waveView.waveTime = 2; // make wave view animate indefinitely with input -1
         [self.waveView wave];
     }
     
     // Animate waveViewContainer to go up from bottom
-    waveContainerFrame.size.height = 0;
-    waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
-    [UIView animateWithDuration:2.5f animations:^{
-        [self.waveViewContainer setFrame:waveContainerFrame];
-    } completion:^(BOOL finished) {
-        CGRect waveViewFrame = self.waveView.frame;
-        waveViewFrame.origin.y = -(waveHeight - 0.05);
-        self.waveView.frame = waveViewFrame;
-    }];
+//    waveContainerFrame.size.height = 0;
+//    waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
+//    [UIView animateWithDuration:2.5f animations:^{
+//        [self.waveViewContainer setFrame:waveContainerFrame];
+//    } completion:^(BOOL finished) {
+//        CGRect waveViewFrame = self.waveView.frame;
+//        waveViewFrame.origin.y = -(waveHeight - 0.05);
+//        self.waveView.frame = waveViewFrame;
+//    }];
 }
 
 #pragma Actions
