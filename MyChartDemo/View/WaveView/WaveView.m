@@ -10,7 +10,6 @@
 #import "WeakLinkObj.h"
 
 @interface WaveView () {
-    CGFloat steepIncrementUnit;
 }
 
 @property (assign, nonatomic) CGFloat offsetX;
@@ -57,7 +56,7 @@
     self.waveSpeed = 6.f;
     self.waveTime = 1.5f;
     self.waveColor = [UIColor whiteColor];
-    steepIncrementUnit = 0.2f;
+    self.steepIncrementUnit = 0.2f;
 }
 
 - (BOOL)wave {
@@ -74,7 +73,7 @@
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
     if (self.waveTime != -1.f && self.waveTime > 0.f) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waveTime * NSEC_PER_SEC))
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waveTime * 1000 * NSEC_PER_MSEC))
                        , dispatch_get_main_queue(), ^{
                            [self stop];
                        });
@@ -95,7 +94,7 @@
     for (CGFloat x = 0.f; x <= width; x++) {
         y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
         CGPathAddLineToPoint(path, nil, x, y);
-        steepLevel += steepIncrementUnit;
+        steepLevel += self.steepIncrementUnit;
     }
     CGPathAddLineToPoint(path, nil, width, height);
     CGPathAddLineToPoint(path, nil, 0, height);
@@ -106,8 +105,8 @@
 
 - (void)stop {
     self.waveGoesDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
-        steepIncrementUnit -= 0.003f;
-        if (steepIncrementUnit < 0.1f) {
+        self.steepIncrementUnit -= 0.003f;
+        if (self.steepIncrementUnit < 0.1f) {
             self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
                 self.waveSpeed -= 0.2f;
                 if (self.waveSpeed < 0) {

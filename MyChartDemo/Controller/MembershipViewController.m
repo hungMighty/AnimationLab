@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
 @property (strong, nonatomic) UIView *waveViewContainer;
 @property (strong, nonatomic) WaveView *waveView;
+@property (strong, nonatomic) WaveView *shadowWaveView;
 
 @property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
 @property (strong, nonatomic) IBOutlet UIView *panelsContainer;
@@ -179,25 +180,51 @@
 }
 
 - (void)animateWaveView {
+    UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
+    UIColor *shadowRedColor = [UIColor rgb:247 green:232 blue:233];
+    waveHeight = 9;
+    CGFloat waveTimeOfFrontWave = 1;
+    CGFloat shadowWaveDispatchTime = 0.3f;
+    
     CGRect waveContainerFrame = self.membershipView.frame;
     waveContainerFrame.size.height = 0;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
+    if (self.waveViewContainer != nil) {
+        [self.waveViewContainer removeFromSuperview];
+        self.waveView = nil;
+        self.shadowWaveView = nil;
+    }
     self.waveViewContainer = [[UIView alloc] initWithFrame:waveContainerFrame];
+    self.waveViewContainer.clipsToBounds = false;
+    self.waveViewContainer.backgroundColor = redColor;
     [self.membershipView insertSubview:self.waveViewContainer belowSubview:self.membershipLabel];
     
-    if (!self.waveView) {
-        UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
-        self.waveViewContainer.clipsToBounds = false;
-        self.waveViewContainer.backgroundColor = redColor;
-        waveHeight = 9;
-        self.waveView = [WaveView addToView:self.waveViewContainer
-                                  withFrame:CGRectMake(0, -(waveHeight - 0.2),
-                                                       self.waveViewContainer.frame.size.width, waveHeight)];
-        self.waveView.waveColor = redColor;
-        self.waveView.angularSpeed = 2.5f;
-        self.waveView.waveTime = 1; // make wave view animate indefinitely with input -1
-        [self.waveView wave];
-    }
+    // Add new Shadow WaveView
+    self.shadowWaveView = [WaveView addToView:self.waveViewContainer
+                              withFrame:CGRectMake(0, -(waveHeight - 0.2),
+                                                   self.waveViewContainer.frame.size.width, waveHeight)];
+    self.shadowWaveView.waveColor = shadowRedColor;
+    self.shadowWaveView.angularSpeed = 2.5f;
+    self.shadowWaveView.steepIncrementUnit = 0.2f;
+    self.shadowWaveView.waveTime = waveTimeOfFrontWave - shadowWaveDispatchTime; // make wave view animate indefinitely with input -1
+    
+    // Add new waveView
+    UIColor *redColorWithAlpha = [redColor colorWithAlphaComponent:0.6];
+    self.waveView = [WaveView addToView:self.waveViewContainer
+                              withFrame:CGRectMake(0, -(waveHeight - 0.2),
+                                                   self.waveViewContainer.frame.size.width, waveHeight)];
+    self.waveView.waveColor = redColorWithAlpha;
+    self.waveView.angularSpeed = 2.5f;
+    self.waveView.steepIncrementUnit = 0.2f;
+    self.waveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
+    
+    // Start Animating waves
+    [self.waveView wave];
+//    [self.shadowWaveView wave];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(shadowWaveDispatchTime * 1000 * NSEC_PER_MSEC)),
+                   dispatch_get_main_queue(), ^{
+                       [self.shadowWaveView wave];
+                   });
     
     // Animate waveViewContainer to go up from bottom
 //    waveContainerFrame.size.height = 0;

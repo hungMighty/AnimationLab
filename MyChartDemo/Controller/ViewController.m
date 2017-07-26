@@ -27,6 +27,10 @@
     [super viewWillAppear:animated];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+}
+
 #pragma Actions
 
 - (IBAction)showBarChartViewClicked:(id)sender {
