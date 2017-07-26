@@ -14,6 +14,7 @@
 @property (assign, nonatomic) CGFloat angularSpeed;
 @property (assign, nonatomic) CGFloat waveSpeed;
 @property (assign, nonatomic) CGFloat steepIncrementUnit;
+@property (assign, nonatomic) BOOL isFrontWave;
 @property (assign, nonatomic) NSTimeInterval waveTime;
 @property (strong, nonatomic) UIColor *waveColor;
 

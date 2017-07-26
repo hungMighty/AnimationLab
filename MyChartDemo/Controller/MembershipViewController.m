@@ -204,7 +204,7 @@
                                                    self.waveViewContainer.frame.size.width, waveHeight)];
     self.shadowWaveView.waveColor = shadowRedColor;
     self.shadowWaveView.angularSpeed = 2.5f;
-    self.shadowWaveView.steepIncrementUnit = 0.14f;
+    self.shadowWaveView.steepIncrementUnit = 0.18f;
     self.shadowWaveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
     
     // Add new waveView
@@ -212,6 +212,7 @@
                               withFrame:CGRectMake(0, -(waveHeight - 0.2),
                                                    self.waveViewContainer.frame.size.width, waveHeight)];
     self.waveView.waveColor = [redColor colorWithAlphaComponent:0.5];
+    self.waveView.isFrontWave = true;
     [self.waveView setOpaque:false];
     self.waveView.angularSpeed = 2.5f;
     self.waveView.steepIncrementUnit = 0.2f;
