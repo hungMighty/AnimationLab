@@ -10,11 +10,11 @@
 #import "WeakLinkObj.h"
 
 @interface WaveView () {
-    
 }
 
 @property (assign, nonatomic) CGFloat offsetX;
 @property (strong, nonatomic) CADisplayLink *waveDisplayLink;
+@property (strong, nonatomic) NSTimer *waveGoesDownTimer;
 @property (strong, nonatomic) NSTimer *waveSlowerTimer;
 @property (strong, nonatomic) CAShapeLayer *waveShapeLayer;
 
@@ -24,8 +24,10 @@
 
 - (void)dealloc {
     [self.waveDisplayLink invalidate];
+    [self.waveGoesDownTimer invalidate];
     [self.waveSlowerTimer invalidate];
     self.waveDisplayLink = nil;
+    self.waveGoesDownTimer = nil;
     self.waveSlowerTimer = nil;
 }
 
@@ -54,6 +56,7 @@
     self.waveSpeed = 6.f;
     self.waveTime = 1.5f;
     self.waveColor = [UIColor whiteColor];
+    self.steepIncrementUnit = 0.2f;
 }
 
 - (BOOL)wave {
@@ -82,36 +85,53 @@
     self.offsetX -= (self.waveSpeed * self.superview.frame.size.width / 320);
     CGFloat width = CGRectGetWidth(self.frame);
     CGFloat height = CGRectGetHeight(self.frame);
-    
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, nil, 0, height / 2);
-    
     CGFloat y = 0.f;
-    CGFloat steepProportion = 0.f;
-    for (CGFloat x = 0.f; x <= width; x++) {
-        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepProportion;
-        CGPathAddLineToPoint(path, nil, x, y);
-        steepProportion += 0.2;
+    CGFloat steepLevel = 0.f;
+    
+    if (self.isFrontWave) {
+        CGPathMoveToPoint(path, nil, 0, height / 2);
+        for (CGFloat x = 0.f; x <= width; x++) {
+            y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
+            CGPathAddLineToPoint(path, nil, x, y);
+            steepLevel += self.steepIncrementUnit;
+        }
+        CGPathAddLineToPoint(path, nil, width, height);
+        CGPathAddLineToPoint(path, nil, 0, height);
+        CGPathCloseSubpath(path);
+    } else {
+        CGPathMoveToPoint(path, nil, 0, height);
+        for (CGFloat x = 0.f; x <= width; x++) {
+            y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
+            CGPathAddLineToPoint(path, nil, x, y);
+            steepLevel += self.steepIncrementUnit;
+        }
+        CGPathAddLineToPoint(path, nil, width, height / 2);
+        CGPathAddLineToPoint(path, nil, width, height);
+        CGPathCloseSubpath(path);
     }
-    CGPathAddLineToPoint(path, nil, width, height);
-    CGPathAddLineToPoint(path, nil, 0, height);
-    CGPathCloseSubpath(path);
     self.waveShapeLayer.path = path;
     CGPathRelease(path);
 }
 
 - (void)stop {
-//    self.alpha = 0.9f;
-    self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
-        self.waveSpeed -= 0.2;
-        
-        if (self.waveSpeed < 0) {
-            [self.waveDisplayLink invalidate];
-            [self.waveSlowerTimer invalidate];
-            self.waveDisplayLink = nil;
-            self.waveSlowerTimer = nil;
-//            self.waveShapeLayer.path = nil;
-//            self.alpha = 0.9f;
+    self.waveGoesDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
+        self.steepIncrementUnit -= 0.003f;
+        if (self.steepIncrementUnit < 0.1f) {
+            self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
+                self.waveSpeed -= 0.2f;
+                if (self.waveSpeed < 0) {
+                    [self.waveDisplayLink invalidate];
+                    [self.waveSlowerTimer invalidate];
+                    self.waveDisplayLink = nil;
+                    self.waveSlowerTimer = nil;
+//                    self.waveShapeLayer.path = nil; // make wave disappear
+//                    self.alpha = 0.9f;
+                }
+            }];
+            
+            [self.waveGoesDownTimer invalidate];
+            self.waveGoesDownTimer = nil;
         }
     }];
 }

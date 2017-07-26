@@ -26,6 +26,7 @@
     UIColor *silverPanelColor;
     UIColor *goldPanelColor;
     CGFloat waveHeight;
+    BOOL viewAlreadyLayout;
 }
 
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
@@ -36,6 +37,7 @@
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
 @property (strong, nonatomic) UIView *waveViewContainer;
 @property (strong, nonatomic) WaveView *waveView;
+@property (strong, nonatomic) WaveView *shadowWaveView;
 
 @property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
 @property (strong, nonatomic) IBOutlet UIView *panelsContainer;
@@ -97,17 +99,19 @@
     [super viewWillAppear:animated];
     
     [self setColorForMultipleViews];
+    int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
+    if (screenHeight >= 667) {
+        self.cupIconWidth.constant = 45; // bigger cup icon size for iPhone S
+    }
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self addRightCornerToRankingPanels];
-    [self animateWaveView];
-    
-    int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
-    if (screenHeight >= 667) { // bigger cup icon size for iPhone s
-        self.cupIconWidth.constant = 45;
+    if (!viewAlreadyLayout) {
+        [self addRightCornerToRankingPanels];
+        [self animateWaveView];
+        viewAlreadyLayout = true;
     }
 }
 
@@ -179,25 +183,47 @@
 }
 
 - (void)animateWaveView {
+    UIColor *redColor = [UIColor rgb:204 green:0 blue:0];
+    UIColor *shadowRedColor = [UIColor rgb:255 green:153 blue:153];
+    waveHeight = 9;
+    CGFloat waveTimeOfFrontWave = 1;
+    
     CGRect waveContainerFrame = self.membershipView.frame;
     waveContainerFrame.size.height = 0;
     waveContainerFrame.origin.y = self.membershipView.frame.size.height - waveContainerFrame.size.height;
+    if (self.waveViewContainer != nil) {
+        [self.waveViewContainer removeFromSuperview];
+        self.waveView = nil;
+        self.shadowWaveView = nil;
+    }
     self.waveViewContainer = [[UIView alloc] initWithFrame:waveContainerFrame];
+    self.waveViewContainer.clipsToBounds = false;
+    self.waveViewContainer.backgroundColor = redColor;
     [self.membershipView insertSubview:self.waveViewContainer belowSubview:self.membershipLabel];
     
-    if (!self.waveView) {
-        UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
-        self.waveViewContainer.clipsToBounds = false;
-        self.waveViewContainer.backgroundColor = redColor;
-        waveHeight = 9;
-        self.waveView = [WaveView addToView:self.waveViewContainer
-                                  withFrame:CGRectMake(0, -(waveHeight - 0.2),
-                                                       self.waveViewContainer.frame.size.width, waveHeight)];
-        self.waveView.waveColor = redColor;
-        self.waveView.angularSpeed = 2.5f;
-        self.waveView.waveTime = 2; // make wave view animate indefinitely with input -1
-        [self.waveView wave];
-    }
+    // Add new Shadow WaveView
+    self.shadowWaveView = [WaveView addToView:self.waveViewContainer
+                              withFrame:CGRectMake(0, -(waveHeight - 0.2),
+                                                   self.waveViewContainer.frame.size.width, waveHeight)];
+    self.shadowWaveView.waveColor = shadowRedColor;
+    self.shadowWaveView.angularSpeed = 2.5f;
+    self.shadowWaveView.steepIncrementUnit = 0.18f;
+    self.shadowWaveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
+    
+    // Add new waveView
+    self.waveView = [WaveView addToView:self.waveViewContainer
+                              withFrame:CGRectMake(0, -(waveHeight - 0.2),
+                                                   self.waveViewContainer.frame.size.width, waveHeight)];
+    self.waveView.waveColor = [redColor colorWithAlphaComponent:0.5];
+    self.waveView.isFrontWave = true;
+    [self.waveView setOpaque:false];
+    self.waveView.angularSpeed = 2.5f;
+    self.waveView.steepIncrementUnit = 0.2f;
+    self.waveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
+    
+    // Start Animating waves
+    [self.waveView wave];
+    [self.shadowWaveView wave];
     
     // Animate waveViewContainer to go up from bottom
 //    waveContainerFrame.size.height = 0;
