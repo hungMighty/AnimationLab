@@ -83,56 +83,35 @@
 
 - (void)currentWave {
     self.offsetX -= (self.waveSpeed * self.superview.frame.size.width / 320);
+    CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat height = CGRectGetHeight(self.frame);
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGFloat y = 0.f;
+    CGFloat steepLevel = 0.f;
     
     if (self.isFrontWave) {
-        CGMutablePathRef path = [self frontWaveEquationInvoke];
-        self.waveShapeLayer.path = path;
-        CGPathRelease(path);
+        CGPathMoveToPoint(path, nil, 0, height / 2);
+        for (CGFloat x = 0.f; x <= width; x++) {
+            y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
+            CGPathAddLineToPoint(path, nil, x, y);
+            steepLevel += self.steepIncrementUnit;
+        }
+        CGPathAddLineToPoint(path, nil, width, height);
+        CGPathAddLineToPoint(path, nil, 0, height);
+        CGPathCloseSubpath(path);
     } else {
-        CGMutablePathRef path = [self backWaveEquationInvoke];
-        self.waveShapeLayer.path = path;
-        CGPathRelease(path);
+        CGPathMoveToPoint(path, nil, 0, height);
+        for (CGFloat x = 0.f; x <= width; x++) {
+            y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
+            CGPathAddLineToPoint(path, nil, x, y);
+            steepLevel += self.steepIncrementUnit;
+        }
+        CGPathAddLineToPoint(path, nil, width, height / 2);
+        CGPathAddLineToPoint(path, nil, width, height);
+        CGPathCloseSubpath(path);
     }
-}
-
-- (CGMutablePathRef)frontWaveEquationInvoke {
-    CGFloat width = CGRectGetWidth(self.frame);
-    CGFloat height = CGRectGetHeight(self.frame);
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGFloat y = 0.f;
-    CGFloat steepLevel = 0.f;
-    
-    CGPathMoveToPoint(path, nil, 0, height / 2);
-    for (CGFloat x = 0.f; x <= width; x++) {
-        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
-        CGPathAddLineToPoint(path, nil, x, y);
-        steepLevel += self.steepIncrementUnit;
-    }
-    CGPathAddLineToPoint(path, nil, width, height);
-    CGPathAddLineToPoint(path, nil, 0, height);
-    CGPathCloseSubpath(path);
-    
-    return path;
-}
-
-- (CGMutablePathRef)backWaveEquationInvoke {
-    CGFloat width = CGRectGetWidth(self.frame);
-    CGFloat height = CGRectGetHeight(self.frame);
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGFloat y = 0.f;
-    CGFloat steepLevel = 0.f;
-    
-    CGPathMoveToPoint(path, nil, 0, height / 2);
-    for (CGFloat x = 0.f; x <= width; x++) {
-        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
-        CGPathAddLineToPoint(path, nil, x, y);
-        steepLevel += self.steepIncrementUnit;
-    }
-    CGPathAddLineToPoint(path, nil, width, height);
-    CGPathAddLineToPoint(path, nil, 0, height);
-    CGPathCloseSubpath(path);
-    
-    return path;
+    self.waveShapeLayer.path = path;
+    CGPathRelease(path);
 }
 
 - (void)stop {
