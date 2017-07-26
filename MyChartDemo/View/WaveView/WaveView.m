@@ -73,7 +73,7 @@
     [self.waveDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
     if (self.waveTime != -1.f && self.waveTime > 0.f) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waveTime * 1000 * NSEC_PER_MSEC))
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waveTime * NSEC_PER_SEC))
                        , dispatch_get_main_queue(), ^{
                            [self stop];
                        });

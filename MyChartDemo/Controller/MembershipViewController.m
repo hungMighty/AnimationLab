@@ -180,11 +180,10 @@
 }
 
 - (void)animateWaveView {
-    UIColor *redColor = [UIColor rgb:203 green:114 blue:117];
-    UIColor *shadowRedColor = [UIColor rgb:247 green:232 blue:233];
+    UIColor *redColor = [UIColor rgb:207 green:124 blue:126];
+    UIColor *shadowRedColor = [UIColor rgb:243 green:231 blue:232];
     waveHeight = 9;
     CGFloat waveTimeOfFrontWave = 1;
-    CGFloat shadowWaveDispatchTime = 0.3f;
     
     CGRect waveContainerFrame = self.membershipView.frame;
     waveContainerFrame.size.height = 0;
@@ -205,26 +204,22 @@
                                                    self.waveViewContainer.frame.size.width, waveHeight)];
     self.shadowWaveView.waveColor = shadowRedColor;
     self.shadowWaveView.angularSpeed = 2.5f;
-    self.shadowWaveView.steepIncrementUnit = 0.2f;
-    self.shadowWaveView.waveTime = waveTimeOfFrontWave - shadowWaveDispatchTime; // make wave view animate indefinitely with input -1
+    self.shadowWaveView.steepIncrementUnit = 0.14f;
+    self.shadowWaveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
     
     // Add new waveView
-    UIColor *redColorWithAlpha = [redColor colorWithAlphaComponent:0.6];
     self.waveView = [WaveView addToView:self.waveViewContainer
                               withFrame:CGRectMake(0, -(waveHeight - 0.2),
                                                    self.waveViewContainer.frame.size.width, waveHeight)];
-    self.waveView.waveColor = redColorWithAlpha;
+    self.waveView.waveColor = [redColor colorWithAlphaComponent:0.5];
+    [self.waveView setOpaque:false];
     self.waveView.angularSpeed = 2.5f;
     self.waveView.steepIncrementUnit = 0.2f;
     self.waveView.waveTime = waveTimeOfFrontWave; // make wave view animate indefinitely with input -1
     
     // Start Animating waves
     [self.waveView wave];
-//    [self.shadowWaveView wave];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(shadowWaveDispatchTime * 1000 * NSEC_PER_MSEC)),
-                   dispatch_get_main_queue(), ^{
-                       [self.shadowWaveView wave];
-                   });
+    [self.shadowWaveView wave];
     
     // Animate waveViewContainer to go up from bottom
 //    waveContainerFrame.size.height = 0;
