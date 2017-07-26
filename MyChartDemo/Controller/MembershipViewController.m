@@ -180,8 +180,8 @@
 }
 
 - (void)animateWaveView {
-    UIColor *redColor = [UIColor rgb:207 green:124 blue:126];
-    UIColor *shadowRedColor = [UIColor rgb:243 green:231 blue:232];
+    UIColor *redColor = [UIColor rgb:204 green:0 blue:0];
+    UIColor *shadowRedColor = [UIColor rgb:255 green:153 blue:153];
     waveHeight = 9;
     CGFloat waveTimeOfFrontWave = 1;
     
