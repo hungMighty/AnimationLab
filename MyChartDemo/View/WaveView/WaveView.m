@@ -10,7 +10,7 @@
 #import "WeakLinkObj.h"
 
 @interface WaveView () {
-    
+    CGFloat steepIncrement;
 }
 
 @property (assign, nonatomic) CGFloat offsetX;
@@ -54,6 +54,7 @@
     self.waveSpeed = 6.f;
     self.waveTime = 1.5f;
     self.waveColor = [UIColor whiteColor];
+    steepIncrement = 0.2f;
 }
 
 - (BOOL)wave {
@@ -91,7 +92,7 @@
     for (CGFloat x = 0.f; x <= width; x++) {
         y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepProportion;
         CGPathAddLineToPoint(path, nil, x, y);
-        steepProportion += 0.2;
+        steepProportion += steepIncrement;
     }
     CGPathAddLineToPoint(path, nil, width, height);
     CGPathAddLineToPoint(path, nil, 0, height);
@@ -102,8 +103,13 @@
 
 - (void)stop {
 //    self.alpha = 0.9f;
+    CGFloat speedReduction = 0.2;
+    CGFloat totalLoop = self.waveSpeed / speedReduction;
+    CGFloat steepReduction = steepIncrement / totalLoop;
     self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
-        self.waveSpeed -= 0.2;
+        self.waveSpeed -= speedReduction;
+        steepIncrement = steepIncrement - steepReduction;
+        NSLog(@"new steep %f", steepIncrement);
         
         if (self.waveSpeed < 0) {
             [self.waveDisplayLink invalidate];
