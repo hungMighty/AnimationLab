@@ -26,6 +26,7 @@
     UIColor *silverPanelColor;
     UIColor *goldPanelColor;
     CGFloat waveHeight;
+    BOOL viewAlreadyLayout;
 }
 
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
@@ -98,17 +99,19 @@
     [super viewWillAppear:animated];
     
     [self setColorForMultipleViews];
+    int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
+    if (screenHeight >= 667) {
+        self.cupIconWidth.constant = 45; // bigger cup icon size for iPhone S
+    }
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self addRightCornerToRankingPanels];
-    [self animateWaveView];
-    
-    int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
-    if (screenHeight >= 667) { // bigger cup icon size for iPhone s
-        self.cupIconWidth.constant = 45;
+    if (!viewAlreadyLayout) {
+        [self addRightCornerToRankingPanels];
+        [self animateWaveView];
+        viewAlreadyLayout = true;
     }
 }
 
