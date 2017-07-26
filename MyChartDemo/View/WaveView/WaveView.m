@@ -10,11 +10,12 @@
 #import "WeakLinkObj.h"
 
 @interface WaveView () {
-    CGFloat steepIncrement;
+    CGFloat steepIncrementUnit;
 }
 
 @property (assign, nonatomic) CGFloat offsetX;
 @property (strong, nonatomic) CADisplayLink *waveDisplayLink;
+@property (strong, nonatomic) NSTimer *waveGoesDownTimer;
 @property (strong, nonatomic) NSTimer *waveSlowerTimer;
 @property (strong, nonatomic) CAShapeLayer *waveShapeLayer;
 
@@ -24,8 +25,10 @@
 
 - (void)dealloc {
     [self.waveDisplayLink invalidate];
+    [self.waveGoesDownTimer invalidate];
     [self.waveSlowerTimer invalidate];
     self.waveDisplayLink = nil;
+    self.waveGoesDownTimer = nil;
     self.waveSlowerTimer = nil;
 }
 
@@ -54,7 +57,7 @@
     self.waveSpeed = 6.f;
     self.waveTime = 1.5f;
     self.waveColor = [UIColor whiteColor];
-    steepIncrement = 0.2f;
+    steepIncrementUnit = 0.2f;
 }
 
 - (BOOL)wave {
@@ -88,11 +91,11 @@
     CGPathMoveToPoint(path, nil, 0, height / 2);
     
     CGFloat y = 0.f;
-    CGFloat steepProportion = 0.f;
+    CGFloat steepLevel = 0.f;
     for (CGFloat x = 0.f; x <= width; x++) {
-        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepProportion;
+        y = height * sin(0.01 * (self.angularSpeed * x + self.offsetX)) - steepLevel;
         CGPathAddLineToPoint(path, nil, x, y);
-        steepProportion += steepIncrement;
+        steepLevel += steepIncrementUnit;
     }
     CGPathAddLineToPoint(path, nil, width, height);
     CGPathAddLineToPoint(path, nil, 0, height);
@@ -102,22 +105,23 @@
 }
 
 - (void)stop {
-//    self.alpha = 0.9f;
-    CGFloat speedReduction = 0.2;
-    CGFloat totalLoop = self.waveSpeed / speedReduction;
-    CGFloat steepReduction = steepIncrement / totalLoop;
-    self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
-        self.waveSpeed -= speedReduction;
-        steepIncrement = steepIncrement - steepReduction;
-        NSLog(@"new steep %f", steepIncrement);
-        
-        if (self.waveSpeed < 0) {
-            [self.waveDisplayLink invalidate];
-            [self.waveSlowerTimer invalidate];
-            self.waveDisplayLink = nil;
-            self.waveSlowerTimer = nil;
-//            self.waveShapeLayer.path = nil;
-//            self.alpha = 0.9f;
+    self.waveGoesDownTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
+        steepIncrementUnit -= 0.003f;
+        if (steepIncrementUnit < 0.1f) {
+            self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
+                self.waveSpeed -= 0.2f;
+                if (self.waveSpeed < 0) {
+                    [self.waveDisplayLink invalidate];
+                    [self.waveSlowerTimer invalidate];
+                    self.waveDisplayLink = nil;
+                    self.waveSlowerTimer = nil;
+//                    self.waveShapeLayer.path = nil; // make wave disappear
+//                    self.alpha = 0.9f;
+                }
+            }];
+            
+            [self.waveGoesDownTimer invalidate];
+            self.waveGoesDownTimer = nil;
         }
     }];
 }

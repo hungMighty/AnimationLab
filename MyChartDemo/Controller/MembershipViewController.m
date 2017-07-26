@@ -195,7 +195,7 @@
                                                        self.waveViewContainer.frame.size.width, waveHeight)];
         self.waveView.waveColor = redColor;
         self.waveView.angularSpeed = 2.5f;
-        self.waveView.waveTime = 2; // make wave view animate indefinitely with input -1
+        self.waveView.waveTime = 1; // make wave view animate indefinitely with input -1
         [self.waveView wave];
     }
     
