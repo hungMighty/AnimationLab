@@ -1,5 +1,5 @@
 //
-//  CustomBarChartViewController.h
+//  MembershipViewController.h
 //  MyChartDemo
 //
 //  Created by Ahri on 7/12/17.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@interface CustomBarChartViewController : ViewController
+@interface MembershipViewController : ViewController
 
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *bronzeBarChartValues;
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *silverBarChartValues;

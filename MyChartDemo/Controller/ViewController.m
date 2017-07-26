@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "HorizontalBarChartViewController.h"
-#import "CustomBarChartViewController.h"
+#import "MembershipViewController.h"
 #import "WavingViewViewController.h"
 
 @interface ViewController ()
@@ -35,7 +35,7 @@
 }
 
 - (IBAction)drawBarChartUsingCustomUIView:(id)sender {
-    UIViewController *view = [[CustomBarChartViewController alloc] init];
+    UIViewController *view = [[MembershipViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 

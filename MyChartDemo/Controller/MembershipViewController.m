@@ -1,12 +1,12 @@
 //
-//  CustomBarChartViewController.m
+//  MembershipViewController.m
 //  MyChartDemo
 //
 //  Created by Ahri on 7/12/17.
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "CustomBarChartViewController.h"
+#import "MembershipViewController.h"
 #import "UtilityClasses.h"
 #import "SimpleHorizontalBarChart.h"
 #import "ValueLabelForBarchart.h"
@@ -17,7 +17,7 @@
 #import "GroupButtonWithColor.h"
 #import "WaveView.h"
 
-@interface CustomBarChartViewController () {
+@interface MembershipViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
     NSMutableArray<ValueLabelForBarchart *> *valueLabels;
     NSMutableArray<UIView *> *rankingPanels;
@@ -65,7 +65,7 @@
 
 @end
 
-@implementation CustomBarChartViewController
+@implementation MembershipViewController
 
 - (void)emulateData {
     self.bronzeBarChartValues = [[NSMutableArray alloc] init];

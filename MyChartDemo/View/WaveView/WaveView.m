@@ -103,7 +103,7 @@
 - (void)stop {
 //    self.alpha = 0.9f;
     self.waveSlowerTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f repeats:true block:^(NSTimer *timer) {
-        self.waveSpeed -= 0.15;
+        self.waveSpeed -= 0.2;
         
         if (self.waveSpeed < 0) {
             [self.waveDisplayLink invalidate];
