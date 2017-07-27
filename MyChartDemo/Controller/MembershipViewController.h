@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@interface MembershipViewController : ViewController
+@interface MembershipViewController : ViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *bronzeBarChartValues;
 @property (strong, nonatomic) NSMutableArray<NSNumber *> *silverBarChartValues;

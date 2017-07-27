@@ -29,12 +29,16 @@
     BOOL viewAlreadyLayout;
 }
 
-@property (strong, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
+@property (weak, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *topResultButton;
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *currentRankButton;
+@property (weak, nonatomic) IBOutlet UIView *animatedLine;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animatedLineLeftMargin;
 
-@property (strong, nonatomic) IBOutlet UIView *achievementSubview;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *membershipSubview;
+@property (strong, nonatomic) IBOutlet UIView *topResultsSubview;
+@property (strong, nonatomic) IBOutlet UIView *curRankSubview;
 
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
@@ -122,8 +126,8 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
+    [self addRightCornerToRankingPanels];
     if (!viewAlreadyLayout) {
-        [self addRightCornerToRankingPanels];
         [self animateWaveView];
         viewAlreadyLayout = true;
     }
@@ -258,8 +262,34 @@
 }
 
 - (IBAction)topResultsClicked:(id)sender {
-    self.achievementSubview.backgroundColor = UIColor.greenColor;
-    [self.view bringSubviewToFront:self.achievementSubview];
+    self.topResultsSubview.backgroundColor = UIColor.greenColor;
+    [self.view bringSubviewToFront:self.topResultsSubview];
+}
+
+// MARK: - Utility Functions
+- (void)animateLine:(CGFloat)x {
+    self.animatedLineLeftMargin.constant = x;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.animatedLine layoutIfNeeded];
+        [self.view layoutIfNeeded];
+    } completion:nil];
+}
+
+// MARK: - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offsetX = self.scrollView.contentOffset.x;
+    [self animateLine:offsetX / 3];
+    if (offsetX == self.membershipButton.frame.origin.x) {
+        [self.membershipButton didTouchButton];
+    }
+    if (offsetX == self.topResultButton.frame.origin.x) {
+        [self.topResultButton didTouchButton];
+    }
+    if (offsetX == self.currentRankButton.frame.origin.x) {
+        [self.currentRankButton didTouchButton];
+    }
 }
 
 @end
