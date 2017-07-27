@@ -11,8 +11,8 @@
 @interface HorizontalBarChartViewController () <ChartViewDelegate> {
     NSArray<HorizontalBarChartView *> *chartViews;
 }
-@property (strong, nonatomic) IBOutlet HorizontalBarChartView *bronzeChartView;
-@property (strong, nonatomic) IBOutlet HorizontalBarChartView *silverChartView;
+@property (weak, nonatomic) IBOutlet HorizontalBarChartView *bronzeChartView;
+@property (weak, nonatomic) IBOutlet HorizontalBarChartView *silverChartView;
 
 @end
 

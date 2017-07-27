@@ -30,47 +30,47 @@
 }
 
 @property (weak, nonatomic) IBOutlet GroupButtonWithColor *membershipButton;
-@property (strong, nonatomic) IBOutlet GroupButtonWithColor *topResultButton;
-@property (strong, nonatomic) IBOutlet GroupButtonWithColor *currentRankButton;
+@property (weak, nonatomic) IBOutlet GroupButtonWithColor *topResultButton;
+@property (weak, nonatomic) IBOutlet GroupButtonWithColor *currentRankButton;
 @property (weak, nonatomic) IBOutlet UIView *animatedLine;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *animatedLineLeftMargin;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) IBOutlet UIView *membershipSubview;
-@property (strong, nonatomic) IBOutlet UIView *topResultsSubview;
-@property (strong, nonatomic) IBOutlet UIView *curRankSubview;
+@property (weak, nonatomic) IBOutlet UIView *membershipSubview;
+@property (weak, nonatomic) IBOutlet UIView *topResultsSubview;
+@property (weak, nonatomic) IBOutlet UIView *curRankSubview;
 
-@property (strong, nonatomic) IBOutlet UIView *membershipView;
-@property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
+@property (weak, nonatomic) IBOutlet UIView *membershipView;
+@property (weak, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
 @property (strong, nonatomic) UIView *waveViewContainer;
 @property (strong, nonatomic) WaveView *waveView;
 @property (strong, nonatomic) WaveView *shadowWaveView;
 
-@property (strong, nonatomic) IBOutlet UIView *panelsContainerBackground;
-@property (strong, nonatomic) IBOutlet UIView *panelsContainer;
+@property (weak, nonatomic) IBOutlet UIView *panelsContainerBackground;
+@property (weak, nonatomic) IBOutlet UIView *panelsContainer;
 
-@property (strong, nonatomic) IBOutlet CustomRankingPanel *bronzePanelOval;
-@property (strong, nonatomic) IBOutlet CustomRankingPanel *silverPanelOval;
-@property (strong, nonatomic) IBOutlet CustomRankingPanel *goldPanelOval;
+@property (weak, nonatomic) IBOutlet CustomRankingPanel *bronzePanelOval;
+@property (weak, nonatomic) IBOutlet CustomRankingPanel *silverPanelOval;
+@property (weak, nonatomic) IBOutlet CustomRankingPanel *goldPanelOval;
 
-@property (strong, nonatomic) IBOutlet UIView *bronzePanel;
-@property (strong, nonatomic) IBOutlet UIView *silverPanel;
-@property (strong, nonatomic) IBOutlet UIView *goldPanel;
+@property (weak, nonatomic) IBOutlet UIView *bronzePanel;
+@property (weak, nonatomic) IBOutlet UIView *silverPanel;
+@property (weak, nonatomic) IBOutlet UIView *goldPanel;
 
-@property (strong, nonatomic) IBOutlet UILabel *bronzeLevelTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *silverLevelTitleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *goldLevelTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bronzeLevelTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *silverLevelTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goldLevelTitleLabel;
 
-@property (strong, nonatomic) IBOutlet BarChartValueLabel *bronzeValueLabel;
-@property (strong, nonatomic) IBOutlet BarChartValueLabel *silverValueLabel;
-@property (strong, nonatomic) IBOutlet BarChartValueLabel *goldValueLabel;
+@property (weak, nonatomic) IBOutlet BarChartValueLabel *bronzeValueLabel;
+@property (weak, nonatomic) IBOutlet BarChartValueLabel *silverValueLabel;
+@property (weak, nonatomic) IBOutlet BarChartValueLabel *goldValueLabel;
 
-@property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
-@property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
+@property (weak, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
+@property (weak, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
 
-@property (strong, nonatomic) IBOutlet CircleLabel *targetBronzeLabel;
-@property (strong, nonatomic) IBOutlet CircleLabel *targetSilverLabel;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cupIconWidth;
+@property (weak, nonatomic) IBOutlet CircleLabel *targetBronzeLabel;
+@property (weak, nonatomic) IBOutlet CircleLabel *targetSilverLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cupIconWidth;
 
 @end
 
