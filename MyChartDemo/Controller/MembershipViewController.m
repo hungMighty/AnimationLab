@@ -9,9 +9,9 @@
 #import "MembershipViewController.h"
 #import "UtilityClasses.h"
 #import "SimpleHorizontalBarChart.h"
-#import "ValueLabelForBarchart.h"
+#import "BarChartValueLabel.h"
 #import "CustomRankingPanel.h"
-#import "CustomCircleLabel.h"
+#import "CircleLabel.h"
 #import "BAFluidView.h"
 #import "RightRoundCornerLabel.h"
 #import "GroupButtonWithColor.h"
@@ -19,7 +19,7 @@
 
 @interface MembershipViewController () {
     NSMutableArray<SimpleHorizontalBarChart *> *chartBackViews;
-    NSMutableArray<ValueLabelForBarchart *> *valueLabels;
+    NSMutableArray<BarChartValueLabel *> *valueLabels;
     NSMutableArray<UIView *> *rankingPanels;
     int ovalPanelRadius;
     UIColor *bronzePanelColor;
@@ -54,15 +54,15 @@
 @property (strong, nonatomic) IBOutlet UILabel *silverLevelTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *goldLevelTitleLabel;
 
-@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *bronzeValueLabel;
-@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *silverValueLabel;
-@property (strong, nonatomic) IBOutlet ValueLabelForBarchart *goldValueLabel;
+@property (strong, nonatomic) IBOutlet BarChartValueLabel *bronzeValueLabel;
+@property (strong, nonatomic) IBOutlet BarChartValueLabel *silverValueLabel;
+@property (strong, nonatomic) IBOutlet BarChartValueLabel *goldValueLabel;
 
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *bronzeBarChart;
 @property (strong, nonatomic) IBOutlet SimpleHorizontalBarChart *silverBarChart;
 
-@property (strong, nonatomic) IBOutlet CustomCircleLabel *targetBronzeLabel;
-@property (strong, nonatomic) IBOutlet CustomCircleLabel *targetSilverLabel;
+@property (strong, nonatomic) IBOutlet CircleLabel *targetBronzeLabel;
+@property (strong, nonatomic) IBOutlet CircleLabel *targetSilverLabel;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *cupIconWidth;
 
 @end
@@ -78,6 +78,16 @@
     [self.silverBarChartValues addObject:@3];
     [self.silverBarChartValues addObject:@4];
     [self.goldBarChartValues addObject:@0];
+}
+
+#pragma mark - View Auto-Rotation
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
 }
 
 #pragma View LifeCycles

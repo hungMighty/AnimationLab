@@ -6,15 +6,15 @@
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "CustomCircleLabel.h"
+#import "CircleLabel.h"
 #import "UIColor+RGB.h"
 
-@interface CustomCircleLabel () {
+@interface CircleLabel () {
 }
 
 @end
 
-@implementation CustomCircleLabel
+@implementation CircleLabel
 
 // load from nib
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

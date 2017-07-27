@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UtilityClasses.h"
 
-@interface ValueLabelForBarchart : UIView
+@interface BarChartValueLabel : UIView
 
 @property (weak, nonatomic) NSMutableArray<NSNumber *> *barChartValues;
 

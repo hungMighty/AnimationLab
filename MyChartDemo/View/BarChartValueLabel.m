@@ -6,9 +6,9 @@
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "ValueLabelForBarchart.h"
+#import "BarChartValueLabel.h"
 
-@implementation ValueLabelForBarchart
+@implementation BarChartValueLabel
 
 // load from nib
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */; };
+		A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CircleLabel.m */; };
 		A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6161F22069F003A4CC4 /* WeakLinkObj.m */; };
 		A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6191F2206AE003A4CC4 /* WaveView.m */; };
 		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
@@ -29,14 +29,14 @@
 		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
 		A0C474801F1CB2570098BCED /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */; };
 		A0C474811F1CB2570098BCED /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */; };
-		A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */; };
+		A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		B7B32994D794EA1B65256A60 /* Pods_MyChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A026A0FE1F1DC31A007CF948 /* CustomCircleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCircleLabel.h; path = View/CustomCircleLabel.h; sourceTree = "<group>"; };
-		A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCircleLabel.m; path = View/CustomCircleLabel.m; sourceTree = "<group>"; };
+		A026A0FE1F1DC31A007CF948 /* CircleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleLabel.h; path = View/CircleLabel.h; sourceTree = "<group>"; };
+		A026A0FF1F1DC31A007CF948 /* CircleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleLabel.m; path = View/CircleLabel.m; sourceTree = "<group>"; };
 		A028A6151F22069F003A4CC4 /* WeakLinkObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeakLinkObj.h; path = View/WaveView/WeakLinkObj.h; sourceTree = "<group>"; };
 		A028A6161F22069F003A4CC4 /* WeakLinkObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeakLinkObj.m; path = View/WaveView/WeakLinkObj.m; sourceTree = "<group>"; };
 		A028A6181F2206AE003A4CC4 /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveView.h; path = View/WaveView/WaveView.h; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
 		A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Silver Cup.jpg"; path = "Images/Silver Cup.jpg"; sourceTree = "<group>"; };
 		A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Silver Cup@2x.jpg"; path = "Images/Silver Cup@2x.jpg"; sourceTree = "<group>"; };
-		A0CA3CE21F19178400BF4079 /* ValueLabelForBarchart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueLabelForBarchart.h; path = View/ValueLabelForBarchart.h; sourceTree = "<group>"; };
-		A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ValueLabelForBarchart.m; path = View/ValueLabelForBarchart.m; sourceTree = "<group>"; };
+		A0CA3CE21F19178400BF4079 /* BarChartValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarChartValueLabel.h; path = View/BarChartValueLabel.h; sourceTree = "<group>"; };
+		A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarChartValueLabel.m; path = View/BarChartValueLabel.m; sourceTree = "<group>"; };
 		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
 		A0EF81C11F17A087006065BF /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "Model/UIColor+RGB.m"; sourceTree = "<group>"; };
 		A0EF81C31F17AF16006065BF /* UtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilityClasses.h; path = Model/UtilityClasses.h; sourceTree = "<group>"; };
@@ -191,12 +191,12 @@
 				A028A6111F2200F2003A4CC4 /* WaveView */,
 				A0978FCB1F18A63000F815BA /* SimpleHorizontalBarChart.h */,
 				A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */,
-				A0CA3CE21F19178400BF4079 /* ValueLabelForBarchart.h */,
-				A0CA3CE31F19178400BF4079 /* ValueLabelForBarchart.m */,
+				A0CA3CE21F19178400BF4079 /* BarChartValueLabel.h */,
+				A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */,
 				A0C474781F1C60080098BCED /* CustomRankingPanel.h */,
 				A0C474791F1C60080098BCED /* CustomRankingPanel.m */,
-				A026A0FE1F1DC31A007CF948 /* CustomCircleLabel.h */,
-				A026A0FF1F1DC31A007CF948 /* CustomCircleLabel.m */,
+				A026A0FE1F1DC31A007CF948 /* CircleLabel.h */,
+				A026A0FF1F1DC31A007CF948 /* CircleLabel.m */,
 				A04EF0741F20568B00CC70FB /* BlueRoundButton.h */,
 				A04EF0751F20568B00CC70FB /* BlueRoundButton.m */,
 				A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */,
@@ -368,12 +368,12 @@
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A09F27F01F1F12BC00DF4825 /* WavingViewViewController.m in Sources */,
-				A0CA3CE41F19178400BF4079 /* ValueLabelForBarchart.m in Sources */,
+				A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */,
 				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
 				A09008D31F20C201002E044B /* GroupButtonWithColor.m in Sources */,
-				A026A1001F1DC31A007CF948 /* CustomCircleLabel.m in Sources */,
+				A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */,
 				A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
 				A07E865B1F16307F00A3D158 /* MembershipViewController.m in Sources */,

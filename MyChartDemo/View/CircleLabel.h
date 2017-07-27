@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomCircleLabel : UILabel
+@interface CircleLabel : UILabel
 
 - (void)setLabelColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor;
 
