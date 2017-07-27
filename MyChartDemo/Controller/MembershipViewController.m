@@ -33,6 +33,9 @@
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *topResultButton;
 @property (strong, nonatomic) IBOutlet GroupButtonWithColor *currentRankButton;
 
+@property (strong, nonatomic) IBOutlet UIView *achievementSubview;
+@property (strong, nonatomic) IBOutlet UIView *membershipSubview;
+
 @property (strong, nonatomic) IBOutlet UIView *membershipView;
 @property (strong, nonatomic) IBOutlet RightRoundCornerLabel *membershipLabel;
 @property (strong, nonatomic) UIView *waveViewContainer;
@@ -109,6 +112,7 @@
     [super viewWillAppear:animated];
     
     [self setColorForMultipleViews];
+    [self.membershipButton didTouchButton];
     int screenHeight = (int) [[UIScreen mainScreen] bounds].size.height;
     if (screenHeight >= 667) {
         self.cupIconWidth.constant = 45; // bigger cup icon size for iPhone S
@@ -250,7 +254,12 @@
 #pragma Actions
 
 - (IBAction)membershipClicked:(id)sender {
-    NSLog(@"Membership button clicked");
+    [self.view bringSubviewToFront:self.membershipSubview];
+}
+
+- (IBAction)topResultsClicked:(id)sender {
+    self.achievementSubview.backgroundColor = UIColor.greenColor;
+    [self.view bringSubviewToFront:self.achievementSubview];
 }
 
 @end
