@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "MembershipViewController.h"
+#import "GalleryViewController.h"
 
 @interface MenuViewController ()
 
@@ -37,7 +38,8 @@
 }
 
 - (IBAction)focusTransitionTapped:(id)sender {
-    
+    GalleryViewController *view = [[GalleryViewController alloc] init];
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 @end
