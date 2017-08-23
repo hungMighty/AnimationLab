@@ -11,7 +11,7 @@
 
 @interface WavingViewViewController ()
 
-@property (strong, nonatomic) IBOutlet UIView *wavingView;
+@property (weak, nonatomic) IBOutlet UIView *wavingView;
 
 @property (strong,nonatomic) CAShapeLayer *lineLayer;
 @property (assign,nonatomic) int waveLength;//** 2 UIBezierPaths = 1 wavelength
