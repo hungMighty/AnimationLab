@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <Charts/Charts-Swift.h>
 
 @interface HorizontalBarChartViewController : ViewController
 

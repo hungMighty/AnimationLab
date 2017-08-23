@@ -12,7 +12,6 @@
 #import "BarChartValueLabel.h"
 #import "CustomRankingPanel.h"
 #import "CircleLabel.h"
-#import "BAFluidView.h"
 #import "RightRoundCornerLabel.h"
 #import "GroupButtonWithColor.h"
 #import "WaveView.h"

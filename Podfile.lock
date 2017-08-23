@@ -1,17 +1,3 @@
-PODS:
-  - BAFluidView (0.2.3)
-  - Charts (3.0.2):
-    - Charts/Core (= 3.0.2)
-  - Charts/Core (3.0.2)
-
-DEPENDENCIES:
-  - BAFluidView
-  - Charts (~> 3.0)
-
-SPEC CHECKSUMS:
-  BAFluidView: 5d84ef109831b97740f75b6d785e51f13fa08398
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
-
-PODFILE CHECKSUM: 5cc02dc57ecc22e48c0cb6888a38fa5d430ae52c
+PODFILE CHECKSUM: fb7c70a371da692873b6addab8792faaca28bf36
 
 COCOAPODS: 1.2.1

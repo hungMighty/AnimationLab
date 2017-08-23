@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MyChartDemo.xcodeproj">
+      location = "group:/Users/apple/Documents/Workspace/Projects/SimpleBarChart/AnimationLab.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:AnimationLab.xcodeproj">
    </FileRef>
 </Workspace>
