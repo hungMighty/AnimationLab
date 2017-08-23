@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryViewController">
             <connections>
-                <outlet property="localCollectionView" destination="UWM-fL-IaO" id="rUu-qD-h4e"/>
+                <outlet property="collectionView" destination="UWM-fL-IaO" id="rUu-qD-h4e"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ZAx-Eo-mLs"/>
             </connections>
         </placeholder>

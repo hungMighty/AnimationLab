@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GalleryViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface GalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *localCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (strong, nonatomic) NSMutableArray<NSString *> *imagesNames;
 

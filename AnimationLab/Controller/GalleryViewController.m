@@ -9,7 +9,10 @@
 #import "GalleryViewController.h"
 #import "SimpleCollectionCell.h"
 
-@interface GalleryViewController ()
+@interface GalleryViewController () {
+    UIEdgeInsets sectionInsets;
+    int itemsPerRow;
+}
 
 @end
 
@@ -20,14 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.localCollectionView registerNib:[UINib nibWithNibName:[SimpleCollectionCell nibName] bundle:nil]
+    [self.collectionView registerNib:[UINib nibWithNibName:[SimpleCollectionCell nibName] bundle:nil]
                forCellWithReuseIdentifier:[SimpleCollectionCell cellIdentifier]];
     self.imagesNames = [[NSMutableArray alloc] initWithObjects:@"(x) Ahri",
-                        @"Battle 2B", @"Guilty Pleasure", @"Star Guardian Ahri",
+                        @"Battle 2B", @"Star Guardian Ahri",
                         @"Star Guardian Syndra", @"Young Gothic", nil];
     for (int i = 0; i < self.imagesNames.count; i++) {
-        [imagesNames[i] stringByAppendingString:@".jpg"];
+        imagesNames[i] = [imagesNames[i] stringByAppendingString:@".jpg"];
     }
+    [imagesNames addObject:@"Guilty Pleasure"];
+    
+    sectionInsets = UIEdgeInsetsMake(50, 20, 50, 20);
+    itemsPerRow = 3;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,13 +58,27 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SimpleCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[SimpleCollectionCell cellIdentifier] forIndexPath:indexPath];
-    cell.cellImageView.backgroundColor = UIColor.cyanColor;
+    cell.cellImageView.backgroundColor = UIColor.blackColor;
+    cell.cellImageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.cellImageView.image = [UIImage imageNamed:self.imagesNames[indexPath.row]];
     
     return cell;
 }
 
-
 // MARK: - CollectionView Delegate
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat totalPaddingSpace = sectionInsets.left * (itemsPerRow + 1);
+    CGFloat widthPerItem = (self.view.frame.size.width - totalPaddingSpace) / itemsPerRow;
+    return CGSizeMake(widthPerItem, widthPerItem);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return sectionInsets;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return sectionInsets.left;
+}
 
 @end
