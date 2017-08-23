@@ -25,7 +25,6 @@
 		A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */; };
 		A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */; };
 		A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */; };
-		A0BB25991F4D62BB00AE6C02 /* SimpleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25981F4D62BB00AE6C02 /* SimpleCollectionCell.xib */; };
 		A0BB259C1F4D65D000AE6C02 /* SimpleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */; };
 		A0BB25A11F4D675800AE6C02 /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB259F1F4D675300AE6C02 /* Silver Cup.jpg */; };
 		A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A01F4D675300AE6C02 /* Silver Cup@2x.jpg */; };
@@ -35,6 +34,9 @@
 		A0BB25AC1F4D679300AE6C02 /* Star Guardian Ahri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A61F4D678B00AE6C02 /* Star Guardian Ahri.jpg */; };
 		A0BB25AD1F4D679300AE6C02 /* Star Guardian Syndra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A81F4D678B00AE6C02 /* Star Guardian Syndra.jpg */; };
 		A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A41F4D678B00AE6C02 /* Young Gothic.jpg */; };
+		A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25B01F4D856300AE6C02 /* ViewPhotoViewController.m */; };
+		A0BB25B61F4D85F600AE6C02 /* ViewPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25B51F4D85F600AE6C02 /* ViewPhotoViewController.xib */; };
+		A0BB25B71F4D89AA00AE6C02 /* SimpleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */; };
 		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
 		A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
@@ -76,7 +78,6 @@
 		A0BB25931F4D61B800AE6C02 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = Controller/GalleryViewController.h; sourceTree = "<group>"; };
 		A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GalleryViewController.m; path = Controller/GalleryViewController.m; sourceTree = "<group>"; };
 		A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GalleryViewController.xib; path = Xibs/GalleryViewController.xib; sourceTree = "<group>"; };
-		A0BB25981F4D62BB00AE6C02 /* SimpleCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SimpleCollectionCell.xib; path = Xibs/SimpleCollectionCell.xib; sourceTree = "<group>"; };
 		A0BB259A1F4D65D000AE6C02 /* SimpleCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleCollectionCell.h; path = View/SimpleCollectionCell.h; sourceTree = "<group>"; };
 		A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SimpleCollectionCell.m; path = View/SimpleCollectionCell.m; sourceTree = "<group>"; };
 		A0BB259F1F4D675300AE6C02 /* Silver Cup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Silver Cup.jpg"; sourceTree = "<group>"; };
@@ -87,6 +88,10 @@
 		A0BB25A61F4D678B00AE6C02 /* Star Guardian Ahri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Star Guardian Ahri.jpg"; path = "Images/Star Guardian Ahri.jpg"; sourceTree = "<group>"; };
 		A0BB25A71F4D678B00AE6C02 /* Guilty Pleasure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Guilty Pleasure.png"; path = "Images/Guilty Pleasure.png"; sourceTree = "<group>"; };
 		A0BB25A81F4D678B00AE6C02 /* Star Guardian Syndra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Star Guardian Syndra.jpg"; path = "Images/Star Guardian Syndra.jpg"; sourceTree = "<group>"; };
+		A0BB25AF1F4D856300AE6C02 /* ViewPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewPhotoViewController.h; path = Controller/ViewPhotoViewController.h; sourceTree = "<group>"; };
+		A0BB25B01F4D856300AE6C02 /* ViewPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewPhotoViewController.m; path = Controller/ViewPhotoViewController.m; sourceTree = "<group>"; };
+		A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCollectionCell.xib; sourceTree = "<group>"; };
+		A0BB25B51F4D85F600AE6C02 /* ViewPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewPhotoViewController.xib; path = Controller/ViewPhotoViewController.xib; sourceTree = "<group>"; };
 		A0C474781F1C60080098BCED /* CustomRankingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomRankingPanel.h; path = View/CustomRankingPanel.h; sourceTree = "<group>"; };
 		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
 		A0CA3CE21F19178400BF4079 /* BarChartValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarChartValueLabel.h; path = View/BarChartValueLabel.h; sourceTree = "<group>"; };
@@ -126,9 +131,10 @@
 		A07E86531F160DFC00A3D158 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				A0BB25B31F4D85C400AE6C02 /* View Xibs */,
 				A07E865D1F16309900A3D158 /* MembershipViewController.xib */,
 				A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */,
-				A0BB25981F4D62BB00AE6C02 /* SimpleCollectionCell.xib */,
+				A0BB25B51F4D85F600AE6C02 /* ViewPhotoViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -187,6 +193,8 @@
 				A07E86591F16307F00A3D158 /* MembershipViewController.m */,
 				A0BB25931F4D61B800AE6C02 /* GalleryViewController.h */,
 				A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */,
+				A0BB25AF1F4D856300AE6C02 /* ViewPhotoViewController.h */,
+				A0BB25B01F4D856300AE6C02 /* ViewPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -235,6 +243,15 @@
 			);
 			name = icons;
 			path = Images/icons;
+			sourceTree = "<group>";
+		};
+		A0BB25B31F4D85C400AE6C02 /* View Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */,
+			);
+			name = "View Xibs";
+			path = "Xibs/View Xibs";
 			sourceTree = "<group>";
 		};
 		A0C4747B1F1CB18A0098BCED /* Images */ = {
@@ -333,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BB25B61F4D85F600AE6C02 /* ViewPhotoViewController.xib in Resources */,
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */,
 				A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */,
@@ -344,9 +362,9 @@
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 				A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */,
 				A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */,
-				A0BB25991F4D62BB00AE6C02 /* SimpleCollectionCell.xib in Resources */,
 				A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */,
 				A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */,
+				A0BB25B71F4D89AA00AE6C02 /* SimpleCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +429,7 @@
 				A0BB258F1F4D3FA800AE6C02 /* FocusAnimationController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */,
+				A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */,
 				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */,

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FocusAnimationController.h"
 
-@interface GalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface GalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate,
+ImageTransitionProtocol>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

@@ -10,6 +10,12 @@
 
 @implementation FocusAnimationController
 
+- (void)setupImageTransition:(UIImage *)image fromDelegate:(id<ImageTransitionProtocol> )fromDelegate toDelegate:(id<ImageTransitionProtocol>)toDelegate {
+    self.image = image;
+    self.fromDelegate = fromDelegate;
+    self.toDelegate = toDelegate;
+}
+
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
     return 1;
 }
@@ -24,10 +30,13 @@
     
     toVC.view.frame = fromVC.view.frame;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:nil];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.frame = CGRectMake(0, 0, 0, 0);
+    imageView.frame = [self.fromDelegate imageWindowFrame];
     imageView.clipsToBounds = true;
+    
+    [self.fromDelegate tranisitionSetup];
+    [self.toDelegate tranisitionSetup];
     
     UIView *fromSnapshot = [fromVC.view snapshotViewAfterScreenUpdates:true];
     fromSnapshot.frame = fromVC.view.frame;
@@ -39,7 +48,7 @@
     toSnapshot.alpha = 0;
     
     [containerView bringSubviewToFront:imageView];
-    CGRect toFrame = CGRectMake(0, 0, 0, 0);
+    CGRect toFrame = [self.toDelegate imageWindowFrame];
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0
          usingSpringWithDamping:0.85 initialSpringVelocity:0.8
@@ -49,6 +58,9 @@
                          imageView.frame = toFrame;
                      }
                      completion:^(BOOL finished) {
+                         [self.fromDelegate tranisitionCleanup];
+                         [self.toDelegate tranisitionCleanup];
+                         
                          [imageView removeFromSuperview];
                          [fromSnapshot removeFromSuperview];
                          [toSnapshot removeFromSuperview];
