@@ -6,14 +6,14 @@
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MenuViewController.h"
 #import "MembershipViewController.h"
 
-@interface ViewController ()
+@interface MenuViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +32,7 @@
 #pragma Actions
 
 - (IBAction)cutomizeBarchartsTapped:(id)sender {
-    UIViewController *view = [[MembershipViewController alloc] init];
+    MembershipViewController *view = [[MembershipViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 

@@ -22,7 +22,8 @@
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
 		A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */; };
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
-		A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77CB01F14A54500D16BC2 /* ViewController.m */; };
+		A0BB258F1F4D3FA800AE6C02 /* AnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB258E1F4D3FA800AE6C02 /* AnimationController.m */; };
+		A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */; };
 		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
 		A0C474801F1CB2570098BCED /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */; };
 		A0C474811F1CB2570098BCED /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0C4747F1F1CB2570098BCED /* Silver Cup@2x.jpg */; };
@@ -60,8 +61,10 @@
 		A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A77C9E1F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A77CA01F14750F00D16BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0A77CAF1F14A54500D16BC2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Controller/ViewController.h; sourceTree = "<group>"; };
-		A0A77CB01F14A54500D16BC2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Controller/ViewController.m; sourceTree = "<group>"; };
+		A0BB258D1F4D3FA800AE6C02 /* AnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnimationController.h; path = View/AnimationController.h; sourceTree = "<group>"; };
+		A0BB258E1F4D3FA800AE6C02 /* AnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AnimationController.m; path = View/AnimationController.m; sourceTree = "<group>"; };
+		A0BB25901F4D3FCD00AE6C02 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controller/MenuViewController.h; sourceTree = "<group>"; };
+		A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controller/MenuViewController.m; sourceTree = "<group>"; };
 		A0C474781F1C60080098BCED /* CustomRankingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomRankingPanel.h; path = View/CustomRankingPanel.h; sourceTree = "<group>"; };
 		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
 		A0C4747E1F1CB2570098BCED /* Silver Cup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Silver Cup.jpg"; path = "Images/Silver Cup.jpg"; sourceTree = "<group>"; };
@@ -157,8 +160,8 @@
 		A0A77CA61F14757700D16BC2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A0A77CAF1F14A54500D16BC2 /* ViewController.h */,
-				A0A77CB01F14A54500D16BC2 /* ViewController.m */,
+				A0BB25901F4D3FCD00AE6C02 /* MenuViewController.h */,
+				A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */,
 				A07E86581F16307F00A3D158 /* MembershipViewController.h */,
 				A07E86591F16307F00A3D158 /* MembershipViewController.m */,
 			);
@@ -193,6 +196,8 @@
 				A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */,
 				A09008D11F20C201002E044B /* GroupButtonWithColor.h */,
 				A09008D21F20C201002E044B /* GroupButtonWithColor.m */,
+				A0BB258D1F4D3FA800AE6C02 /* AnimationController.h */,
+				A0BB258E1F4D3FA800AE6C02 /* AnimationController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -354,10 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */,
+				A0BB258F1F4D3FA800AE6C02 /* AnimationController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
+				A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */,
 				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
-				A0A77CB11F14A54500D16BC2 /* ViewController.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */,
