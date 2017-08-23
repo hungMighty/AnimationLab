@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TVm-jw-6bl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TVm-jw-6bl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,34 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzw-On-sjj">
-                                <rect key="frame" x="85.5" y="74" width="203" height="30"/>
-                                <state key="normal" title="Using Daniel Gindi framework"/>
+                                <rect key="frame" x="114" y="74" width="146" height="30"/>
+                                <state key="normal" title="Customize BarCharts"/>
                                 <connections>
-                                    <action selector="showBarChartViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q8t-3v-yfR"/>
+                                    <action selector="cutomizeBarchartsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqH-1F-2Ar"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zb-3D-VcK">
-                                <rect key="frame" x="134.5" y="114" width="105" height="30"/>
-                                <state key="normal" title="Custom UIView"/>
+                                <rect key="frame" x="94.5" y="114" width="185" height="30"/>
+                                <state key="normal" title="Focus Transition Animation"/>
                                 <connections>
-                                    <action selector="drawBarChartUsingCustomUIView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1T3-97-QcT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmB-cF-6vf">
-                                <rect key="frame" x="135.5" y="154" width="103" height="30"/>
-                                <state key="normal" title="Waving UIVIew"/>
-                                <connections>
-                                    <action selector="showWavingViewClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMg-wF-WIU"/>
+                                    <action selector="focusTransitionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8u-Bw-7kj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-nO-pHH"/>
-                            <constraint firstItem="kmB-cF-6vf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pmh-jO-Uwm"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="top" secondItem="Pzw-On-sjj" secondAttribute="bottom" constant="10" id="jq1-Cx-572"/>
-                            <constraint firstItem="kmB-cF-6vf" firstAttribute="top" secondItem="9zb-3D-VcK" secondAttribute="bottom" constant="10" id="uCm-4H-F4z"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMV-eg-S86"/>
                         </constraints>
                     </view>
@@ -64,7 +56,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVm-jw-6bl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d7e-oM-jE0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

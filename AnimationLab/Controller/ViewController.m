@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "HorizontalBarChartViewController.h"
 #import "MembershipViewController.h"
-#import "WavingViewViewController.h"
 
 @interface ViewController ()
 
@@ -33,19 +31,13 @@
 
 #pragma Actions
 
-- (IBAction)showBarChartViewClicked:(id)sender {
-    UIViewController *view = [[HorizontalBarChartViewController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
-}
-
-- (IBAction)drawBarChartUsingCustomUIView:(id)sender {
+- (IBAction)cutomizeBarchartsTapped:(id)sender {
     UIViewController *view = [[MembershipViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (IBAction)showWavingViewClicked:(id)sender {
-    UIViewController *view = [[WavingViewViewController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
+- (IBAction)focusTransitionTapped:(id)sender {
+    
 }
 
 @end
