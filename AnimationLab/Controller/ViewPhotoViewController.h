@@ -11,6 +11,10 @@
 
 @interface ViewPhotoViewController : UIViewController <ImageTransitionProtocol>
 
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
 
 @property (assign, nonatomic) NSString *bigImageName;

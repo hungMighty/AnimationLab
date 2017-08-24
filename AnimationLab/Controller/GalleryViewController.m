@@ -63,7 +63,6 @@
     ViewPhotoViewController *view = [[ViewPhotoViewController alloc] init];
     view.bigImageName = name;
     view.transitioningDelegate = self;
-//    [self.navigationController pushViewController:view animated:true];
     [self presentViewController:view animated:true completion:nil];
 }
 
