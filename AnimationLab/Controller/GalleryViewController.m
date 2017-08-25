@@ -63,7 +63,9 @@
     ViewPhotoViewController *view = [[ViewPhotoViewController alloc] init];
     view.bigImageName = name;
     view.transitioningDelegate = self;
-    [self presentViewController:view animated:true completion:nil];
+    view.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    [self presentViewController:view animated:true completion:nil];
+    [self.navigationController presentViewController:view animated:true completion:nil];
 }
 
 // MARK: - CollectionView DataSource
@@ -85,7 +87,7 @@
     if (hideSelectedCell && indexPath.row == selectedIndex) {
         setImage = nil;
     }
-    cell.cellImageView.image = [UIImage imageNamed:self.imagesNames[indexPath.row]];
+    cell.cellImageView.image = setImage;
     
     return cell;
 }
@@ -117,12 +119,16 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
-    [animationObj setupImageTransition:allPhotos[selectedIndex] fromDelegate:self toDelegate:(ViewPhotoViewController *)presented];
+    ViewPhotoViewController *viewPhotoScene = (ViewPhotoViewController *)presented;
+    UIImage *selectedImage = allPhotos[selectedIndex];
+    [animationObj setupImageTransition:selectedImage fromDelegate:self toDelegate:viewPhotoScene];
     return animationObj;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    [animationObj setupImageTransition:allPhotos[selectedIndex] fromDelegate:(ViewPhotoViewController *)dismissed toDelegate:self];
+    ViewPhotoViewController *viewPhotoScene = (ViewPhotoViewController *)dismissed;
+    UIImage *selectedImage = allPhotos[selectedIndex];
+    [animationObj setupImageTransition:selectedImage fromDelegate:viewPhotoScene toDelegate:self];
     return animationObj;
 }
 

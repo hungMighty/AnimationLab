@@ -17,7 +17,7 @@
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return 1;
+    return 0.5;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -32,11 +32,18 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:self.image];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.frame = [self.fromDelegate imageWindowFrame];
+    imageView.frame = CGRectMake(0, 0, 0, 0);
+    if (self.fromDelegate != nil) {
+        imageView.frame = [self.fromDelegate imageWindowFrame];
+    }
     imageView.clipsToBounds = true;
     
-    [self.fromDelegate tranisitionSetup];
-    [self.toDelegate tranisitionSetup];
+    if (self.fromDelegate != nil) {
+        [self.fromDelegate tranisitionSetup];
+    }
+    if (self.toDelegate != nil) {
+        [self.toDelegate tranisitionSetup];
+    }
     
     UIView *fromSnapshot = [fromVC.view snapshotViewAfterScreenUpdates:true];
     fromSnapshot.frame = fromVC.view.frame;
@@ -48,8 +55,12 @@
     toSnapshot.alpha = 0;
     
     [containerView bringSubviewToFront:imageView];
-    CGRect toFrame = [self.toDelegate imageWindowFrame];
+    CGRect toFrame = CGRectMake(0, 0, 0, 0);
+    if (self.toDelegate != nil) {
+        toFrame = [self.toDelegate imageWindowFrame];
+    }
     
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0
          usingSpringWithDamping:0.85 initialSpringVelocity:0.8
                         options:UIViewAnimationOptionCurveEaseOut
@@ -58,17 +69,24 @@
                          imageView.frame = toFrame;
                      }
                      completion:^(BOOL finished) {
-                         [self.fromDelegate tranisitionCleanup];
-                         [self.toDelegate tranisitionCleanup];
-                         
-                         [imageView removeFromSuperview];
-                         [fromSnapshot removeFromSuperview];
-                         [toSnapshot removeFromSuperview];
-                         
-                         if (!transitionContext.transitionWasCancelled) {
-                             [containerView addSubview:toVC.view];
+                         if (weakSelf != nil) {
+                             __strong typeof(weakSelf) strongSelf = weakSelf;
+                             if (strongSelf.toDelegate != nil) {
+                                 [strongSelf.toDelegate tranisitionCleanup];
+                             }
+                             if (strongSelf.fromDelegate != nil) {
+                                 [strongSelf.fromDelegate tranisitionCleanup];
+                             }
+                             
+                             [imageView removeFromSuperview];
+                             [fromSnapshot removeFromSuperview];
+                             [toSnapshot removeFromSuperview];
+                             
+                             if (![transitionContext transitionWasCancelled]) {
+                                 [containerView addSubview:toVC.view];
+                             }
+                             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                          }
-                         [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
                      }];
 }
 
