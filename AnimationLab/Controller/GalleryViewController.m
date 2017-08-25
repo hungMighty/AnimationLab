@@ -14,7 +14,6 @@
     UIEdgeInsets sectionInsets;
     int itemsPerRow;
     int selectedIndex;
-    FocusAnimationController *animationObj;
     BOOL hideSelectedCell;
     NSMutableArray<UIImage *> *allPhotos;
 }
@@ -42,8 +41,6 @@
     itemsPerRow = 3;
     hideSelectedCell = false;
     
-    animationObj = [[FocusAnimationController alloc] init];
-    
     allPhotos = [[NSMutableArray alloc] init];
     for (int i = 0; i < imagesNames.count; i++) {
         [allPhotos addObject:[UIImage imageNamed:self.imagesNames[i]]];
@@ -63,9 +60,7 @@
     ViewPhotoViewController *view = [[ViewPhotoViewController alloc] init];
     view.bigImageName = name;
     view.transitioningDelegate = self;
-    view.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//    [self presentViewController:view animated:true completion:nil];
-    [self.navigationController presentViewController:view animated:true completion:nil];
+    [self presentViewController:view animated:true completion:nil];
 }
 
 // MARK: - CollectionView DataSource
@@ -119,36 +114,55 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
-    ViewPhotoViewController *viewPhotoScene = (ViewPhotoViewController *)presented;
-    UIImage *selectedImage = allPhotos[selectedIndex];
-    [animationObj setupImageTransition:selectedImage fromDelegate:self toDelegate:viewPhotoScene];
-    return animationObj;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)source;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)presented;
+    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
+        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
+        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
+        animator.goingForward = YES;
+        animator.sourceTransition = sourceTransition;
+        animator.destinationTransition = destinationTransition;
+        return animator;
+    }
+    return nil;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    ViewPhotoViewController *viewPhotoScene = (ViewPhotoViewController *)dismissed;
-    UIImage *selectedImage = allPhotos[selectedIndex];
-    [animationObj setupImageTransition:selectedImage fromDelegate:viewPhotoScene toDelegate:self];
-    return animationObj;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)dismissed;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)self;
+    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
+        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
+        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
+        animator.goingForward = NO;
+        animator.sourceTransition = sourceTransition;
+        animator.destinationTransition = destinationTransition;
+        return animator;
+    }
+    return nil;
 }
 
-// MARK: - ImageTransitionProtocol Implementation
+// MARK: - <RMPZoomTransitionAnimating> Implementation
 
-- (void)tranisitionSetup {
-    hideSelectedCell = true;
-    [self.collectionView reloadData];
+- (UIImageView *)transitionSourceImageView {
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    SimpleCollectionCell *cell = (SimpleCollectionCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.cellImageView.image];
+    imageView.contentMode = cell.cellImageView.contentMode;
+    imageView.clipsToBounds = YES;
+    imageView.userInteractionEnabled = NO;
+    imageView.frame = [cell.cellImageView convertRect:cell.cellImageView.frame toView:self.collectionView.superview];
+    return imageView;
 }
 
-- (void)tranisitionCleanup {
-    hideSelectedCell = false;
-    [self.collectionView reloadData];
+- (UIColor *)transitionSourceBackgroundColor {
+    return self.collectionView.backgroundColor;
 }
 
-- (CGRect)imageWindowFrame {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:selectedIndex inSection:0];
-    UICollectionViewLayoutAttributes *attributes  = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath];
-    CGRect cellRect = attributes.frame;
-    return [self.collectionView convertRect:cellRect toView:nil];
+- (CGRect)transitionDestinationImageViewFrame {
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    SimpleCollectionCell *cell = (SimpleCollectionCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    CGRect cellFrameInSuperview = [cell.cellImageView convertRect:cell.cellImageView.frame toView:self.collectionView.superview];
+    return cellFrameInSuperview;
 }
 
 @end

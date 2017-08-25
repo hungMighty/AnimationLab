@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FocusAnimationController.h"
+#import "RMPZoomTransitionAnimator.h"
 
-@interface GalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate,
-ImageTransitionProtocol>
+@interface GalleryViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,
+UIViewControllerTransitioningDelegate, RMPZoomTransitionAnimating>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

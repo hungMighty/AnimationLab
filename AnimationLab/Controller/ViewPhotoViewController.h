@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FocusAnimationController.h"
+#import "RMPZoomTransitionAnimator.h"
 
-@interface ViewPhotoViewController : UIViewController <ImageTransitionProtocol>
+@interface ViewPhotoViewController : UIViewController <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
 @property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
 
 @property (assign, nonatomic) NSString *bigImageName;

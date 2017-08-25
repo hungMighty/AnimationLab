@@ -42,20 +42,6 @@
     button.tintColor = UIColor.whiteColor;
 }
 
-// MARK: ImageTransitionProtocol
-
-- (void)tranisitionSetup {
-    self.bigImageView.hidden = true;
-}
-
-- (void)tranisitionCleanup {
-    self.bigImageView.hidden = false;
-}
-
-- (CGRect)imageWindowFrame {
-    return self.bigImageView.frame;
-}
-
 // MARK: - Actions
 
 - (IBAction)backButtonPressed:(id)sender {
@@ -65,5 +51,34 @@
 - (IBAction)moreButtonPressed:(id)sender {
 }
 
+// MARK: - <RMPZoomTransitionAnimating>
+
+- (UIImageView *)transitionSourceImageView {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.bigImageView.image];
+    imageView.contentMode = self.bigImageView.contentMode;
+    imageView.clipsToBounds = YES;
+    imageView.userInteractionEnabled = NO;
+    imageView.frame = self.bigImageView.frame;
+    return imageView;
+}
+
+- (UIColor *)transitionSourceBackgroundColor {
+    return self.view.backgroundColor;
+}
+
+- (CGRect)transitionDestinationImageViewFrame {
+    CGFloat width = CGRectGetWidth(self.view.frame);
+    CGRect frame = self.bigImageView.frame;
+    frame.size.width = width;
+    return frame;
+}
+
+// MARK: - <RMPZoomTransitionDelegate>
+
+- (void)zoomTransitionAnimator:(RMPZoomTransitionAnimator *)animator
+         didCompleteTransition:(BOOL)didComplete
+      animatingSourceImageView:(UIImageView *)imageView {
+    self.bigImageView.image = imageView.image;
+}
 
 @end

@@ -21,7 +21,6 @@
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
 		A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */; };
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
-		A0BB258F1F4D3FA800AE6C02 /* FocusAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB258E1F4D3FA800AE6C02 /* FocusAnimationController.m */; };
 		A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */; };
 		A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */; };
 		A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */; };
@@ -39,6 +38,7 @@
 		A0BB25B71F4D89AA00AE6C02 /* SimpleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */; };
 		A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C474791F1C60080098BCED /* CustomRankingPanel.m */; };
 		A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */; };
+		A0DCC3331F50005600EC953C /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DCC3321F50004B00EC953C /* RMPZoomTransitionAnimator.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		E684C6EA3E121773D358CE2D /* Pods_AnimationLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80AB908942154A2D69DA66 /* Pods_AnimationLab.framework */; };
 /* End PBXBuildFile section */
@@ -71,8 +71,6 @@
 		A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A77C9E1F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A77CA01F14750F00D16BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0BB258D1F4D3FA800AE6C02 /* FocusAnimationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FocusAnimationController.h; path = View/FocusAnimationController.h; sourceTree = "<group>"; };
-		A0BB258E1F4D3FA800AE6C02 /* FocusAnimationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FocusAnimationController.m; path = View/FocusAnimationController.m; sourceTree = "<group>"; };
 		A0BB25901F4D3FCD00AE6C02 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controller/MenuViewController.h; sourceTree = "<group>"; };
 		A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controller/MenuViewController.m; sourceTree = "<group>"; };
 		A0BB25931F4D61B800AE6C02 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = Controller/GalleryViewController.h; sourceTree = "<group>"; };
@@ -96,6 +94,8 @@
 		A0C474791F1C60080098BCED /* CustomRankingPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomRankingPanel.m; path = View/CustomRankingPanel.m; sourceTree = "<group>"; };
 		A0CA3CE21F19178400BF4079 /* BarChartValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BarChartValueLabel.h; path = View/BarChartValueLabel.h; sourceTree = "<group>"; };
 		A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BarChartValueLabel.m; path = View/BarChartValueLabel.m; sourceTree = "<group>"; };
+		A0DCC3311F50004B00EC953C /* RMPZoomTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPZoomTransitionAnimator.h; sourceTree = "<group>"; };
+		A0DCC3321F50004B00EC953C /* RMPZoomTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPZoomTransitionAnimator.m; sourceTree = "<group>"; };
 		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
 		A0EF81C11F17A087006065BF /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "Model/UIColor+RGB.m"; sourceTree = "<group>"; };
 		A0EF81C31F17AF16006065BF /* UtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilityClasses.h; path = Model/UtilityClasses.h; sourceTree = "<group>"; };
@@ -212,6 +212,7 @@
 		A0A77CA81F14887F00D16BC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A0DCC3301F50004B00EC953C /* Focus Transition */,
 				A028A6111F2200F2003A4CC4 /* WaveView */,
 				A0978FCB1F18A63000F815BA /* SimpleHorizontalBarChart.h */,
 				A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */,
@@ -227,8 +228,6 @@
 				A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */,
 				A09008D11F20C201002E044B /* GroupButtonWithColor.h */,
 				A09008D21F20C201002E044B /* GroupButtonWithColor.m */,
-				A0BB258D1F4D3FA800AE6C02 /* FocusAnimationController.h */,
-				A0BB258E1F4D3FA800AE6C02 /* FocusAnimationController.m */,
 				A0BB259A1F4D65D000AE6C02 /* SimpleCollectionCell.h */,
 				A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */,
 			);
@@ -266,6 +265,16 @@
 				A0BB25A41F4D678B00AE6C02 /* Young Gothic.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		A0DCC3301F50004B00EC953C /* Focus Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A0DCC3311F50004B00EC953C /* RMPZoomTransitionAnimator.h */,
+				A0DCC3321F50004B00EC953C /* RMPZoomTransitionAnimator.m */,
+			);
+			name = "Focus Transition";
+			path = "View/Focus Transition";
 			sourceTree = "<group>";
 		};
 		B2B934F2D65FEB74D2CF5A9E /* Pods */ = {
@@ -425,8 +434,8 @@
 			files = (
 				A0BB259C1F4D65D000AE6C02 /* SimpleCollectionCell.m in Sources */,
 				A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */,
+				A0DCC3331F50005600EC953C /* RMPZoomTransitionAnimator.m in Sources */,
 				A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */,
-				A0BB258F1F4D3FA800AE6C02 /* FocusAnimationController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */,
 				A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */,
