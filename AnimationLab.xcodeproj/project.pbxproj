@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A021E5E41F52B1200061D08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021E5E31F52B0300061D08C /* Assets.xcassets */; };
 		A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CircleLabel.m */; };
 		A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6161F22069F003A4CC4 /* WeakLinkObj.m */; };
 		A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6191F2206AE003A4CC4 /* WaveView.m */; };
@@ -19,7 +20,6 @@
 		A0A77C911F14750F00D16BC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C901F14750F00D16BC2 /* main.m */; };
 		A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C931F14750F00D16BC2 /* AppDelegate.m */; };
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
-		A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */; };
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
 		A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */; };
 		A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */; };
@@ -46,6 +46,7 @@
 /* Begin PBXFileReference section */
 		5A19D921E89C62C4E8E4B9F9 /* Pods-AnimationLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationLab/Pods-AnimationLab.release.xcconfig"; sourceTree = "<group>"; };
 		5D80AB908942154A2D69DA66 /* Pods_AnimationLab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationLab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A021E5E31F52B0300061D08C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A026A0FE1F1DC31A007CF948 /* CircleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleLabel.h; path = View/CircleLabel.h; sourceTree = "<group>"; };
 		A026A0FF1F1DC31A007CF948 /* CircleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleLabel.m; path = View/CircleLabel.m; sourceTree = "<group>"; };
 		A028A6151F22069F003A4CC4 /* WeakLinkObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeakLinkObj.h; path = View/WaveView/WeakLinkObj.h; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		A0A77C921F14750F00D16BC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0A77C931F14750F00D16BC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0A77C991F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0A77C9E1F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A77CA01F14750F00D16BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BB25901F4D3FCD00AE6C02 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controller/MenuViewController.h; sourceTree = "<group>"; };
@@ -165,9 +165,9 @@
 				A0A77CA71F14887500D16BC2 /* Model */,
 				A0A77CA61F14757700D16BC2 /* Controller */,
 				A0A77CA81F14887F00D16BC2 /* View */,
-				A0A77C9B1F14750F00D16BC2 /* Assets.xcassets */,
 				A07E86531F160DFC00A3D158 /* Xibs */,
 				A0A77C981F14750F00D16BC2 /* Main.storyboard */,
+				A021E5E31F52B0300061D08C /* Assets.xcassets */,
 				A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */,
 				A0A77CA01F14750F00D16BC2 /* Info.plist */,
 				A0A77C8F1F14750F00D16BC2 /* Supporting Files */,
@@ -363,10 +363,10 @@
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */,
 				A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */,
+				A021E5E41F52B1200061D08C /* Assets.xcassets in Resources */,
 				A0BB25AB1F4D679300AE6C02 /* Guilty Pleasure.png in Resources */,
 				A0BB25A11F4D675800AE6C02 /* Silver Cup.jpg in Resources */,
 				A0BB25AD1F4D679300AE6C02 /* Star Guardian Syndra.jpg in Resources */,
-				A0A77C9C1F14750F00D16BC2 /* Assets.xcassets in Resources */,
 				A0BB25AC1F4D679300AE6C02 /* Star Guardian Ahri.jpg in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 				A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */,
