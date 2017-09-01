@@ -150,7 +150,7 @@
     imageView.contentMode = cell.cellImageView.contentMode;
     imageView.clipsToBounds = YES;
     imageView.userInteractionEnabled = NO;
-    imageView.frame = [cell.cellImageView convertRect:cell.cellImageView.frame toView:self.collectionView.superview];
+    imageView.frame = [cell.cellImageView convertRect:cell.cellImageView.frame toView:self.view.window];
     return imageView;
 }
 
@@ -161,7 +161,7 @@
 - (CGRect)transitionDestinationImageViewFrame {
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     SimpleCollectionCell *cell = (SimpleCollectionCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-    CGRect cellFrameInSuperview = [cell.cellImageView convertRect:cell.cellImageView.frame toView:self.collectionView.superview];
+    CGRect cellFrameInSuperview = [self.view.window convertRect:cell.cellImageView.frame fromView:cell.cellImageView];
     return cellFrameInSuperview;
 }
 

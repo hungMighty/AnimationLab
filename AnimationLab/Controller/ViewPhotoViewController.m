@@ -67,10 +67,7 @@
 }
 
 - (CGRect)transitionDestinationImageViewFrame {
-    CGFloat width = CGRectGetWidth(self.view.frame);
-    CGRect frame = self.bigImageView.frame;
-    frame.size.width = width;
-    return frame;
+    return self.bigImageView.frame;
 }
 
 // MARK: - <RMPZoomTransitionDelegate>
