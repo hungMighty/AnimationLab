@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "MembershipViewController.h"
 #import "GalleryViewController.h"
+#import "CustomizeSearchViewController.h"
 
 @interface MenuViewController ()
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.translucent = NO;
+    self.title = @"Main Menu";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,6 +42,11 @@
 - (IBAction)focusTransitionTapped:(id)sender {
     GalleryViewController *view = [[GalleryViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
+}
+
+- (IBAction)customizeSearchbarTapped:(id)sender {
+    CustomizeSearchViewController *customizeSearchView = [[CustomizeSearchViewController alloc] init];
+    [self.navigationController pushViewController:customizeSearchView animated:true];
 }
 
 @end

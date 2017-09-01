@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vN-A9-Pg3" userLabel="Title View">
-                    <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsJ-6a-qfc" userLabel="Back Button">
                             <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -83,14 +83,14 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GRE-80-Vn5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9MI-Zb-7LD"/>
-                <constraint firstItem="7vN-A9-Pg3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="UM6-2U-waO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7vN-A9-Pg3" secondAttribute="trailing" id="VqR-o4-zOb"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GRE-80-Vn5" secondAttribute="trailing" id="eLq-Rs-fqE"/>
+                <constraint firstItem="GRE-80-Vn5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="B97-pU-JRL"/>
+                <constraint firstAttribute="trailing" secondItem="GRE-80-Vn5" secondAttribute="trailing" id="PUV-qx-1PF"/>
+                <constraint firstItem="7vN-A9-Pg3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UM6-2U-waO"/>
+                <constraint firstItem="7vN-A9-Pg3" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="eJc-Bv-GNL"/>
                 <constraint firstItem="7vN-A9-Pg3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lXA-OP-Qoi"/>
                 <constraint firstItem="GRE-80-Vn5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="won-UV-26M"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="Evr-Cd-ldN"/>
         </view>
     </objects>
     <resources>

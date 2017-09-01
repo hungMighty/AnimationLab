@@ -14,8 +14,8 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="qpc-fx-ccQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="X0F-kP-eU7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -35,13 +35,22 @@
                                     <action selector="focusTransitionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8u-Bw-7kj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-LS-F4I">
+                                <rect key="frame" x="105.5" y="154" width="163" height="30"/>
+                                <state key="normal" title="Customize UISearchBar"/>
+                                <connections>
+                                    <action selector="customizeSearchbarTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmh-So-tpX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-nO-pHH"/>
-                            <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
+                            <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="qpc-fx-ccQ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="top" secondItem="Pzw-On-sjj" secondAttribute="bottom" constant="10" id="jq1-Cx-572"/>
+                            <constraint firstItem="AiC-LS-F4I" firstAttribute="top" secondItem="9zb-3D-VcK" secondAttribute="bottom" constant="10" id="kng-fq-ePE"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMV-eg-S86"/>
+                            <constraint firstItem="AiC-LS-F4I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wTD-lo-Wu0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="emb-ck-ghW"/>

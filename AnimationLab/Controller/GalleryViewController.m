@@ -161,7 +161,8 @@
 - (CGRect)transitionDestinationImageViewFrame {
     NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
     SimpleCollectionCell *cell = (SimpleCollectionCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
-    CGRect cellFrameInSuperview = [self.view.window convertRect:cell.cellImageView.frame fromView:cell.cellImageView];
+//    CGRect cellFrameInSuperview = [self.view.window convertRect:cell.cellImageView.frame fromView:cell.cellImageView];
+    CGRect cellFrameInSuperview = [cell.cellImageView convertRect:cell.cellImageView.bounds toView:self.view.window];
     return cellFrameInSuperview;
 }
 

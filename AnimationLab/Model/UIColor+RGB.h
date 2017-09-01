@@ -11,6 +11,7 @@
 @interface UIColor (RGB)
 
 + (UIColor *)rgb:(int)red green:(int) green blue:(int) blue;
-+ (UIColor*)colorWithHex:(int)hex;
++ (UIColor *)colorWithHex:(int)hex;
++ (UIColor *)redNavigationColor;
 
 @end
