@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+RGB.h"
 
-@interface CustomizeSearchViewController : UIViewController
+@interface CustomizeSearchViewController : UIViewController <UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

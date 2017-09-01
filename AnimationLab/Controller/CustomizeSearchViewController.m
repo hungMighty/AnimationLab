@@ -26,6 +26,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self customizeSearchbar];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -42,6 +44,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)customizeSearchbar {
+    [self.searchBar setPlaceholder:@"Search..."];
+    [self.searchBar setBarTintColor:[UIColor redNavigationColor]];
+}
+
 // MARK - Actions
+
+// MARK - SearchBar Delegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self.searchBar setShowsCancelButton:true animated:true];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.text = @"";
+    [self.searchBar setShowsCancelButton:false animated:true];
+    [self.searchBar resignFirstResponder];
+}
 
 @end
