@@ -79,15 +79,16 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="220" id="f9X-2h-k50"/>
                     </constraints>
+                    <viewLayoutGuide key="safeArea" id="t6D-Hp-zVW"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GRE-80-Vn5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="B97-pU-JRL"/>
-                <constraint firstAttribute="trailing" secondItem="GRE-80-Vn5" secondAttribute="trailing" id="PUV-qx-1PF"/>
-                <constraint firstItem="7vN-A9-Pg3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UM6-2U-waO"/>
-                <constraint firstItem="7vN-A9-Pg3" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="eJc-Bv-GNL"/>
-                <constraint firstItem="7vN-A9-Pg3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lXA-OP-Qoi"/>
+                <constraint firstItem="GRE-80-Vn5" firstAttribute="trailing" secondItem="Evr-Cd-ldN" secondAttribute="trailing" id="Evb-nh-xkr"/>
+                <constraint firstItem="GRE-80-Vn5" firstAttribute="leading" secondItem="Evr-Cd-ldN" secondAttribute="leading" id="HqV-gg-waE"/>
+                <constraint firstItem="7vN-A9-Pg3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UAm-zb-hNg"/>
+                <constraint firstItem="7vN-A9-Pg3" firstAttribute="trailing" secondItem="Evr-Cd-ldN" secondAttribute="trailing" id="a3d-Zz-vRl"/>
+                <constraint firstItem="7vN-A9-Pg3" firstAttribute="leading" secondItem="Evr-Cd-ldN" secondAttribute="leading" id="atM-YE-s7E"/>
                 <constraint firstItem="GRE-80-Vn5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="won-UV-26M"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Evr-Cd-ldN"/>
