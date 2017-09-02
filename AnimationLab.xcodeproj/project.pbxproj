@@ -13,13 +13,13 @@
 		A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6191F2206AE003A4CC4 /* WaveView.m */; };
 		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
 		A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */; };
-		A070D4AD1F59137300BCFEFC /* CustomizeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070D4AB1F59137300BCFEFC /* CustomizeSearchViewController.m */; };
+		A070D4AD1F59137300BCFEFC /* UsingUISearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */; };
 		A070D4B11F59415B00BCFEFC /* ViewPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A070D4B01F59139A00BCFEFC /* ViewPhotoViewController.xib */; };
-		A070D4B21F59416500BCFEFC /* CustomizeSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A070D4AF1F59139A00BCFEFC /* CustomizeSearchViewController.xib */; };
 		A07E865B1F16307F00A3D158 /* MembershipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07E86591F16307F00A3D158 /* MembershipViewController.m */; };
 		A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E865D1F16309900A3D158 /* MembershipViewController.xib */; };
 		A09008D31F20C201002E044B /* GroupButtonWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A09008D21F20C201002E044B /* GroupButtonWithColor.m */; };
 		A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A0978FCC1F18A63000F815BA /* SimpleHorizontalBarChart.m */; };
+		A09CFC331F5B028B00FA2773 /* UsingUISearchBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */; };
 		A0A77C911F14750F00D16BC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C901F14750F00D16BC2 /* main.m */; };
 		A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C931F14750F00D16BC2 /* AppDelegate.m */; };
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
@@ -59,9 +59,9 @@
 		A04EF0751F20568B00CC70FB /* BlueRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueRoundButton.m; path = View/BlueRoundButton.m; sourceTree = "<group>"; };
 		A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightRoundCornerLabel.h; path = View/RightRoundCornerLabel.h; sourceTree = "<group>"; };
 		A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightRoundCornerLabel.m; path = View/RightRoundCornerLabel.m; sourceTree = "<group>"; };
-		A070D4AA1F59137300BCFEFC /* CustomizeSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomizeSearchViewController.h; path = Controller/CustomizeSearchViewController.h; sourceTree = "<group>"; };
-		A070D4AB1F59137300BCFEFC /* CustomizeSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomizeSearchViewController.m; path = Controller/CustomizeSearchViewController.m; sourceTree = "<group>"; };
-		A070D4AF1F59139A00BCFEFC /* CustomizeSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CustomizeSearchViewController.xib; path = Xibs/CustomizeSearchViewController.xib; sourceTree = "<group>"; };
+		A070D4AA1F59137300BCFEFC /* UsingUISearchBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsingUISearchBarViewController.h; path = Controller/UsingUISearchBarViewController.h; sourceTree = "<group>"; };
+		A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UsingUISearchBarViewController.m; path = Controller/UsingUISearchBarViewController.m; sourceTree = "<group>"; };
+		A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UsingUISearchBarViewController.xib; path = Xibs/UsingUISearchBarViewController.xib; sourceTree = "<group>"; };
 		A070D4B01F59139A00BCFEFC /* ViewPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewPhotoViewController.xib; path = Xibs/ViewPhotoViewController.xib; sourceTree = "<group>"; };
 		A07E86581F16307F00A3D158 /* MembershipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MembershipViewController.h; path = Controller/MembershipViewController.h; sourceTree = "<group>"; };
 		A07E86591F16307F00A3D158 /* MembershipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MembershipViewController.m; path = Controller/MembershipViewController.m; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				A07E865D1F16309900A3D158 /* MembershipViewController.xib */,
 				A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */,
 				A070D4B01F59139A00BCFEFC /* ViewPhotoViewController.xib */,
-				A070D4AF1F59139A00BCFEFC /* CustomizeSearchViewController.xib */,
+				A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -201,8 +201,8 @@
 				A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */,
 				A0BB25AF1F4D856300AE6C02 /* ViewPhotoViewController.h */,
 				A0BB25B01F4D856300AE6C02 /* ViewPhotoViewController.m */,
-				A070D4AA1F59137300BCFEFC /* CustomizeSearchViewController.h */,
-				A070D4AB1F59137300BCFEFC /* CustomizeSearchViewController.m */,
+				A070D4AA1F59137300BCFEFC /* UsingUISearchBarViewController.h */,
+				A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -369,6 +369,7 @@
 			files = (
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */,
+				A09CFC331F5B028B00FA2773 /* UsingUISearchBarViewController.xib in Resources */,
 				A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */,
 				A021E5E41F52B1200061D08C /* Assets.xcassets in Resources */,
 				A070D4B11F59415B00BCFEFC /* ViewPhotoViewController.xib in Resources */,
@@ -381,7 +382,6 @@
 				A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */,
 				A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */,
 				A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */,
-				A070D4B21F59416500BCFEFC /* CustomizeSearchViewController.xib in Resources */,
 				A0BB25B71F4D89AA00AE6C02 /* SimpleCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +450,7 @@
 				A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */,
 				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,
-				A070D4AD1F59137300BCFEFC /* CustomizeSearchViewController.m in Sources */,
+				A070D4AD1F59137300BCFEFC /* UsingUISearchBarViewController.m in Sources */,
 				A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */,

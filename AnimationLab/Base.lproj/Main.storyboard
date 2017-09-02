@@ -36,17 +36,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-LS-F4I">
-                                <rect key="frame" x="105.5" y="154" width="163" height="30"/>
-                                <state key="normal" title="Customize UISearchBar"/>
+                                <rect key="frame" x="122" y="154" width="130" height="30"/>
+                                <state key="normal" title="Using UISearchBar"/>
                                 <connections>
                                     <action selector="customizeSearchbarTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmh-So-tpX"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-1z-APK">
+                                <rect key="frame" x="100" y="194" width="174" height="30"/>
+                                <state key="normal" title="Using UISearchController"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-nO-pHH"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="qpc-fx-ccQ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
+                            <constraint firstItem="dc9-1z-APK" firstAttribute="top" secondItem="AiC-LS-F4I" secondAttribute="bottom" constant="10" id="WX1-HC-MDK"/>
+                            <constraint firstItem="dc9-1z-APK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hyS-IQ-pct"/>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="top" secondItem="Pzw-On-sjj" secondAttribute="bottom" constant="10" id="jq1-Cx-572"/>
                             <constraint firstItem="AiC-LS-F4I" firstAttribute="top" secondItem="9zb-3D-VcK" secondAttribute="bottom" constant="10" id="kng-fq-ePE"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMV-eg-S86"/>

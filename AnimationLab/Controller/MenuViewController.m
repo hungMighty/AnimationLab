@@ -9,7 +9,7 @@
 #import "MenuViewController.h"
 #import "MembershipViewController.h"
 #import "GalleryViewController.h"
-#import "CustomizeSearchViewController.h"
+#import "UsingUISearchBarViewController.h"
 
 @interface MenuViewController ()
 
@@ -45,7 +45,7 @@
 }
 
 - (IBAction)customizeSearchbarTapped:(id)sender {
-    CustomizeSearchViewController *customizeSearchView = [[CustomizeSearchViewController alloc] init];
+    UsingUISearchBarViewController *customizeSearchView = [[UsingUISearchBarViewController alloc] init];
     [self.navigationController pushViewController:customizeSearchView animated:true];
 }
 

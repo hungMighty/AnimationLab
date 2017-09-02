@@ -6,13 +6,13 @@
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "CustomizeSearchViewController.h"
+#import "UsingUISearchBarViewController.h"
 
-@interface CustomizeSearchViewController ()
+@interface UsingUISearchBarViewController ()
 
 @end
 
-@implementation CustomizeSearchViewController
+@implementation UsingUISearchBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
