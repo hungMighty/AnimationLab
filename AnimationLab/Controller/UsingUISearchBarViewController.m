@@ -7,8 +7,12 @@
 //
 
 #import "UsingUISearchBarViewController.h"
+#import "CityCell.h"
 
-@interface UsingUISearchBarViewController ()
+@interface UsingUISearchBarViewController () {
+    NSMutableArray *gamesData;
+    NSMutableArray *filteredResults;
+}
 
 @end
 
@@ -22,6 +26,15 @@
     [navBar setTintColor:[UIColor whiteColor]];
     [navBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: UIColor.whiteColor }];
     self.title = @"Customize Search Bar";
+    
+    gamesData = @[
+                  @"Nier Automata", @"Crash Bandicoot", @"Neighbors from Hell", @"Age of Empire 3", @"Dota 2", @"League of Legends", @"The Sims 4", @"Need for Speed",
+                  @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch"
+                  ];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier]
+                                               bundle:nil]
+         forCellReuseIdentifier:[CityCell cellIdentifier]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,6 +60,29 @@
 - (void)customizeSearchbar {
     [self.searchBar setPlaceholder:@"Search..."];
     [self.searchBar setBarTintColor:[UIColor redNavigationColor]];
+}
+
+// MARK - TableView Datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return gamesData.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CityCell *cell = [tableView dequeueReusableCellWithIdentifier:[CityCell cellIdentifier] forIndexPath:indexPath];
+    cell.contentLabel.text = gamesData[indexPath.row];
+    
+    return cell;
+}
+
+// MARK - TableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 // MARK - Actions

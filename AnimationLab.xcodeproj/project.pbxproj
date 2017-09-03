@@ -11,6 +11,8 @@
 		A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CircleLabel.m */; };
 		A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6161F22069F003A4CC4 /* WeakLinkObj.m */; };
 		A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6191F2206AE003A4CC4 /* WaveView.m */; };
+		A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C5ECB1F5C3462005380CE /* CityCell.xib */; };
+		A04C5ECF1F5C37F7005380CE /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C5ECE1F5C37F7005380CE /* CityCell.m */; };
 		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
 		A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */; };
 		A070D4AD1F59137300BCFEFC /* UsingUISearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */; };
@@ -55,6 +57,9 @@
 		A028A6161F22069F003A4CC4 /* WeakLinkObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeakLinkObj.m; path = View/WaveView/WeakLinkObj.m; sourceTree = "<group>"; };
 		A028A6181F2206AE003A4CC4 /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveView.h; path = View/WaveView/WaveView.h; sourceTree = "<group>"; };
 		A028A6191F2206AE003A4CC4 /* WaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveView.m; path = View/WaveView/WaveView.m; sourceTree = "<group>"; };
+		A04C5ECB1F5C3462005380CE /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		A04C5ECD1F5C37F7005380CE /* CityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CityCell.h; path = View/CityCell.h; sourceTree = "<group>"; };
+		A04C5ECE1F5C37F7005380CE /* CityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CityCell.m; path = View/CityCell.m; sourceTree = "<group>"; };
 		A04EF0741F20568B00CC70FB /* BlueRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueRoundButton.h; path = View/BlueRoundButton.h; sourceTree = "<group>"; };
 		A04EF0751F20568B00CC70FB /* BlueRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueRoundButton.m; path = View/BlueRoundButton.m; sourceTree = "<group>"; };
 		A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightRoundCornerLabel.h; path = View/RightRoundCornerLabel.h; sourceTree = "<group>"; };
@@ -238,6 +243,8 @@
 				A09008D21F20C201002E044B /* GroupButtonWithColor.m */,
 				A0BB259A1F4D65D000AE6C02 /* SimpleCollectionCell.h */,
 				A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */,
+				A04C5ECD1F5C37F7005380CE /* CityCell.h */,
+				A04C5ECE1F5C37F7005380CE /* CityCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */,
+				A04C5ECB1F5C3462005380CE /* CityCell.xib */,
 			);
 			name = "View Xibs";
 			path = "Xibs/View Xibs";
@@ -379,6 +387,7 @@
 				A0BB25AC1F4D679300AE6C02 /* Star Guardian Ahri.jpg in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 				A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */,
+				A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */,
 				A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */,
 				A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */,
 				A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */,
@@ -447,6 +456,7 @@
 				A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */,
+				A04C5ECF1F5C37F7005380CE /* CityCell.m in Sources */,
 				A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */,
 				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,

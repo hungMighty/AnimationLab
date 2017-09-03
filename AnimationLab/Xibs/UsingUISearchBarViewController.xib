@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UsingUISearchBarViewController">
             <connections>
                 <outlet property="searchBar" destination="A8Z-YA-0IK" id="iFi-54-dH8"/>
+                <outlet property="tableView" destination="qF9-AS-HSa" id="Imf-NX-FkB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="LIE-BD-4km"/>
             </connections>
         </placeholder>
@@ -27,12 +28,24 @@
                         <outlet property="delegate" destination="-1" id="TCD-Qk-9fB"/>
                     </connections>
                 </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qF9-AS-HSa">
+                    <rect key="frame" x="0.0" y="56" width="375" height="611"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="z0b-dO-hZC"/>
+                        <outlet property="delegate" destination="-1" id="EHr-Zq-ClT"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="A8Z-YA-0IK" secondAttribute="trailing" id="6I2-hv-xbl"/>
+                <constraint firstItem="qF9-AS-HSa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6SL-ir-vex"/>
                 <constraint firstItem="A8Z-YA-0IK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Tw5-Tp-Jkt"/>
+                <constraint firstAttribute="trailing" secondItem="qF9-AS-HSa" secondAttribute="trailing" id="X2k-fd-7E3"/>
                 <constraint firstItem="A8Z-YA-0IK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="u8O-Lc-3aI"/>
+                <constraint firstItem="qF9-AS-HSa" firstAttribute="top" secondItem="A8Z-YA-0IK" secondAttribute="bottom" id="xzN-rX-ZdF"/>
+                <constraint firstAttribute="bottom" secondItem="qF9-AS-HSa" secondAttribute="bottom" id="yWp-lb-sGX"/>
             </constraints>
         </view>
     </objects>
