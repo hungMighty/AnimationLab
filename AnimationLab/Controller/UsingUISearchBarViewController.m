@@ -11,7 +11,8 @@
 
 @interface UsingUISearchBarViewController () {
     NSMutableArray *gamesData;
-    NSMutableArray *filteredResults;
+    NSMutableArray *filteredData;
+    BOOL searchActive;
 }
 
 @end
@@ -27,10 +28,9 @@
     [navBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: UIColor.whiteColor }];
     self.title = @"Customize Search Bar";
     
-    gamesData = @[
-                  @"Nier Automata", @"Crash Bandicoot", @"Neighbors from Hell", @"Age of Empire 3", @"Dota 2", @"League of Legends", @"The Sims 4", @"Need for Speed",
-                  @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch"
-                  ];
+    gamesData = [[NSMutableArray alloc] initWithObjects:@"Nier Automata", @"Crash Bandicoot", @"Neighbors from Hell",
+                 @"Age of Empire 3", @"Dota 2", @"League of Legends", @"The Sims 4", @"Need for Speed",
+                 @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch", nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier]
                                                bundle:nil]
@@ -65,6 +65,9 @@
 // MARK - TableView Datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (searchActive == true) {
+        return filteredData.count;
+    }
     return gamesData.count;
 }
 
@@ -74,7 +77,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CityCell *cell = [tableView dequeueReusableCellWithIdentifier:[CityCell cellIdentifier] forIndexPath:indexPath];
-    cell.contentLabel.text = gamesData[indexPath.row];
+    if (searchActive == true) {
+        cell.contentLabel.text = filteredData[indexPath.row];
+    } else {
+        cell.contentLabel.text = gamesData[indexPath.row];
+    }
     
     return cell;
 }
@@ -87,19 +94,54 @@
 
 // MARK - Actions
 
+
 // MARK - SearchBar Delegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    searchActive = true;
     [self.searchBar setShowsCancelButton:true animated:true];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    searchActive = false;
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    searchActive = false;
     self.searchBar.text = @"";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
     [self.searchBar setShowsCancelButton:false animated:true];
     [self.searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    searchActive = false;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    filteredData = [[NSMutableArray alloc] init];
+    if ([searchText isEqualToString:@""]) {
+        searchActive = false;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+        return;
+    }
+    
+    for (int i = 0; i <gamesData.count; i++) {
+        NSString *str = gamesData[i];
+        if ([[str lowercaseString] rangeOfString:[searchText lowercaseString]].location != NSNotFound) {
+            [filteredData addObject:str];
+        }
+    }
+    searchActive = true;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 @end
