@@ -13,6 +13,7 @@
     NSMutableArray *gamesData;
     NSMutableArray *filteredData;
     BOOL searchActive;
+    NSIndexPath *lastRowIndex;
 }
 
 @end
@@ -30,13 +31,15 @@
     
     gamesData = [[NSMutableArray alloc] initWithObjects:@"Nier Automata", @"Crash Bandicoot", @"Neighbors from Hell",
                  @"Age of Empire 3", @"Dota 2", @"League of Legends", @"The Sims 4", @"Need for Speed",
-                 @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch", nil];
+                 @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch",
+                 @"Days Gone", @"Mario", @"Just Dance", @"Blade & Soul", nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier]
                                                bundle:nil]
          forCellReuseIdentifier:[CityCell cellIdentifier]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
@@ -44,6 +47,10 @@
     [super viewWillAppear:animated];
     
     [self customizeSearchbar];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -83,9 +90,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CityCell *cell = [tableView dequeueReusableCellWithIdentifier:[CityCell cellIdentifier] forIndexPath:indexPath];
-    if (searchActive == true) {
+    if (searchActive == true && indexPath.row < filteredData.count) {
         cell.contentLabel.text = filteredData[indexPath.row];
-    } else {
+    } else if (indexPath.row < gamesData.count) {
         cell.contentLabel.text = gamesData[indexPath.row];
     }
     
@@ -151,14 +158,29 @@
 
 // MARK - Keyboard Observer
 
+- (void)keyboardWillShow:(NSNotification *)noti {
+    NSArray *visibleIndexes = [self.tableView indexPathsForVisibleRows];
+    lastRowIndex = visibleIndexes.lastObject;
+}
+
 - (void)keyboardDidShow:(NSNotification *)noti {
     NSDictionary *keyboardInfo = [noti userInfo];
     CGRect keyboardRect = [[keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.tableViewBottomSpaceConstraint.constant = keyboardRect.size.height;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tableViewBottomSpaceConstraint.constant = keyboardRect.size.height;
+        [self.tableView layoutIfNeeded];
+        
+        if (lastRowIndex != nil) {
+            [self.tableView scrollToRowAtIndexPath:lastRowIndex atScrollPosition:UITableViewScrollPositionBottom animated:true];
+        }
+    });
 }
 
 - (void)keyboardDidHide:(NSNotification *)noti {
-    self.tableViewBottomSpaceConstraint.constant = 0;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tableViewBottomSpaceConstraint.constant = 0;
+    });
 }
 
 @end
