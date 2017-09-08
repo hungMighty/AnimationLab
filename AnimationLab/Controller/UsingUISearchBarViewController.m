@@ -35,6 +35,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier]
                                                bundle:nil]
          forCellReuseIdentifier:[CityCell cellIdentifier]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,6 +53,9 @@
     [navBar setBarTintColor:[UIColor whiteColor]];
     [navBar setTintColor:[UIColor blackColor]];
     [navBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: UIColor.blackColor }];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,7 +104,6 @@
 // MARK - SearchBar Delegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    searchActive = true;
     [self.searchBar setShowsCancelButton:true animated:true];
 }
 
@@ -142,6 +147,18 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+// MARK - Keyboard Observer
+
+- (void)keyboardDidShow:(NSNotification *)noti {
+    NSDictionary *keyboardInfo = [noti userInfo];
+    CGRect keyboardRect = [[keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.tableViewBottomSpaceConstraint.constant = keyboardRect.size.height;
+}
+
+- (void)keyboardDidHide:(NSNotification *)noti {
+    self.tableViewBottomSpaceConstraint.constant = 0;
 }
 
 @end

@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="searchBar" destination="A8Z-YA-0IK" id="iFi-54-dH8"/>
                 <outlet property="tableView" destination="qF9-AS-HSa" id="Imf-NX-FkB"/>
+                <outlet property="tableViewBottomSpaceConstraint" destination="yWp-lb-sGX" id="OsQ-k5-blH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="LIE-BD-4km"/>
             </connections>
         </placeholder>
@@ -37,7 +38,7 @@
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="A8Z-YA-0IK" secondAttribute="trailing" id="6I2-hv-xbl"/>
                 <constraint firstItem="qF9-AS-HSa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6SL-ir-vex"/>
