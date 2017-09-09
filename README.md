@@ -1,2 +1,4 @@
-# SimpleBarChart
-Customize charts using danielgindi's Library
+# Animation Lab
+
+A collection of custom Animations for iOS Development.
+
