@@ -34,8 +34,7 @@
                  @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch",
                  @"Days Gone", @"Mario", @"Just Dance", @"Blade & Soul", nil];
     
-    [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier]
-                                               bundle:nil]
+    [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier] bundle:nil]
          forCellReuseIdentifier:[CityCell cellIdentifier]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
