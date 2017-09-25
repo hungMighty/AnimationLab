@@ -69,7 +69,7 @@
         progressView.layer.masksToBounds = true;
         progressView.layer.cornerRadius = 10;
         progressView.trackTintColor = [UIColor rgb:240 green:245 blue:255];
-        progressView.tintColor = [UIColor rgb:0 green:191 blue:255];
+        progressView.tintColor = UIColor.redColor;
         [imageViews[i] addSubview:progressView];
         
         double randomTime = 1 + arc4random() % (7 - 1);
