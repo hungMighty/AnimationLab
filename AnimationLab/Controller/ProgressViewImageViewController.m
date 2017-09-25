@@ -68,7 +68,7 @@
         [progressView setTransform:CGAffineTransformMakeScale(1.0, 2.0)];
         progressView.layer.masksToBounds = true;
         progressView.layer.cornerRadius = 10;
-        progressView.trackTintColor = [UIColor rgb:240 green:245 blue:255];
+        progressView.trackTintColor = [UIColor rgb:182 green:182 blue:182];
         progressView.tintColor = UIColor.redColor;
         [imageViews[i] addSubview:progressView];
         
