@@ -96,10 +96,16 @@
     
     if (remainTime < 0) {
         progressView.progress = 1;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [progressView removeFromSuperview];
             int imageIndex = [(NSNumber *)userInfo[IMAGE_INDEX_KEY] intValue];
-            imageViews[imageIndex].image = [UIImage imageNamed:imageNames[imageIndex]];
+            UIImageView *imageView = imageViews[imageIndex];
+            
+            imageView.transform = CGAffineTransformMakeScale(0.2, 0.2);
+            imageView.image = [UIImage imageNamed:imageNames[imageIndex]];
+            [UIView animateWithDuration:.25 animations:^{
+                imageView.transform = CGAffineTransformMakeScale(1, 1);
+            }];
         });
         
         [theTimer invalidate];
