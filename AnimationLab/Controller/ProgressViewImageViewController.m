@@ -10,7 +10,7 @@
 #import "WeakLinkObj.h"
 #import "UIColor+RGB.h"
 
-#define PROGRESS_KEY @"progressObj"
+#define PROGRESS_OBJ_KEY @"progressObj"
 #define TOTAL_TIME_KEY @"totalTime"
 #define REMAIN_TIME_KEY @"remainTime"
 #define IMAGE_INDEX_KEY @"imageIndex"
@@ -64,17 +64,30 @@
         CGRect imageViewBounds = imageViews[i].bounds;
         CGRect progressViewFrame = CGRectMake(5, (imageViewBounds.size.height - 4) / 2,
                                               (imageViewBounds.size.width - 5 * 2), 4);
-        UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:progressViewFrame];
-        [progressView setTransform:CGAffineTransformMakeScale(1.0, 2.0)];
-        progressView.layer.masksToBounds = true;
-        progressView.layer.cornerRadius = 10;
-        progressView.trackTintColor = [UIColor rgb:182 green:182 blue:182];
-        progressView.tintColor = UIColor.redColor;
-        [imageViews[i] addSubview:progressView];
+        NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+        
+        if (i < 5) {
+            UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:progressViewFrame];
+            [progressView setTransform:CGAffineTransformMakeScale(1.0, 2.0)];
+            progressView.layer.masksToBounds = true;
+            progressView.layer.cornerRadius = 10;
+            progressView.trackTintColor = [UIColor rgb:182 green:182 blue:182];
+            progressView.tintColor = UIColor.redColor;
+            [imageViews[i] addSubview:progressView];
+            userInfo[PROGRESS_OBJ_KEY] = progressView;
+        } else {
+            UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+            spinner.color = UIColor.redColor;
+            CGRect spinnerFrame = spinner.frame;
+            spinnerFrame.origin.x = imageViews[i].frame.size.width / 2 - spinnerFrame.size.width / 2;
+            spinnerFrame.origin.y = imageViews[i].frame.size.height / 2 - spinnerFrame.size.height / 2;
+            [spinner setFrame:spinnerFrame];
+            [imageViews[i] addSubview:spinner];
+            [spinner startAnimating];
+            userInfo[PROGRESS_OBJ_KEY] = spinner;
+        }
         
         double randomTime = 1 + arc4random() % (7 - 1);
-        NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-        userInfo[PROGRESS_KEY] = progressView;
         userInfo[TOTAL_TIME_KEY] = @(randomTime);
         userInfo[REMAIN_TIME_KEY] = @(randomTime);
         userInfo[IMAGE_INDEX_KEY] = @(i);
@@ -90,14 +103,19 @@
 
 - (void)updateProgress:(NSTimer *)theTimer {
     NSMutableDictionary *userInfo = [theTimer userInfo];
-    UIProgressView *progressView = (UIProgressView *)userInfo[PROGRESS_KEY];
     double totalTime = [(NSNumber *)userInfo[TOTAL_TIME_KEY] doubleValue];
     double remainTime = [(NSNumber *)userInfo[REMAIN_TIME_KEY] doubleValue];
     
     if (remainTime < 0) {
-        progressView.progress = 1;
+        if ([userInfo[PROGRESS_OBJ_KEY] isKindOfClass:[UIProgressView class]]) {
+            ((UIProgressView *)userInfo[PROGRESS_OBJ_KEY]).progress = 1;
+        }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [progressView removeFromSuperview];
+            if ([userInfo[PROGRESS_OBJ_KEY] isKindOfClass:[UIProgressView class]]) {
+                [((UIProgressView *)userInfo[PROGRESS_OBJ_KEY]) removeFromSuperview];
+            } else if ([userInfo[PROGRESS_OBJ_KEY] isKindOfClass:[UIActivityIndicatorView class]]) {
+                [((UIActivityIndicatorView *)userInfo[PROGRESS_OBJ_KEY]) removeFromSuperview];
+            }
             int imageIndex = [(NSNumber *)userInfo[IMAGE_INDEX_KEY] intValue];
             UIImageView *imageView = imageViews[imageIndex];
             
@@ -111,7 +129,9 @@
         [theTimer invalidate];
         theTimer = nil;
     } else {
-        progressView.progress = (totalTime - remainTime) / totalTime;
+        if ([userInfo[PROGRESS_OBJ_KEY] isKindOfClass:[UIProgressView class]]) {
+            ((UIProgressView *)userInfo[PROGRESS_OBJ_KEY]).progress = (totalTime - remainTime) / totalTime;
+        }
         userInfo[@"remainTime"] = @(remainTime - 0.1);
     }
 }
