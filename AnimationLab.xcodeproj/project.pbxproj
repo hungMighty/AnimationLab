@@ -11,6 +11,19 @@
 		A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A026A0FF1F1DC31A007CF948 /* CircleLabel.m */; };
 		A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6161F22069F003A4CC4 /* WeakLinkObj.m */; };
 		A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = A028A6191F2206AE003A4CC4 /* WaveView.m */; };
+		A03743911F78C05C00313E97 /* ProgressViewImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A037438F1F78C05C00313E97 /* ProgressViewImageViewController.m */; };
+		A03743941F78C08700313E97 /* ProgressViewImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03743931F78C07D00313E97 /* ProgressViewImageViewController.xib */; };
+		A03743A71F7906FA00313E97 /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB259F1F4D675300AE6C02 /* Silver Cup.jpg */; };
+		A03743A81F7906FA00313E97 /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A01F4D675300AE6C02 /* Silver Cup@2x.jpg */; };
+		A03743A91F7906FA00313E97 /* (x) Ahri icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A037439F1F78E84100313E97 /* (x) Ahri icon.jpg */; };
+		A03743AA1F7906FA00313E97 /* (x) Jinx Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743951F78C59F00313E97 /* (x) Jinx Avatar.png */; };
+		A03743AB1F7906FA00313E97 /* Ahri without Glasses.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743991F78C5A000313E97 /* Ahri without Glasses.png */; };
+		A03743AC1F7906FA00313E97 /* Jack-O icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743981F78C59F00313E97 /* Jack-O icon.png */; };
+		A03743AD1F7906FA00313E97 /* Jax.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743971F78C59F00313E97 /* Jax.png */; };
+		A03743AE1F7906FA00313E97 /* Kawaii Annie.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743961F78C59F00313E97 /* Kawaii Annie.png */; };
+		A03743AF1F7906FA00313E97 /* Ahri's Peko.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A31F7906F100313E97 /* Ahri's Peko.png */; };
+		A03743B01F7906FA00313E97 /* Cute Ahri.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A21F7906F100313E97 /* Cute Ahri.png */; };
+		A03743B11F7906FA00313E97 /* Yuzuruha Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A11F7906F100313E97 /* Yuzuruha Avatar.png */; };
 		A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C5ECB1F5C3462005380CE /* CityCell.xib */; };
 		A04C5ECF1F5C37F7005380CE /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C5ECE1F5C37F7005380CE /* CityCell.m */; };
 		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
@@ -30,8 +43,6 @@
 		A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */; };
 		A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */; };
 		A0BB259C1F4D65D000AE6C02 /* SimpleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */; };
-		A0BB25A11F4D675800AE6C02 /* Silver Cup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB259F1F4D675300AE6C02 /* Silver Cup.jpg */; };
-		A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A01F4D675300AE6C02 /* Silver Cup@2x.jpg */; };
 		A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A51F4D678B00AE6C02 /* (x) Ahri.jpg */; };
 		A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A31F4D678B00AE6C02 /* Battle 2B.jpg */; };
 		A0BB25AB1F4D679300AE6C02 /* Guilty Pleasure.png in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25A71F4D678B00AE6C02 /* Guilty Pleasure.png */; };
@@ -57,6 +68,18 @@
 		A028A6161F22069F003A4CC4 /* WeakLinkObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WeakLinkObj.m; path = View/WaveView/WeakLinkObj.m; sourceTree = "<group>"; };
 		A028A6181F2206AE003A4CC4 /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveView.h; path = View/WaveView/WaveView.h; sourceTree = "<group>"; };
 		A028A6191F2206AE003A4CC4 /* WaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveView.m; path = View/WaveView/WaveView.m; sourceTree = "<group>"; };
+		A037438E1F78C05C00313E97 /* ProgressViewImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProgressViewImageViewController.h; path = Controller/ProgressViewImageViewController.h; sourceTree = "<group>"; };
+		A037438F1F78C05C00313E97 /* ProgressViewImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProgressViewImageViewController.m; path = Controller/ProgressViewImageViewController.m; sourceTree = "<group>"; };
+		A03743931F78C07D00313E97 /* ProgressViewImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProgressViewImageViewController.xib; path = Xibs/ProgressViewImageViewController.xib; sourceTree = "<group>"; };
+		A03743951F78C59F00313E97 /* (x) Jinx Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "(x) Jinx Avatar.png"; sourceTree = "<group>"; };
+		A03743961F78C59F00313E97 /* Kawaii Annie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Kawaii Annie.png"; sourceTree = "<group>"; };
+		A03743971F78C59F00313E97 /* Jax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jax.png; sourceTree = "<group>"; };
+		A03743981F78C59F00313E97 /* Jack-O icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack-O icon.png"; sourceTree = "<group>"; };
+		A03743991F78C5A000313E97 /* Ahri without Glasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ahri without Glasses.png"; sourceTree = "<group>"; };
+		A037439F1F78E84100313E97 /* (x) Ahri icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "(x) Ahri icon.jpg"; sourceTree = "<group>"; };
+		A03743A11F7906F100313E97 /* Yuzuruha Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yuzuruha Avatar.png"; sourceTree = "<group>"; };
+		A03743A21F7906F100313E97 /* Cute Ahri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cute Ahri.png"; sourceTree = "<group>"; };
+		A03743A31F7906F100313E97 /* Ahri's Peko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ahri's Peko.png"; sourceTree = "<group>"; };
 		A04C5ECB1F5C3462005380CE /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		A04C5ECD1F5C37F7005380CE /* CityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CityCell.h; path = View/CityCell.h; sourceTree = "<group>"; };
 		A04C5ECE1F5C37F7005380CE /* CityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CityCell.m; path = View/CityCell.m; sourceTree = "<group>"; };
@@ -146,6 +169,7 @@
 				A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */,
 				A070D4B01F59139A00BCFEFC /* ViewPhotoViewController.xib */,
 				A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */,
+				A03743931F78C07D00313E97 /* ProgressViewImageViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -208,6 +232,8 @@
 				A0BB25B01F4D856300AE6C02 /* ViewPhotoViewController.m */,
 				A070D4AA1F59137300BCFEFC /* UsingUISearchBarViewController.h */,
 				A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */,
+				A037438E1F78C05C00313E97 /* ProgressViewImageViewController.h */,
+				A037438F1F78C05C00313E97 /* ProgressViewImageViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -254,6 +280,15 @@
 			children = (
 				A0BB259F1F4D675300AE6C02 /* Silver Cup.jpg */,
 				A0BB25A01F4D675300AE6C02 /* Silver Cup@2x.jpg */,
+				A037439F1F78E84100313E97 /* (x) Ahri icon.jpg */,
+				A03743951F78C59F00313E97 /* (x) Jinx Avatar.png */,
+				A03743991F78C5A000313E97 /* Ahri without Glasses.png */,
+				A03743981F78C59F00313E97 /* Jack-O icon.png */,
+				A03743971F78C59F00313E97 /* Jax.png */,
+				A03743961F78C59F00313E97 /* Kawaii Annie.png */,
+				A03743A31F7906F100313E97 /* Ahri's Peko.png */,
+				A03743A21F7906F100313E97 /* Cute Ahri.png */,
+				A03743A11F7906F100313E97 /* Yuzuruha Avatar.png */,
 			);
 			name = icons;
 			path = Images/icons;
@@ -376,22 +411,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
+				A03743AB1F7906FA00313E97 /* Ahri without Glasses.png in Resources */,
 				A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */,
 				A09CFC331F5B028B00FA2773 /* UsingUISearchBarViewController.xib in Resources */,
+				A03743AE1F7906FA00313E97 /* Kawaii Annie.png in Resources */,
+				A03743AF1F7906FA00313E97 /* Ahri's Peko.png in Resources */,
 				A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */,
 				A021E5E41F52B1200061D08C /* Assets.xcassets in Resources */,
+				A03743A91F7906FA00313E97 /* (x) Ahri icon.jpg in Resources */,
 				A070D4B11F59415B00BCFEFC /* ViewPhotoViewController.xib in Resources */,
+				A03743AA1F7906FA00313E97 /* (x) Jinx Avatar.png in Resources */,
 				A0BB25AB1F4D679300AE6C02 /* Guilty Pleasure.png in Resources */,
-				A0BB25A11F4D675800AE6C02 /* Silver Cup.jpg in Resources */,
 				A0BB25AD1F4D679300AE6C02 /* Star Guardian Syndra.jpg in Resources */,
+				A03743A71F7906FA00313E97 /* Silver Cup.jpg in Resources */,
 				A0BB25AC1F4D679300AE6C02 /* Star Guardian Ahri.jpg in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 				A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */,
+				A03743941F78C08700313E97 /* ProgressViewImageViewController.xib in Resources */,
+				A03743B11F7906FA00313E97 /* Yuzuruha Avatar.png in Resources */,
+				A03743AC1F7906FA00313E97 /* Jack-O icon.png in Resources */,
+				A03743B01F7906FA00313E97 /* Cute Ahri.png in Resources */,
 				A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */,
+				A03743AD1F7906FA00313E97 /* Jax.png in Resources */,
 				A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */,
-				A0BB25A21F4D675800AE6C02 /* Silver Cup@2x.jpg in Resources */,
 				A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */,
 				A0BB25B71F4D89AA00AE6C02 /* SimpleCollectionCell.xib in Resources */,
+				A03743A81F7906FA00313E97 /* Silver Cup@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +511,7 @@
 				A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */,
 				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
 				A09008D31F20C201002E044B /* GroupButtonWithColor.m in Sources */,
+				A03743911F78C05C00313E97 /* ProgressViewImageViewController.m in Sources */,
 				A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */,
 				A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,

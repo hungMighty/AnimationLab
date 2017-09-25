@@ -10,6 +10,7 @@
 #import "MembershipViewController.h"
 #import "GalleryViewController.h"
 #import "UsingUISearchBarViewController.h"
+#import "ProgressViewImageViewController.h"
 
 @interface MenuViewController ()
 
@@ -47,6 +48,11 @@
 - (IBAction)customizeSearchbarTapped:(id)sender {
     UsingUISearchBarViewController *customizeSearchView = [[UsingUISearchBarViewController alloc] init];
     [self.navigationController pushViewController:customizeSearchView animated:true];
+}
+
+- (IBAction)touchProgressView:(id)sender {
+    ProgressViewImageViewController *view = [[ProgressViewImageViewController alloc] init];
+    [self.navigationController pushViewController:view animated:true];
 }
 
 @end
