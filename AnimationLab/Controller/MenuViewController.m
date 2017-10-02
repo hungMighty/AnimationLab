@@ -35,17 +35,17 @@
 
 #pragma Actions
 
-- (IBAction)cutomizeBarchartsTapped:(id)sender {
+- (IBAction)touchCutomizeBarcharts:(id)sender {
     MembershipViewController *view = [[MembershipViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (IBAction)focusTransitionTapped:(id)sender {
+- (IBAction)touchFocusTransition:(id)sender {
     GalleryViewController *view = [[GalleryViewController alloc] init];
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (IBAction)customizeSearchbarTapped:(id)sender {
+- (IBAction)touchCustomizeSearchbar:(id)sender {
     UsingUISearchBarViewController *customizeSearchView = [[UsingUISearchBarViewController alloc] init];
     [self.navigationController pushViewController:customizeSearchView animated:true];
 }
@@ -53,6 +53,10 @@
 - (IBAction)touchProgressView:(id)sender {
     ProgressViewImageViewController *view = [[ProgressViewImageViewController alloc] init];
     [self.navigationController pushViewController:view animated:true];
+}
+
+- (IBAction)touchShowTableWithHeaderImage:(id)sender {
+    
 }
 
 @end

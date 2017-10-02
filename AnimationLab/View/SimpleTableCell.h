@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CityCell : UITableViewCell
+@interface SimpleTableCell : UITableViewCell
 
 + (NSString *)cellIdentifier;
 

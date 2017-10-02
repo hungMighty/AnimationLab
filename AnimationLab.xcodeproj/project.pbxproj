@@ -24,8 +24,8 @@
 		A03743AF1F7906FA00313E97 /* Ahri's Peko.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A31F7906F100313E97 /* Ahri's Peko.png */; };
 		A03743B01F7906FA00313E97 /* Cute Ahri.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A21F7906F100313E97 /* Cute Ahri.png */; };
 		A03743B11F7906FA00313E97 /* Yuzuruha Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A03743A11F7906F100313E97 /* Yuzuruha Avatar.png */; };
-		A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C5ECB1F5C3462005380CE /* CityCell.xib */; };
-		A04C5ECF1F5C37F7005380CE /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C5ECE1F5C37F7005380CE /* CityCell.m */; };
+		A04C5ECC1F5C3462005380CE /* SimpleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04C5ECB1F5C3462005380CE /* SimpleTableCell.xib */; };
+		A04C5ECF1F5C37F7005380CE /* SimpleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A04C5ECE1F5C37F7005380CE /* SimpleTableCell.m */; };
 		A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0751F20568B00CC70FB /* BlueRoundButton.m */; };
 		A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EF0781F2056BF00CC70FB /* RightRoundCornerLabel.m */; };
 		A070D4AD1F59137300BCFEFC /* UsingUISearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */; };
@@ -81,9 +81,9 @@
 		A03743A11F7906F100313E97 /* Yuzuruha Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yuzuruha Avatar.png"; sourceTree = "<group>"; };
 		A03743A21F7906F100313E97 /* Cute Ahri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cute Ahri.png"; sourceTree = "<group>"; };
 		A03743A31F7906F100313E97 /* Ahri's Peko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ahri's Peko.png"; sourceTree = "<group>"; };
-		A04C5ECB1F5C3462005380CE /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
-		A04C5ECD1F5C37F7005380CE /* CityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CityCell.h; path = View/CityCell.h; sourceTree = "<group>"; };
-		A04C5ECE1F5C37F7005380CE /* CityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CityCell.m; path = View/CityCell.m; sourceTree = "<group>"; };
+		A04C5ECB1F5C3462005380CE /* SimpleTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleTableCell.xib; sourceTree = "<group>"; };
+		A04C5ECD1F5C37F7005380CE /* SimpleTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SimpleTableCell.h; path = View/SimpleTableCell.h; sourceTree = "<group>"; };
+		A04C5ECE1F5C37F7005380CE /* SimpleTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SimpleTableCell.m; path = View/SimpleTableCell.m; sourceTree = "<group>"; };
 		A04EF0741F20568B00CC70FB /* BlueRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueRoundButton.h; path = View/BlueRoundButton.h; sourceTree = "<group>"; };
 		A04EF0751F20568B00CC70FB /* BlueRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueRoundButton.m; path = View/BlueRoundButton.m; sourceTree = "<group>"; };
 		A04EF0771F2056BF00CC70FB /* RightRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightRoundCornerLabel.h; path = View/RightRoundCornerLabel.h; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 				A09008D21F20C201002E044B /* GroupButtonWithColor.m */,
 				A0BB259A1F4D65D000AE6C02 /* SimpleCollectionCell.h */,
 				A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */,
-				A04C5ECD1F5C37F7005380CE /* CityCell.h */,
-				A04C5ECE1F5C37F7005380CE /* CityCell.m */,
+				A04C5ECD1F5C37F7005380CE /* SimpleTableCell.h */,
+				A04C5ECE1F5C37F7005380CE /* SimpleTableCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */,
-				A04C5ECB1F5C3462005380CE /* CityCell.xib */,
+				A04C5ECB1F5C3462005380CE /* SimpleTableCell.xib */,
 			);
 			name = "View Xibs";
 			path = "Xibs/View Xibs";
@@ -436,7 +436,7 @@
 				A03743B11F7906FA00313E97 /* Yuzuruha Avatar.png in Resources */,
 				A03743AC1F7906FA00313E97 /* Jack-O icon.png in Resources */,
 				A03743B01F7906FA00313E97 /* Cute Ahri.png in Resources */,
-				A04C5ECC1F5C3462005380CE /* CityCell.xib in Resources */,
+				A04C5ECC1F5C3462005380CE /* SimpleTableCell.xib in Resources */,
 				A03743AD1F7906FA00313E97 /* Jax.png in Resources */,
 				A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */,
 				A0BB25AE1F4D679300AE6C02 /* Young Gothic.jpg in Resources */,
@@ -507,7 +507,7 @@
 				A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */,
 				A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */,
 				A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */,
-				A04C5ECF1F5C37F7005380CE /* CityCell.m in Sources */,
+				A04C5ECF1F5C37F7005380CE /* SimpleTableCell.m in Sources */,
 				A0BB25B11F4D856300AE6C02 /* ViewPhotoViewController.m in Sources */,
 				A04EF0791F2056BF00CC70FB /* RightRoundCornerLabel.m in Sources */,
 				A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */,

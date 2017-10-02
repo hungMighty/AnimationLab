@@ -7,7 +7,7 @@
 //
 
 #import "UsingUISearchBarViewController.h"
-#import "CityCell.h"
+#import "SimpleTableCell.h"
 
 @interface UsingUISearchBarViewController () {
     NSMutableArray *gamesData;
@@ -34,8 +34,8 @@
                  @"Resident Evil", @"Diablo 3", @"Hearthstone", @"Overwatch",
                  @"Days Gone", @"Mario", @"Just Dance", @"Blade & Soul", nil];
     
-    [self.tableView registerNib:[UINib nibWithNibName:[CityCell cellIdentifier] bundle:nil]
-         forCellReuseIdentifier:[CityCell cellIdentifier]];
+    [self.tableView registerNib:[UINib nibWithNibName:[SimpleTableCell cellIdentifier] bundle:nil]
+         forCellReuseIdentifier:[SimpleTableCell cellIdentifier]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -88,7 +88,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CityCell *cell = [tableView dequeueReusableCellWithIdentifier:[CityCell cellIdentifier] forIndexPath:indexPath];
+    SimpleTableCell *cell = [tableView dequeueReusableCellWithIdentifier:[SimpleTableCell cellIdentifier] forIndexPath:indexPath];
     if (searchActive == true && indexPath.row < filteredData.count) {
         cell.contentLabel.text = filteredData[indexPath.row];
     } else if (indexPath.row < gamesData.count) {

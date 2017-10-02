@@ -25,21 +25,21 @@
                                 <rect key="frame" x="114" y="74" width="146" height="30"/>
                                 <state key="normal" title="Customize BarCharts"/>
                                 <connections>
-                                    <action selector="cutomizeBarchartsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqH-1F-2Ar"/>
+                                    <action selector="touchCutomizeBarcharts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zqH-1F-2Ar"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zb-3D-VcK">
                                 <rect key="frame" x="94.5" y="114" width="185" height="30"/>
                                 <state key="normal" title="Focus Transition Animation"/>
                                 <connections>
-                                    <action selector="focusTransitionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8u-Bw-7kj"/>
+                                    <action selector="touchFocusTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8u-Bw-7kj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-LS-F4I">
                                 <rect key="frame" x="122" y="154" width="130" height="30"/>
                                 <state key="normal" title="Using UISearchBar"/>
                                 <connections>
-                                    <action selector="customizeSearchbarTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmh-So-tpX"/>
+                                    <action selector="touchCustomizeSearchbar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmh-So-tpX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-1z-APK">
@@ -47,16 +47,24 @@
                                 <state key="normal" title="Using UISearchController"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nP9-n4-lEx">
-                                <rect key="frame" x="103.5" y="234" width="167" height="30"/>
-                                <state key="normal" title="Progress View for Image"/>
+                                <rect key="frame" x="70.5" y="234" width="233" height="30"/>
+                                <state key="normal" title="Progress View for Loading Images"/>
                                 <connections>
                                     <action selector="touchProgressView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ubs-0B-3cj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nen-Kl-BCh">
+                                <rect key="frame" x="113" y="274" width="148" height="30"/>
+                                <state key="normal" title="Table - Header Image"/>
+                                <connections>
+                                    <action selector="touchShowTableWithHeaderImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YW7-8J-fgq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zb-3D-VcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="850-nO-pHH"/>
+                            <constraint firstItem="Nen-Kl-BCh" firstAttribute="top" secondItem="nP9-n4-lEx" secondAttribute="bottom" constant="10" id="UBI-7l-zcG"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="top" secondItem="qpc-fx-ccQ" secondAttribute="bottom" constant="10" id="VgO-9t-VnW"/>
                             <constraint firstItem="dc9-1z-APK" firstAttribute="top" secondItem="AiC-LS-F4I" secondAttribute="bottom" constant="10" id="WX1-HC-MDK"/>
                             <constraint firstItem="nP9-n4-lEx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcM-5U-t2r"/>
@@ -65,6 +73,7 @@
                             <constraint firstItem="AiC-LS-F4I" firstAttribute="top" secondItem="9zb-3D-VcK" secondAttribute="bottom" constant="10" id="kng-fq-ePE"/>
                             <constraint firstItem="Pzw-On-sjj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMV-eg-S86"/>
                             <constraint firstItem="AiC-LS-F4I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wTD-lo-Wu0"/>
+                            <constraint firstItem="Nen-Kl-BCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x2X-2E-5FK"/>
                             <constraint firstItem="nP9-n4-lEx" firstAttribute="top" secondItem="dc9-1z-APK" secondAttribute="bottom" constant="10" id="yaC-dH-GOD"/>
                         </constraints>
                     </view>

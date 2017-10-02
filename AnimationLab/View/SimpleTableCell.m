@@ -6,12 +6,12 @@
 //  Copyright © 2017 Bloomer. All rights reserved.
 //
 
-#import "CityCell.h"
+#import "SimpleTableCell.h"
 
-@implementation CityCell
+@implementation SimpleTableCell
 
 + (NSString *)cellIdentifier {
-    return @"CityCell";
+    return @"SimpleTableCell";
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
