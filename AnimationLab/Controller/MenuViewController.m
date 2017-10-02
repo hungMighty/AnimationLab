@@ -11,6 +11,7 @@
 #import "GalleryViewController.h"
 #import "UsingUISearchBarViewController.h"
 #import "ProgressViewImageViewController.h"
+#import "TableWithHeaderImageScaleViewController.h"
 
 @interface MenuViewController ()
 
@@ -56,7 +57,8 @@
 }
 
 - (IBAction)touchShowTableWithHeaderImage:(id)sender {
-    
+    TableWithHeaderImageScaleViewController *view = [[TableWithHeaderImageScaleViewController alloc] init];
+    [self.navigationController pushViewController:view animated:true];
 }
 
 @end

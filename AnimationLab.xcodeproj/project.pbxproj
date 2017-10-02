@@ -56,6 +56,8 @@
 		A0DCC3331F50005600EC953C /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DCC3321F50004B00EC953C /* RMPZoomTransitionAnimator.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
 		A0F42B131F827CDC001C09D5 /* CustomNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F42B121F827CDC001C09D5 /* CustomNavController.m */; };
+		A0F42B171F828442001C09D5 /* TableWithHeaderImageScaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F42B151F828442001C09D5 /* TableWithHeaderImageScaleViewController.m */; };
+		A0F42B1A1F8289C8001C09D5 /* TableWithHeaderImageScaleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F42B191F828458001C09D5 /* TableWithHeaderImageScaleViewController.xib */; };
 		E684C6EA3E121773D358CE2D /* Pods_AnimationLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80AB908942154A2D69DA66 /* Pods_AnimationLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,9 @@
 		A0EF81C31F17AF16006065BF /* UtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilityClasses.h; path = Model/UtilityClasses.h; sourceTree = "<group>"; };
 		A0F42B111F827CDC001C09D5 /* CustomNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomNavController.h; path = Controller/CustomNavController.h; sourceTree = "<group>"; };
 		A0F42B121F827CDC001C09D5 /* CustomNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomNavController.m; path = Controller/CustomNavController.m; sourceTree = "<group>"; };
+		A0F42B141F828442001C09D5 /* TableWithHeaderImageScaleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableWithHeaderImageScaleViewController.h; path = Controller/TableWithHeaderImageScaleViewController.h; sourceTree = "<group>"; };
+		A0F42B151F828442001C09D5 /* TableWithHeaderImageScaleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TableWithHeaderImageScaleViewController.m; path = Controller/TableWithHeaderImageScaleViewController.m; sourceTree = "<group>"; };
+		A0F42B191F828458001C09D5 /* TableWithHeaderImageScaleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TableWithHeaderImageScaleViewController.xib; path = Xibs/TableWithHeaderImageScaleViewController.xib; sourceTree = "<group>"; };
 		B5C4B2BB6DE84A84F634A741 /* Pods-MyChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyChartDemo/Pods-MyChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0CE7B46736D76FB97DD25F /* Pods-AnimationLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationLab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationLab/Pods-AnimationLab.debug.xcconfig"; sourceTree = "<group>"; };
 		CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +178,7 @@
 				A070D4B01F59139A00BCFEFC /* ViewPhotoViewController.xib */,
 				A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */,
 				A03743931F78C07D00313E97 /* ProgressViewImageViewController.xib */,
+				A0F42B191F828458001C09D5 /* TableWithHeaderImageScaleViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -239,6 +245,8 @@
 				A037438F1F78C05C00313E97 /* ProgressViewImageViewController.m */,
 				A0F42B111F827CDC001C09D5 /* CustomNavController.h */,
 				A0F42B121F827CDC001C09D5 /* CustomNavController.m */,
+				A0F42B141F828442001C09D5 /* TableWithHeaderImageScaleViewController.h */,
+				A0F42B151F828442001C09D5 /* TableWithHeaderImageScaleViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -430,6 +438,7 @@
 				A0BB25AD1F4D679300AE6C02 /* Star Guardian Syndra.jpg in Resources */,
 				A03743A71F7906FA00313E97 /* Silver Cup.jpg in Resources */,
 				A0BB25AC1F4D679300AE6C02 /* Star Guardian Ahri.jpg in Resources */,
+				A0F42B1A1F8289C8001C09D5 /* TableWithHeaderImageScaleViewController.xib in Resources */,
 				A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */,
 				A0BB25AA1F4D679300AE6C02 /* Battle 2B.jpg in Resources */,
 				A03743941F78C08700313E97 /* ProgressViewImageViewController.xib in Resources */,
@@ -515,6 +524,7 @@
 				A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */,
 				A0C4747A1F1C60080098BCED /* CustomRankingPanel.m in Sources */,
 				A028A6171F22069F003A4CC4 /* WeakLinkObj.m in Sources */,
+				A0F42B171F828442001C09D5 /* TableWithHeaderImageScaleViewController.m in Sources */,
 				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
 				A09008D31F20C201002E044B /* GroupButtonWithColor.m in Sources */,
 				A03743911F78C05C00313E97 /* ProgressViewImageViewController.m in Sources */,
