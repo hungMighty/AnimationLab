@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="838" y="-562"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Nav Controller-->
         <scene sceneID="p9V-XP-J1l">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVm-jw-6bl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVm-jw-6bl" customClass="CustomNavController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d7e-oM-jE0">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

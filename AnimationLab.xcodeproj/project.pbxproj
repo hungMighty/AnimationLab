@@ -55,6 +55,7 @@
 		A0CA3CE41F19178400BF4079 /* BarChartValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CA3CE31F19178400BF4079 /* BarChartValueLabel.m */; };
 		A0DCC3331F50005600EC953C /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DCC3321F50004B00EC953C /* RMPZoomTransitionAnimator.m */; };
 		A0EF81C21F17A087006065BF /* UIColor+RGB.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF81C11F17A087006065BF /* UIColor+RGB.m */; };
+		A0F42B131F827CDC001C09D5 /* CustomNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F42B121F827CDC001C09D5 /* CustomNavController.m */; };
 		E684C6EA3E121773D358CE2D /* Pods_AnimationLab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D80AB908942154A2D69DA66 /* Pods_AnimationLab.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,8 @@
 		A0EF81C01F17A087006065BF /* UIColor+RGB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RGB.h"; path = "Model/UIColor+RGB.h"; sourceTree = "<group>"; };
 		A0EF81C11F17A087006065BF /* UIColor+RGB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RGB.m"; path = "Model/UIColor+RGB.m"; sourceTree = "<group>"; };
 		A0EF81C31F17AF16006065BF /* UtilityClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilityClasses.h; path = Model/UtilityClasses.h; sourceTree = "<group>"; };
+		A0F42B111F827CDC001C09D5 /* CustomNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomNavController.h; path = Controller/CustomNavController.h; sourceTree = "<group>"; };
+		A0F42B121F827CDC001C09D5 /* CustomNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomNavController.m; path = Controller/CustomNavController.m; sourceTree = "<group>"; };
 		B5C4B2BB6DE84A84F634A741 /* Pods-MyChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyChartDemo/Pods-MyChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0CE7B46736D76FB97DD25F /* Pods-AnimationLab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationLab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AnimationLab/Pods-AnimationLab.debug.xcconfig"; sourceTree = "<group>"; };
 		CD67C3014E77FAC6F86485EE /* Pods_MyChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +237,8 @@
 				A070D4AB1F59137300BCFEFC /* UsingUISearchBarViewController.m */,
 				A037438E1F78C05C00313E97 /* ProgressViewImageViewController.h */,
 				A037438F1F78C05C00313E97 /* ProgressViewImageViewController.m */,
+				A0F42B111F827CDC001C09D5 /* CustomNavController.h */,
+				A0F42B121F827CDC001C09D5 /* CustomNavController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F42B131F827CDC001C09D5 /* CustomNavController.m in Sources */,
 				A0BB259C1F4D65D000AE6C02 /* SimpleCollectionCell.m in Sources */,
 				A0978FCD1F18A63000F815BA /* SimpleHorizontalBarChart.m in Sources */,
 				A0DCC3331F50005600EC953C /* RMPZoomTransitionAnimator.m in Sources */,
