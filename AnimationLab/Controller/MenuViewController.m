@@ -60,5 +60,7 @@
     TableWithHeaderImageScaleViewController *view = [[TableWithHeaderImageScaleViewController alloc] init];
     [self.navigationController pushViewController:view animated:true];
 }
+- (IBAction)touchHorizontalTableView:(id)sender {
+}
 
 @end

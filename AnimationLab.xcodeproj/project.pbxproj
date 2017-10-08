@@ -39,6 +39,10 @@
 		A0A77C941F14750F00D16BC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A77C931F14750F00D16BC2 /* AppDelegate.m */; };
 		A0A77C9A1F14750F00D16BC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C981F14750F00D16BC2 /* Main.storyboard */; };
 		A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0A77C9D1F14750F00D16BC2 /* LaunchScreen.storyboard */; };
+		A0B361D51F8A536000A44347 /* HorizontalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B361D41F8A536000A44347 /* HorizontalTableViewController.m */; };
+		A0B361D71F8A537300A44347 /* HorizontalTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B361D61F8A537300A44347 /* HorizontalTableViewController.xib */; };
+		A0B361DB1F8A545200A44347 /* HorizontalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B361D91F8A545200A44347 /* HorizontalTableViewCell.m */; };
+		A0B361DE1F8A546F00A44347 /* HorizontalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B361DD1F8A546C00A44347 /* HorizontalTableViewCell.xib */; };
 		A0BB25921F4D3FCE00AE6C02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */; };
 		A0BB25951F4D61B800AE6C02 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB25941F4D61B800AE6C02 /* GalleryViewController.m */; };
 		A0BB25971F4D624A00AE6C02 /* GalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BB25961F4D624A00AE6C02 /* GalleryViewController.xib */; };
@@ -108,6 +112,12 @@
 		A0A77C991F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0A77C9E1F14750F00D16BC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0A77CA01F14750F00D16BC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0B361D31F8A536000A44347 /* HorizontalTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HorizontalTableViewController.h; path = Controller/HorizontalTableViewController.h; sourceTree = "<group>"; };
+		A0B361D41F8A536000A44347 /* HorizontalTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HorizontalTableViewController.m; path = Controller/HorizontalTableViewController.m; sourceTree = "<group>"; };
+		A0B361D61F8A537300A44347 /* HorizontalTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HorizontalTableViewController.xib; path = Xibs/HorizontalTableViewController.xib; sourceTree = "<group>"; };
+		A0B361D81F8A545200A44347 /* HorizontalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HorizontalTableViewCell.h; path = Controller/HorizontalTableViewCell.h; sourceTree = "<group>"; };
+		A0B361D91F8A545200A44347 /* HorizontalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HorizontalTableViewCell.m; path = Controller/HorizontalTableViewCell.m; sourceTree = "<group>"; };
+		A0B361DD1F8A546C00A44347 /* HorizontalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalTableViewCell.xib; sourceTree = "<group>"; };
 		A0BB25901F4D3FCD00AE6C02 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controller/MenuViewController.h; sourceTree = "<group>"; };
 		A0BB25911F4D3FCE00AE6C02 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controller/MenuViewController.m; sourceTree = "<group>"; };
 		A0BB25931F4D61B800AE6C02 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GalleryViewController.h; path = Controller/GalleryViewController.h; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 				A070D4AF1F59139A00BCFEFC /* UsingUISearchBarViewController.xib */,
 				A03743931F78C07D00313E97 /* ProgressViewImageViewController.xib */,
 				A0F42B191F828458001C09D5 /* TableWithHeaderImageScaleViewController.xib */,
+				A0B361D61F8A537300A44347 /* HorizontalTableViewController.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -247,6 +258,8 @@
 				A0F42B121F827CDC001C09D5 /* CustomNavController.m */,
 				A0F42B141F828442001C09D5 /* TableWithHeaderImageScaleViewController.h */,
 				A0F42B151F828442001C09D5 /* TableWithHeaderImageScaleViewController.m */,
+				A0B361D31F8A536000A44347 /* HorizontalTableViewController.h */,
+				A0B361D41F8A536000A44347 /* HorizontalTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -284,6 +297,8 @@
 				A0BB259B1F4D65D000AE6C02 /* SimpleCollectionCell.m */,
 				A04C5ECD1F5C37F7005380CE /* SimpleTableCell.h */,
 				A04C5ECE1F5C37F7005380CE /* SimpleTableCell.m */,
+				A0B361D81F8A545200A44347 /* HorizontalTableViewCell.h */,
+				A0B361D91F8A545200A44347 /* HorizontalTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -312,6 +327,7 @@
 			children = (
 				A0BB25B41F4D85C400AE6C02 /* SimpleCollectionCell.xib */,
 				A04C5ECB1F5C3462005380CE /* SimpleTableCell.xib */,
+				A0B361DD1F8A546C00A44347 /* HorizontalTableViewCell.xib */,
 			);
 			name = "View Xibs";
 			path = "Xibs/View Xibs";
@@ -425,8 +441,10 @@
 			files = (
 				A0A77C9F1F14750F00D16BC2 /* LaunchScreen.storyboard in Resources */,
 				A03743AB1F7906FA00313E97 /* Ahri without Glasses.png in Resources */,
+				A0B361D71F8A537300A44347 /* HorizontalTableViewController.xib in Resources */,
 				A0BB25A91F4D679300AE6C02 /* (x) Ahri.jpg in Resources */,
 				A09CFC331F5B028B00FA2773 /* UsingUISearchBarViewController.xib in Resources */,
+				A0B361DE1F8A546F00A44347 /* HorizontalTableViewCell.xib in Resources */,
 				A03743AE1F7906FA00313E97 /* Kawaii Annie.png in Resources */,
 				A03743AF1F7906FA00313E97 /* Ahri's Peko.png in Resources */,
 				A07E865E1F16309900A3D158 /* MembershipViewController.xib in Resources */,
@@ -528,9 +546,11 @@
 				A04EF0761F20568B00CC70FB /* BlueRoundButton.m in Sources */,
 				A09008D31F20C201002E044B /* GroupButtonWithColor.m in Sources */,
 				A03743911F78C05C00313E97 /* ProgressViewImageViewController.m in Sources */,
+				A0B361D51F8A536000A44347 /* HorizontalTableViewController.m in Sources */,
 				A026A1001F1DC31A007CF948 /* CircleLabel.m in Sources */,
 				A028A61A1F2206AE003A4CC4 /* WaveView.m in Sources */,
 				A0A77C911F14750F00D16BC2 /* main.m in Sources */,
+				A0B361DB1F8A545200A44347 /* HorizontalTableViewCell.m in Sources */,
 				A07E865B1F16307F00A3D158 /* MembershipViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
